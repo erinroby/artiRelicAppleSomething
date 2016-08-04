@@ -30,17 +30,17 @@ Idea: An app with iBeacon integration that replaces the plaque along side an art
 ## Group Members
 
 ### Hannah Gaskins 🏓
-[Hannah's GitHub](https://github.com/hnag409)
+[Hannah's GitHub](https://github.com/hnag409)<br>
 [Hannah's LinkedIn](https://www.linkedin.com/in/hannahgaskins)
 
 ### Jeremy Moore ⚔
-[Jeremy's GitHub](https://github.com/damoores)
+[Jeremy's GitHub](https://github.com/damoores)<br>
 [Jeremy's LinkedIn](https://www.linkedin.com/in/jeremy-moore-78515a7b)
 
 ### Erin Roby 🎈
-[Erin's GitHub](https://github.com/erinroby)
+[Erin's GitHub](https://github.com/erinroby)<br>
 [Erin's LinkedIn](https://www.linkedin.com/in/erinroby)
 
 ### David Swaintek 🎹
-[David's GitHub](https://github.com/Swaintek)
+[David's GitHub](https://github.com/Swaintek)<br>
 [David's LinkedIn](https://www.linkedin.com/in/davidswaintek)
