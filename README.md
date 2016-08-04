@@ -26,3 +26,14 @@ Idea: An app with iBeacon integration that replaces the plaque along side an art
 ## WireFrames
 
 ![alt text](images/wireFrames.png "Introductory wireFrames")
+
+## Group Members
+
+### Hannah Gaskins 🏓
+[GitHub link](https://github.com/hnag409)
+
+### Jeremy Moore ⚔
+
+### Erin Roby 🎈
+
+### David Swaintek 🎹
