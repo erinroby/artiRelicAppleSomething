@@ -1,5 +1,9 @@
 //
-// Please report any problems with this app template to contact@estimote.com
+//  main.m
+//  artiRelicAppleSomething
+//
+//  Created by Erin Roby on 8/8/16.
+//  Copyright © 2016 Erin Roby. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
