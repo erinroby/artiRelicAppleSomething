@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "CoreDataStack.h"
+#import "NSManagedObjectContext+NSManagedObjectContext.h"
 
 @class Piece;
 
@@ -15,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Beacon : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
++ (instancetype)beaconWithUIID: (NSString *)uiid major:(NSString *)major minor:(NSString *)minor;
 
 @end
 

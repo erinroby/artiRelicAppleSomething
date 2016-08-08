@@ -12,6 +12,19 @@
 
 @implementation Show
 
-// Insert code here to add functionality to your managed object subclass
++ (instancetype)showWithTitle:(NSString *)title subtitle:(NSString *)subtitle desc:(NSString *)desc gallery:(NSString *)gallery dates:(NSString *)dates curator:(Curator *)curator
+{
+    Show *show = [NSEntityDescription insertNewObjectForEntityForName:@"Show" inManagedObjectContext:[NSManagedObjectContext managerContext]];
+    
+    show.title = title;
+    show.subtitle = subtitle;
+    show.desc = desc;
+    //show.gallery = gallery;
+    //show.dates = dates;
+    //show.curator = curator;
+    
+    return show;
+}
+
 
 @end

@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "CoreDataStack.h"
+#import "NSManagedObjectContext+NSManagedObjectContext.h"
+
 
 @class Show;
 
@@ -15,9 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Curator : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
++ (instancetype) curatorWithUserName:(NSString *)userName password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName;
 
 @end
+
 
 NS_ASSUME_NONNULL_END
 
