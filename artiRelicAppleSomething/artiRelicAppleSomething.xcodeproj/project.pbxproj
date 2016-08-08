@@ -32,6 +32,12 @@
 		0D2FD06E1D59085F004DF6B9 /* NearestBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD05F1D59085F004DF6B9 /* NearestBeaconManager.m */; };
 		0D2FD06F1D59085F004DF6B9 /* ProximityContentManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0601D59085F004DF6B9 /* ProximityContentManager.h */; };
 		0D2FD0701D59085F004DF6B9 /* ProximityContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0611D59085F004DF6B9 /* ProximityContentManager.m */; };
+		EE9B0FE81D5912E600B3AF83 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE51D5912E600B3AF83 /* Bolts.framework */; };
+		EE9B0FE91D5912E600B3AF83 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE61D5912E600B3AF83 /* Parse.framework */; };
+		EE9B0FEA1D5912E600B3AF83 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE71D5912E600B3AF83 /* Stripe.framework */; };
+		EE9B0FEC1D59130E00B3AF83 /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EE9B0FE51D5912E600B3AF83 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EE9B0FED1D59131300B3AF83 /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EE9B0FE61D5912E600B3AF83 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EE9B0FEE1D59131800B3AF83 /* Stripe.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EE9B0FE71D5912E600B3AF83 /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,21 @@
 			remoteInfo = artiRelicAppleSomething;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EE9B0FEB1D59130300B3AF83 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EE9B0FEE1D59131800B3AF83 /* Stripe.framework in CopyFiles */,
+				EE9B0FED1D59131300B3AF83 /* Parse.framework in CopyFiles */,
+				EE9B0FEC1D59130E00B3AF83 /* Bolts.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D2FD0181D5907E1004DF6B9 /* artiRelicAppleSomething.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = artiRelicAppleSomething.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +106,9 @@
 		0D2FD05F1D59085F004DF6B9 /* NearestBeaconManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NearestBeaconManager.m; path = artiRelicAppleSomething/Estimote/NearestBeaconManager.m; sourceTree = "<group>"; };
 		0D2FD0601D59085F004DF6B9 /* ProximityContentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProximityContentManager.h; path = artiRelicAppleSomething/Estimote/ProximityContentManager.h; sourceTree = "<group>"; };
 		0D2FD0611D59085F004DF6B9 /* ProximityContentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProximityContentManager.m; path = artiRelicAppleSomething/Estimote/ProximityContentManager.m; sourceTree = "<group>"; };
+		EE9B0FE51D5912E600B3AF83 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
+		EE9B0FE61D5912E600B3AF83 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
+		EE9B0FE71D5912E600B3AF83 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = Carthage/Build/iOS/Stripe.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +117,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D2FD0521D59083E004DF6B9 /* EstimoteSDK.framework in Frameworks */,
+				EE9B0FE91D5912E600B3AF83 /* Parse.framework in Frameworks */,
+				EE9B0FE81D5912E600B3AF83 /* Bolts.framework in Frameworks */,
+				EE9B0FEA1D5912E600B3AF83 /* Stripe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +148,9 @@
 				0D2FD0421D5907E2004DF6B9 /* artiRelicAppleSomethingUITests */,
 				0D2FD0711D59086F004DF6B9 /* Estimote */,
 				0D2FD0191D5907E1004DF6B9 /* Products */,
+				EE9B0FE51D5912E600B3AF83 /* Bolts.framework */,
+				EE9B0FE61D5912E600B3AF83 /* Parse.framework */,
+				EE9B0FE71D5912E600B3AF83 /* Stripe.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +240,7 @@
 				0D2FD0141D5907E1004DF6B9 /* Sources */,
 				0D2FD0151D5907E1004DF6B9 /* Frameworks */,
 				0D2FD0161D5907E1004DF6B9 /* Resources */,
+				EE9B0FEB1D59130300B3AF83 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -494,6 +525,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/artiRelicAppleSomething/Estimote",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = artiRelicAppleSomething/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -509,6 +541,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/artiRelicAppleSomething/Estimote",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = artiRelicAppleSomething/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -582,6 +615,7 @@
 				0D2FD04A1D5907E2004DF6B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D2FD04B1D5907E2004DF6B9 /* Build configuration list for PBXNativeTarget "artiRelicAppleSomethingTests" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +624,7 @@
 				0D2FD04D1D5907E2004DF6B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D2FD04E1D5907E2004DF6B9 /* Build configuration list for PBXNativeTarget "artiRelicAppleSomethingUITests" */ = {
 			isa = XCConfigurationList;
@@ -598,6 +633,7 @@
 				0D2FD0501D5907E2004DF6B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
