@@ -17,20 +17,12 @@
 		0D2FD0391D5907E2004DF6B9 /* artiRelicAppleSomethingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0381D5907E2004DF6B9 /* artiRelicAppleSomethingTests.m */; };
 		0D2FD0441D5907E2004DF6B9 /* artiRelicAppleSomethingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0431D5907E2004DF6B9 /* artiRelicAppleSomethingUITests.m */; };
 		0D2FD0521D59083E004DF6B9 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2FD0511D59083E004DF6B9 /* EstimoteSDK.framework */; };
-		0D2FD0621D59085F004DF6B9 /* BeaconContentFactory.h in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0531D59085F004DF6B9 /* BeaconContentFactory.h */; };
-		0D2FD0631D59085F004DF6B9 /* BeaconDetails.h in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0541D59085F004DF6B9 /* BeaconDetails.h */; };
 		0D2FD0641D59085F004DF6B9 /* BeaconDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0551D59085F004DF6B9 /* BeaconDetails.m */; };
-		0D2FD0651D59085F004DF6B9 /* BeaconDetailsCloudFactory.h in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0561D59085F004DF6B9 /* BeaconDetailsCloudFactory.h */; };
 		0D2FD0661D59085F004DF6B9 /* BeaconDetailsCloudFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0571D59085F004DF6B9 /* BeaconDetailsCloudFactory.m */; };
-		0D2FD0671D59085F004DF6B9 /* BeaconDetailsStaticFactory.h in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0581D59085F004DF6B9 /* BeaconDetailsStaticFactory.h */; };
 		0D2FD0681D59085F004DF6B9 /* BeaconDetailsStaticFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0591D59085F004DF6B9 /* BeaconDetailsStaticFactory.m */; };
-		0D2FD0691D59085F004DF6B9 /* BeaconID.h in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD05A1D59085F004DF6B9 /* BeaconID.h */; };
 		0D2FD06A1D59085F004DF6B9 /* BeaconID.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD05B1D59085F004DF6B9 /* BeaconID.m */; };
-		0D2FD06B1D59085F004DF6B9 /* CachingContentFactory.h in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD05C1D59085F004DF6B9 /* CachingContentFactory.h */; };
 		0D2FD06C1D59085F004DF6B9 /* CachingContentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD05D1D59085F004DF6B9 /* CachingContentFactory.m */; };
-		0D2FD06D1D59085F004DF6B9 /* NearestBeaconManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD05E1D59085F004DF6B9 /* NearestBeaconManager.h */; };
 		0D2FD06E1D59085F004DF6B9 /* NearestBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD05F1D59085F004DF6B9 /* NearestBeaconManager.m */; };
-		0D2FD06F1D59085F004DF6B9 /* ProximityContentManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0601D59085F004DF6B9 /* ProximityContentManager.h */; };
 		0D2FD0701D59085F004DF6B9 /* ProximityContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0611D59085F004DF6B9 /* ProximityContentManager.m */; };
 		0DDE6FFF1D59291B002F51A2 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE6FFE1D59291B002F51A2 /* DashboardViewController.m */; };
 		0DDE70021D59297D002F51A2 /* NewShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE70011D59297D002F51A2 /* NewShowViewController.m */; };
@@ -415,24 +407,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D2FD0621D59085F004DF6B9 /* BeaconContentFactory.h in Sources */,
 				0DDE70081D5929E5002F51A2 /* NewPieceViewController.m in Sources */,
-				0D2FD0631D59085F004DF6B9 /* BeaconDetails.h in Sources */,
 				0D2FD0641D59085F004DF6B9 /* BeaconDetails.m in Sources */,
 				0DDE700B1D592A0E002F51A2 /* PieceOverviewViewController.m in Sources */,
 				0DDE70021D59297D002F51A2 /* NewShowViewController.m in Sources */,
-				0D2FD0651D59085F004DF6B9 /* BeaconDetailsCloudFactory.h in Sources */,
 				0D2FD0661D59085F004DF6B9 /* BeaconDetailsCloudFactory.m in Sources */,
-				0D2FD0671D59085F004DF6B9 /* BeaconDetailsStaticFactory.h in Sources */,
 				0D2FD0681D59085F004DF6B9 /* BeaconDetailsStaticFactory.m in Sources */,
-				0D2FD0691D59085F004DF6B9 /* BeaconID.h in Sources */,
 				0D2FD06A1D59085F004DF6B9 /* BeaconID.m in Sources */,
-				0D2FD06B1D59085F004DF6B9 /* CachingContentFactory.h in Sources */,
 				0D2FD06C1D59085F004DF6B9 /* CachingContentFactory.m in Sources */,
 				0DDE700E1D592A84002F51A2 /* BeaconPairViewController.m in Sources */,
-				0D2FD06D1D59085F004DF6B9 /* NearestBeaconManager.h in Sources */,
 				0D2FD06E1D59085F004DF6B9 /* NearestBeaconManager.m in Sources */,
-				0D2FD06F1D59085F004DF6B9 /* ProximityContentManager.h in Sources */,
 				0D2FD0701D59085F004DF6B9 /* ProximityContentManager.m in Sources */,
 				0DDE70051D5929AC002F51A2 /* ShowOverviewViewController.m in Sources */,
 				0DDE6FFF1D59291B002F51A2 /* DashboardViewController.m in Sources */,
