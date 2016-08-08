@@ -7,10 +7,12 @@
 //
 
 #import "DashboardViewController.h"
+#import "ShowOverviewViewController.h"
 
-@interface DashboardViewController ()
+@interface DashboardViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *showCollectionView;
+@property(strong, nonatomic)NSArray *dataSource;
 
 @end
 
@@ -18,22 +20,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma MARK - UICollectionViewDelegate methods
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma MARK - UICollectionViewDataSource methods
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.dataSource.count;
 }
-*/
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [[UICollectionViewCell alloc]init];
+    return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    ShowOverviewViewController *showOverviewViewController = [[ShowOverviewViewController alloc]init];
+    [self.navigationController pushViewController:showOverviewViewController animated:YES];
+}
 
 @end

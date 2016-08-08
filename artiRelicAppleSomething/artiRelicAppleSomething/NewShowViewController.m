@@ -12,6 +12,11 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
 
+@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *subtitleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *priceTextField;
+
 @end
 
 @implementation NewShowViewController
