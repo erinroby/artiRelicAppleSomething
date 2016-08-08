@@ -9,6 +9,9 @@
 #import "ShowOverviewViewController.h"
 
 @interface ShowOverviewViewController ()
+@property (weak, nonatomic) IBOutlet UICollectionView *pieceCollectionView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+- (IBAction)editButtonSelected:(id)sender;
 
 @end
 
@@ -34,4 +37,6 @@
 }
 */
 
+- (IBAction)editButtonSelected:(id)sender {
+}
 @end

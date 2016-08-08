@@ -10,6 +10,8 @@
 
 @interface DashboardViewController ()
 
+@property (weak, nonatomic) IBOutlet UICollectionView *showCollectionView;
+
 @end
 
 @implementation DashboardViewController

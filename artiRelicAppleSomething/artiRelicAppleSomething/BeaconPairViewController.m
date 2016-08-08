@@ -9,6 +9,8 @@
 #import "BeaconPairViewController.h"
 
 @interface BeaconPairViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+- (IBAction)saveButtonPressed:(id)sender;
 
 @end
 
@@ -34,4 +36,6 @@
 }
 */
 
+- (IBAction)saveButtonPressed:(id)sender {
+}
 @end

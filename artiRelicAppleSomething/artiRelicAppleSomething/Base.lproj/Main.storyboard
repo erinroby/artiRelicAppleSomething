@@ -16,13 +16,57 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EPK-9Q-R7b">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9jV-Gn-QzL">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="showCollectionViewCell" id="jmZ-rd-G87">
+                                        <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="cEN-iz-JuY" kind="showDetail" identifier="ShowOverviewViewController" id="Zab-78-7nw"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="EPK-9Q-R7b" secondAttribute="bottom" id="MgK-bN-iB8"/>
+                            <constraint firstItem="EPK-9Q-R7b" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Pqn-uw-X53"/>
+                            <constraint firstItem="EPK-9Q-R7b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gsi-JE-feZ"/>
+                            <constraint firstAttribute="trailing" secondItem="EPK-9Q-R7b" secondAttribute="trailing" id="mYg-eL-W4K"/>
+                        </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="XJ4-S8-gJZ"/>
+                        <barButtonItem systemItem="add" id="syi-7B-kWs">
+                            <connections>
+                                <segue destination="PuZ-ZL-qwv" kind="show" id="7Jx-YC-uUP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="8UW-gb-XiT"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="c04-I9-0fz"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="showCollectionView" destination="EPK-9Q-R7b" id="62c-WR-AmO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="1029"/>
+            <point key="canvasLocation" x="1184" y="984"/>
         </scene>
         <!--New Show View Controller-->
         <scene sceneID="IrR-UJ-KHb">
@@ -37,6 +81,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zf0-Au-9MQ"/>
+                        <barButtonItem systemItem="save" id="WK2-XO-XUz">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="PuZ-ZL-qwv" id="y0h-Aw-tiV"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <connections>
+                        <outlet property="saveButton" destination="WK2-XO-XUz" id="DWN-aJ-6mV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oaj-Qc-yUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,8 +108,58 @@
                     <view key="view" contentMode="scaleToFill" id="iKc-D8-X8E">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bYQ-nO-UiV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gHI-dP-wja">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1o2-bT-rL1">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="kfd-90-1Bg" kind="showDetail" identifier="PieceOverviewViewController" id="jjg-kJ-5gt"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U1I-i0-qn1" firstAttribute="top" secondItem="bYQ-nO-UiV" secondAttribute="bottom" id="B1V-gV-2g1"/>
+                            <constraint firstItem="bYQ-nO-UiV" firstAttribute="leading" secondItem="iKc-D8-X8E" secondAttribute="leading" id="V1Z-Rx-LYo"/>
+                            <constraint firstAttribute="trailing" secondItem="bYQ-nO-UiV" secondAttribute="trailing" id="YV7-rR-5ar"/>
+                            <constraint firstItem="bYQ-nO-UiV" firstAttribute="top" secondItem="iKc-D8-X8E" secondAttribute="top" id="kf9-ef-1Jj"/>
+                        </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="add" id="32D-fq-kBj">
+                            <connections>
+                                <segue destination="QMX-Vc-rwu" kind="show" identifier="NewPieceViewController" id="C3I-LS-UMl"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="U4A-58-DWu"/>
+                        <barButtonItem title="Item" systemItem="edit" id="wfc-K0-fBV">
+                            <connections>
+                                <action selector="editButtonSelected:" destination="cEN-iz-JuY" id="ifM-PU-G83"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editButton" destination="wfc-K0-fBV" id="uVq-vg-IX3"/>
+                        <outlet property="pieceCollectionView" destination="bYQ-nO-UiV" id="CbW-WR-pg4"/>
+                        <outlet property="pieceCollectionViewController" destination="bYQ-nO-UiV" id="eXi-MO-86x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBb-HU-OWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,6 +178,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="hGn-M0-ktX"/>
+                        <barButtonItem title="Beacon!" id="hWM-lS-c9D">
+                            <connections>
+                                <segue destination="KDP-VB-VGr" kind="show" identifier="BeaconPairViewController" id="G9a-3Z-aTl"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxG-Kj-T1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,6 +204,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="F8e-o3-4Pc"/>
+                        <barButtonItem systemItem="save" id="Av6-ii-EOx">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="KDP-VB-VGr" id="8FW-2k-hBe"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <connections>
+                        <outlet property="saveButton" destination="Av6-ii-EOx" id="0Ow-os-AxU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdC-MY-1ay" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +254,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phd-Zw-a8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="446" y="1029"/>
+            <point key="canvasLocation" x="449" y="984"/>
         </scene>
     </scenes>
 </document>

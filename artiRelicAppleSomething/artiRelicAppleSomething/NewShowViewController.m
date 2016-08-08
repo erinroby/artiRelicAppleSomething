@@ -9,6 +9,8 @@
 #import "NewShowViewController.h"
 
 @interface NewShowViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+- (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
 
 @end
 
@@ -33,5 +35,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
+}
 
 @end
