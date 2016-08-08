@@ -32,6 +32,12 @@
 		0D2FD06E1D59085F004DF6B9 /* NearestBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD05F1D59085F004DF6B9 /* NearestBeaconManager.m */; };
 		0D2FD06F1D59085F004DF6B9 /* ProximityContentManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0601D59085F004DF6B9 /* ProximityContentManager.h */; };
 		0D2FD0701D59085F004DF6B9 /* ProximityContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0611D59085F004DF6B9 /* ProximityContentManager.m */; };
+		0DDE6FFF1D59291B002F51A2 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE6FFE1D59291B002F51A2 /* DashboardViewController.m */; };
+		0DDE70021D59297D002F51A2 /* NewShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE70011D59297D002F51A2 /* NewShowViewController.m */; };
+		0DDE70051D5929AC002F51A2 /* ShowOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE70041D5929AC002F51A2 /* ShowOverviewViewController.m */; };
+		0DDE70081D5929E5002F51A2 /* NewPieceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE70071D5929E5002F51A2 /* NewPieceViewController.m */; };
+		0DDE700B1D592A0E002F51A2 /* PieceOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE700A1D592A0E002F51A2 /* PieceOverviewViewController.m */; };
+		0DDE700E1D592A84002F51A2 /* BeaconPairViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */; };
 		EE9B0FE81D5912E600B3AF83 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE51D5912E600B3AF83 /* Bolts.framework */; };
 		EE9B0FE91D5912E600B3AF83 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE61D5912E600B3AF83 /* Parse.framework */; };
 		EE9B0FEA1D5912E600B3AF83 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE71D5912E600B3AF83 /* Stripe.framework */; };
@@ -106,6 +112,18 @@
 		0D2FD05F1D59085F004DF6B9 /* NearestBeaconManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NearestBeaconManager.m; path = artiRelicAppleSomething/Estimote/NearestBeaconManager.m; sourceTree = "<group>"; };
 		0D2FD0601D59085F004DF6B9 /* ProximityContentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProximityContentManager.h; path = artiRelicAppleSomething/Estimote/ProximityContentManager.h; sourceTree = "<group>"; };
 		0D2FD0611D59085F004DF6B9 /* ProximityContentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProximityContentManager.m; path = artiRelicAppleSomething/Estimote/ProximityContentManager.m; sourceTree = "<group>"; };
+		0DDE6FFD1D59291B002F51A2 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
+		0DDE6FFE1D59291B002F51A2 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
+		0DDE70001D59297D002F51A2 /* NewShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewShowViewController.h; sourceTree = "<group>"; };
+		0DDE70011D59297D002F51A2 /* NewShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewShowViewController.m; sourceTree = "<group>"; };
+		0DDE70031D5929AC002F51A2 /* ShowOverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOverviewViewController.h; sourceTree = "<group>"; };
+		0DDE70041D5929AC002F51A2 /* ShowOverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowOverviewViewController.m; sourceTree = "<group>"; };
+		0DDE70061D5929E5002F51A2 /* NewPieceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPieceViewController.h; sourceTree = "<group>"; };
+		0DDE70071D5929E5002F51A2 /* NewPieceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPieceViewController.m; sourceTree = "<group>"; };
+		0DDE70091D592A0E002F51A2 /* PieceOverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieceOverviewViewController.h; sourceTree = "<group>"; };
+		0DDE700A1D592A0E002F51A2 /* PieceOverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieceOverviewViewController.m; sourceTree = "<group>"; };
+		0DDE700C1D592A84002F51A2 /* BeaconPairViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconPairViewController.h; sourceTree = "<group>"; };
+		0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconPairViewController.m; sourceTree = "<group>"; };
 		EE9B0FE51D5912E600B3AF83 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		EE9B0FE61D5912E600B3AF83 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		EE9B0FE71D5912E600B3AF83 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = Carthage/Build/iOS/Stripe.framework; sourceTree = "<group>"; };
@@ -144,9 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				0D2FD01A1D5907E2004DF6B9 /* artiRelicAppleSomething */,
+				0D2FD0711D59086F004DF6B9 /* Estimote */,
 				0D2FD0371D5907E2004DF6B9 /* artiRelicAppleSomethingTests */,
 				0D2FD0421D5907E2004DF6B9 /* artiRelicAppleSomethingUITests */,
-				0D2FD0711D59086F004DF6B9 /* Estimote */,
 				0D2FD0191D5907E1004DF6B9 /* Products */,
 				EE9B0FE51D5912E600B3AF83 /* Bolts.framework */,
 				EE9B0FE61D5912E600B3AF83 /* Parse.framework */,
@@ -167,15 +185,10 @@
 		0D2FD01A1D5907E2004DF6B9 /* artiRelicAppleSomething */ = {
 			isa = PBXGroup;
 			children = (
-				0D2FD01E1D5907E2004DF6B9 /* AppDelegate.h */,
-				0D2FD01F1D5907E2004DF6B9 /* AppDelegate.m */,
-				0D2FD0211D5907E2004DF6B9 /* ViewController.h */,
-				0D2FD0221D5907E2004DF6B9 /* ViewController.m */,
+				0DC02B541D5928AA009B03BD /* Global */,
+				0DC02B531D59289D009B03BD /* Controller */,
 				0D2FD0241D5907E2004DF6B9 /* Main.storyboard */,
-				0D2FD02A1D5907E2004DF6B9 /* Assets.xcassets */,
-				0D2FD02C1D5907E2004DF6B9 /* LaunchScreen.storyboard */,
-				0D2FD02F1D5907E2004DF6B9 /* Info.plist */,
-				0D2FD0271D5907E2004DF6B9 /* artiRelicAppleSomething.xcdatamodeld */,
+				0DC02B551D5928BC009B03BD /* Model */,
 				0D2FD01B1D5907E2004DF6B9 /* Supporting Files */,
 			);
 			path = artiRelicAppleSomething;
@@ -228,6 +241,47 @@
 				0D2FD0511D59083E004DF6B9 /* EstimoteSDK.framework */,
 			);
 			name = Estimote;
+			sourceTree = "<group>";
+		};
+		0DC02B531D59289D009B03BD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0D2FD0211D5907E2004DF6B9 /* ViewController.h */,
+				0D2FD0221D5907E2004DF6B9 /* ViewController.m */,
+				0DDE6FFD1D59291B002F51A2 /* DashboardViewController.h */,
+				0DDE6FFE1D59291B002F51A2 /* DashboardViewController.m */,
+				0DDE70001D59297D002F51A2 /* NewShowViewController.h */,
+				0DDE70011D59297D002F51A2 /* NewShowViewController.m */,
+				0DDE70031D5929AC002F51A2 /* ShowOverviewViewController.h */,
+				0DDE70041D5929AC002F51A2 /* ShowOverviewViewController.m */,
+				0DDE70061D5929E5002F51A2 /* NewPieceViewController.h */,
+				0DDE70071D5929E5002F51A2 /* NewPieceViewController.m */,
+				0DDE70091D592A0E002F51A2 /* PieceOverviewViewController.h */,
+				0DDE700A1D592A0E002F51A2 /* PieceOverviewViewController.m */,
+				0DDE700C1D592A84002F51A2 /* BeaconPairViewController.h */,
+				0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0DC02B541D5928AA009B03BD /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				0D2FD01E1D5907E2004DF6B9 /* AppDelegate.h */,
+				0D2FD01F1D5907E2004DF6B9 /* AppDelegate.m */,
+				0D2FD02A1D5907E2004DF6B9 /* Assets.xcassets */,
+				0D2FD02C1D5907E2004DF6B9 /* LaunchScreen.storyboard */,
+				0D2FD02F1D5907E2004DF6B9 /* Info.plist */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		0DC02B551D5928BC009B03BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D2FD0271D5907E2004DF6B9 /* artiRelicAppleSomething.xcdatamodeld */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,8 +416,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D2FD0621D59085F004DF6B9 /* BeaconContentFactory.h in Sources */,
+				0DDE70081D5929E5002F51A2 /* NewPieceViewController.m in Sources */,
 				0D2FD0631D59085F004DF6B9 /* BeaconDetails.h in Sources */,
 				0D2FD0641D59085F004DF6B9 /* BeaconDetails.m in Sources */,
+				0DDE700B1D592A0E002F51A2 /* PieceOverviewViewController.m in Sources */,
+				0DDE70021D59297D002F51A2 /* NewShowViewController.m in Sources */,
 				0D2FD0651D59085F004DF6B9 /* BeaconDetailsCloudFactory.h in Sources */,
 				0D2FD0661D59085F004DF6B9 /* BeaconDetailsCloudFactory.m in Sources */,
 				0D2FD0671D59085F004DF6B9 /* BeaconDetailsStaticFactory.h in Sources */,
@@ -372,10 +429,13 @@
 				0D2FD06A1D59085F004DF6B9 /* BeaconID.m in Sources */,
 				0D2FD06B1D59085F004DF6B9 /* CachingContentFactory.h in Sources */,
 				0D2FD06C1D59085F004DF6B9 /* CachingContentFactory.m in Sources */,
+				0DDE700E1D592A84002F51A2 /* BeaconPairViewController.m in Sources */,
 				0D2FD06D1D59085F004DF6B9 /* NearestBeaconManager.h in Sources */,
 				0D2FD06E1D59085F004DF6B9 /* NearestBeaconManager.m in Sources */,
 				0D2FD06F1D59085F004DF6B9 /* ProximityContentManager.h in Sources */,
 				0D2FD0701D59085F004DF6B9 /* ProximityContentManager.m in Sources */,
+				0DDE70051D5929AC002F51A2 /* ShowOverviewViewController.m in Sources */,
+				0DDE6FFF1D59291B002F51A2 /* DashboardViewController.m in Sources */,
 				0D2FD0231D5907E2004DF6B9 /* ViewController.m in Sources */,
 				0D2FD0201D5907E2004DF6B9 /* AppDelegate.m in Sources */,
 				0D2FD01D1D5907E2004DF6B9 /* main.m in Sources */,
