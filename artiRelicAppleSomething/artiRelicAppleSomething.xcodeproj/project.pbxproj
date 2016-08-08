@@ -30,6 +30,16 @@
 		0DDE70081D5929E5002F51A2 /* NewPieceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE70071D5929E5002F51A2 /* NewPieceViewController.m */; };
 		0DDE700B1D592A0E002F51A2 /* PieceOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE700A1D592A0E002F51A2 /* PieceOverviewViewController.m */; };
 		0DDE700E1D592A84002F51A2 /* BeaconPairViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */; };
+		70AF430F1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF430E1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m */; };
+		70AF43141D59433A004999F1 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43131D59433A004999F1 /* CoreDataStack.m */; };
+		70AF433F1D594B88004999F1 /* Show+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43301D594B88004999F1 /* Show+CoreDataProperties.m */; };
+		70AF43401D594B88004999F1 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43321D594B88004999F1 /* Show.m */; };
+		70AF43411D594B88004999F1 /* Curator+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43341D594B88004999F1 /* Curator+CoreDataProperties.m */; };
+		70AF43421D594B88004999F1 /* Curator.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43361D594B88004999F1 /* Curator.m */; };
+		70AF43431D594B88004999F1 /* Piece+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43381D594B88004999F1 /* Piece+CoreDataProperties.m */; };
+		70AF43441D594B88004999F1 /* Piece.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF433A1D594B88004999F1 /* Piece.m */; };
+		70AF43451D594B88004999F1 /* Beacon+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF433C1D594B88004999F1 /* Beacon+CoreDataProperties.m */; };
+		70AF43461D594B88004999F1 /* Beacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF433E1D594B88004999F1 /* Beacon.m */; };
 		EE9B0FE81D5912E600B3AF83 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE51D5912E600B3AF83 /* Bolts.framework */; };
 		EE9B0FE91D5912E600B3AF83 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE61D5912E600B3AF83 /* Parse.framework */; };
 		EE9B0FEA1D5912E600B3AF83 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE71D5912E600B3AF83 /* Stripe.framework */; };
@@ -116,6 +126,26 @@
 		0DDE700A1D592A0E002F51A2 /* PieceOverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieceOverviewViewController.m; sourceTree = "<group>"; };
 		0DDE700C1D592A84002F51A2 /* BeaconPairViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconPairViewController.h; sourceTree = "<group>"; };
 		0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconPairViewController.m; sourceTree = "<group>"; };
+		70AF430D1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+NSManagedObjectContext.h"; sourceTree = "<group>"; };
+		70AF430E1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+NSManagedObjectContext.m"; sourceTree = "<group>"; };
+		70AF43121D59433A004999F1 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		70AF43131D59433A004999F1 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		70AF432F1D594B88004999F1 /* Show+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Show+CoreDataProperties.h"; sourceTree = "<group>"; };
+		70AF43301D594B88004999F1 /* Show+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Show+CoreDataProperties.m"; sourceTree = "<group>"; };
+		70AF43311D594B88004999F1 /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Show.h; sourceTree = "<group>"; };
+		70AF43321D594B88004999F1 /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
+		70AF43331D594B88004999F1 /* Curator+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Curator+CoreDataProperties.h"; sourceTree = "<group>"; };
+		70AF43341D594B88004999F1 /* Curator+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Curator+CoreDataProperties.m"; sourceTree = "<group>"; };
+		70AF43351D594B88004999F1 /* Curator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Curator.h; sourceTree = "<group>"; };
+		70AF43361D594B88004999F1 /* Curator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Curator.m; sourceTree = "<group>"; };
+		70AF43371D594B88004999F1 /* Piece+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Piece+CoreDataProperties.h"; sourceTree = "<group>"; };
+		70AF43381D594B88004999F1 /* Piece+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Piece+CoreDataProperties.m"; sourceTree = "<group>"; };
+		70AF43391D594B88004999F1 /* Piece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piece.h; sourceTree = "<group>"; };
+		70AF433A1D594B88004999F1 /* Piece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Piece.m; sourceTree = "<group>"; };
+		70AF433B1D594B88004999F1 /* Beacon+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Beacon+CoreDataProperties.h"; sourceTree = "<group>"; };
+		70AF433C1D594B88004999F1 /* Beacon+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Beacon+CoreDataProperties.m"; sourceTree = "<group>"; };
+		70AF433D1D594B88004999F1 /* Beacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beacon.h; sourceTree = "<group>"; };
+		70AF433E1D594B88004999F1 /* Beacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beacon.m; sourceTree = "<group>"; };
 		EE9B0FE51D5912E600B3AF83 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		EE9B0FE61D5912E600B3AF83 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		EE9B0FE71D5912E600B3AF83 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = Carthage/Build/iOS/Stripe.framework; sourceTree = "<group>"; };
@@ -177,6 +207,7 @@
 		0D2FD01A1D5907E2004DF6B9 /* artiRelicAppleSomething */ = {
 			isa = PBXGroup;
 			children = (
+				70AF430C1D594242004999F1 /* Utilities */,
 				0DC02B541D5928AA009B03BD /* Global */,
 				0DC02B531D59289D009B03BD /* Controller */,
 				0D2FD0241D5907E2004DF6B9 /* Main.storyboard */,
@@ -271,9 +302,44 @@
 		0DC02B551D5928BC009B03BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				70AF432E1D594B67004999F1 /* Entities */,
+				70AF43311D594B88004999F1 /* Show.h */,
+				70AF43321D594B88004999F1 /* Show.m */,
+				70AF43351D594B88004999F1 /* Curator.h */,
+				70AF43361D594B88004999F1 /* Curator.m */,
+				70AF43391D594B88004999F1 /* Piece.h */,
+				70AF433A1D594B88004999F1 /* Piece.m */,
+				70AF433D1D594B88004999F1 /* Beacon.h */,
+				70AF433E1D594B88004999F1 /* Beacon.m */,
 				0D2FD0271D5907E2004DF6B9 /* artiRelicAppleSomething.xcdatamodeld */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		70AF430C1D594242004999F1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				70AF430D1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.h */,
+				70AF430E1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m */,
+				70AF43121D59433A004999F1 /* CoreDataStack.h */,
+				70AF43131D59433A004999F1 /* CoreDataStack.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		70AF432E1D594B67004999F1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				70AF432F1D594B88004999F1 /* Show+CoreDataProperties.h */,
+				70AF43301D594B88004999F1 /* Show+CoreDataProperties.m */,
+				70AF43331D594B88004999F1 /* Curator+CoreDataProperties.h */,
+				70AF43341D594B88004999F1 /* Curator+CoreDataProperties.m */,
+				70AF43371D594B88004999F1 /* Piece+CoreDataProperties.h */,
+				70AF43381D594B88004999F1 /* Piece+CoreDataProperties.m */,
+				70AF433B1D594B88004999F1 /* Beacon+CoreDataProperties.h */,
+				70AF433C1D594B88004999F1 /* Beacon+CoreDataProperties.m */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,19 +477,29 @@
 				0D2FD0641D59085F004DF6B9 /* BeaconDetails.m in Sources */,
 				0DDE700B1D592A0E002F51A2 /* PieceOverviewViewController.m in Sources */,
 				0DDE70021D59297D002F51A2 /* NewShowViewController.m in Sources */,
+				70AF433F1D594B88004999F1 /* Show+CoreDataProperties.m in Sources */,
+				70AF43421D594B88004999F1 /* Curator.m in Sources */,
+				70AF43461D594B88004999F1 /* Beacon.m in Sources */,
 				0D2FD0661D59085F004DF6B9 /* BeaconDetailsCloudFactory.m in Sources */,
 				0D2FD0681D59085F004DF6B9 /* BeaconDetailsStaticFactory.m in Sources */,
+				70AF43401D594B88004999F1 /* Show.m in Sources */,
 				0D2FD06A1D59085F004DF6B9 /* BeaconID.m in Sources */,
 				0D2FD06C1D59085F004DF6B9 /* CachingContentFactory.m in Sources */,
 				0DDE700E1D592A84002F51A2 /* BeaconPairViewController.m in Sources */,
 				0D2FD06E1D59085F004DF6B9 /* NearestBeaconManager.m in Sources */,
+				70AF43451D594B88004999F1 /* Beacon+CoreDataProperties.m in Sources */,
 				0D2FD0701D59085F004DF6B9 /* ProximityContentManager.m in Sources */,
+				70AF43431D594B88004999F1 /* Piece+CoreDataProperties.m in Sources */,
 				0DDE70051D5929AC002F51A2 /* ShowOverviewViewController.m in Sources */,
 				0DDE6FFF1D59291B002F51A2 /* DashboardViewController.m in Sources */,
+				70AF43441D594B88004999F1 /* Piece.m in Sources */,
 				0D2FD0231D5907E2004DF6B9 /* ViewController.m in Sources */,
 				0D2FD0201D5907E2004DF6B9 /* AppDelegate.m in Sources */,
 				0D2FD01D1D5907E2004DF6B9 /* main.m in Sources */,
+				70AF43411D594B88004999F1 /* Curator+CoreDataProperties.m in Sources */,
 				0D2FD0291D5907E2004DF6B9 /* artiRelicAppleSomething.xcdatamodeld in Sources */,
+				70AF430F1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m in Sources */,
+				70AF43141D59433A004999F1 /* CoreDataStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
