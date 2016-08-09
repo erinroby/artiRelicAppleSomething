@@ -85,7 +85,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNj-Fl-DHz">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1264"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Show Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gpc-kg-etx">
                                                 <rect key="frame" x="20" y="370" width="560" height="30"/>
@@ -106,24 +106,32 @@
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A18-uz-1LO">
-                                                <rect key="frame" x="32" y="470" width="548" height="350"/>
+                                                <rect key="frame" x="20" y="470" width="560" height="100"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="350" id="H9p-FK-8w4"/>
+                                                    <constraint firstAttribute="height" constant="100" id="H9p-FK-8w4"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="86" id="yHk-dO-ege"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahd-YF-H41">
+                                                <rect key="frame" x="488" y="300" width="37" height="30"/>
+                                                <state key="normal" title="SAVE"/>
+                                                <connections>
+                                                    <action selector="savePressed:" destination="PuZ-ZL-qwv" eventType="touchUpInside" id="xd3-qM-ani"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="i0u-HA-dER" secondAttribute="trailing" constant="20" id="8uj-HV-INK"/>
                                             <constraint firstItem="g71-rR-c5E" firstAttribute="top" secondItem="hNj-Fl-DHz" secondAttribute="top" constant="30" id="G4h-wP-WZM"/>
-                                            <constraint firstItem="A18-uz-1LO" firstAttribute="leading" secondItem="hNj-Fl-DHz" secondAttribute="leading" constant="32" id="Idg-pb-irR"/>
+                                            <constraint firstItem="A18-uz-1LO" firstAttribute="leading" secondItem="hNj-Fl-DHz" secondAttribute="leading" constant="20" id="Idg-pb-irR"/>
                                             <constraint firstItem="gpc-kg-etx" firstAttribute="centerX" secondItem="hNj-Fl-DHz" secondAttribute="centerX" id="Odu-i5-I5f"/>
                                             <constraint firstItem="g71-rR-c5E" firstAttribute="centerX" secondItem="hNj-Fl-DHz" secondAttribute="centerX" id="ZOa-ox-qHb"/>
                                             <constraint firstAttribute="trailing" secondItem="gpc-kg-etx" secondAttribute="trailing" constant="20" id="ciN-DZ-7Ra"/>
-                                            <constraint firstAttribute="height" constant="1264" id="eUJ-hd-PWT"/>
+                                            <constraint firstAttribute="height" constant="600" id="eUJ-hd-PWT"/>
                                             <constraint firstItem="A18-uz-1LO" firstAttribute="top" secondItem="i0u-HA-dER" secondAttribute="bottom" constant="25" id="pM9-B1-RlC"/>
                                             <constraint firstItem="i0u-HA-dER" firstAttribute="centerX" secondItem="hNj-Fl-DHz" secondAttribute="centerX" id="sfd-K4-sGw"/>
                                             <constraint firstItem="i0u-HA-dER" firstAttribute="centerX" secondItem="gpc-kg-etx" secondAttribute="centerX" id="u8o-RB-O7A"/>
@@ -136,7 +144,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="hNj-Fl-DHz" secondAttribute="bottom" constant="-664" id="EFm-UX-2um"/>
+                                    <constraint firstAttribute="bottom" secondItem="hNj-Fl-DHz" secondAttribute="bottom" id="EFm-UX-2um"/>
                                     <constraint firstItem="hNj-Fl-DHz" firstAttribute="top" secondItem="FCH-hD-m4h" secondAttribute="top" id="Kir-ql-7Sh"/>
                                     <constraint firstItem="hNj-Fl-DHz" firstAttribute="centerX" secondItem="FCH-hD-m4h" secondAttribute="centerX" id="YNe-eN-wp8"/>
                                     <constraint firstItem="hNj-Fl-DHz" firstAttribute="leading" secondItem="FCH-hD-m4h" secondAttribute="leading" id="ZmC-fb-nKR"/>
@@ -152,18 +160,10 @@
                             <constraint firstItem="FCH-hD-m4h" firstAttribute="top" secondItem="TWq-sn-nx9" secondAttribute="top" id="zHY-4A-Cua"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="E4X-nx-Ypf"/>
-                        <barButtonItem systemItem="save" id="LQl-Vu-lgE">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="PuZ-ZL-qwv" id="vPg-KL-uzL"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <toolbarItems/>
                     <connections>
                         <outlet property="headerImage" destination="g71-rR-c5E" id="mvE-C4-Top"/>
-                        <outlet property="saveButton" destination="LQl-Vu-lgE" id="Mwh-jR-B1c"/>
+                        <outlet property="save" destination="ahd-YF-H41" id="Vmo-JU-ybo"/>
                         <outlet property="scrollView" destination="FCH-hD-m4h" id="oHO-IK-Os0"/>
                         <outlet property="subtitleTextField" destination="i0u-HA-dER" id="khd-HZ-KWa"/>
                         <outlet property="titleTextField" destination="gpc-kg-etx" id="ZZl-bL-gh7"/>
