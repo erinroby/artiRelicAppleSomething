@@ -13,7 +13,7 @@
 @interface DashboardViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *showCollectionView;
-@property(strong, nonatomic)NSArray *dataSource;
+@property (strong, nonatomic) NSArray *dataSource;
 
 @end
 
@@ -23,6 +23,7 @@
     [super viewDidLoad];
     self.showCollectionView.delegate = self;
     self.showCollectionView.dataSource = self;
+    [self.showCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,10 +31,13 @@
 }
 
 -(NSArray *)dataSource {
-    if (!_dataSource) {
-        // TODO: Replace the following line with the getting for the dataSource. i.e. from Core Data Hotel Assignment: [_datasource = [ReservationService reservationService:self.startDate endDate:self.endDate];]
-        _dataSource = nil;
-    }
+    // TODO: Hook this up to the core data dataSource!
+    UIImage *image = [UIImage imageNamed:@"picasso"];
+    UIImage *imageOne = [UIImage imageNamed:@"picasso1"];
+    UIImage *imageTwo = [UIImage imageNamed:@"picasso2"];
+    
+    _dataSource = @[image, imageOne, imageTwo];
+    
     return _dataSource;
 }
 
@@ -45,15 +49,21 @@
     return self.dataSource.count;
 }
 
+- (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier {
+}
+
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    // TODO: Configure cell for reals here!
+    cell.backgroundColor = [UIColor blackColor];
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    Show *show = self.dataSource[indexPath.row];
+    // TODO: Setup show and other things to be passed along here!
+//    Show *show = self.dataSource[indexPath.row];
     ShowOverviewViewController *showOverviewViewController = [[ShowOverviewViewController alloc]init];
-    showOverviewViewController.show = show;
+//    showOverviewViewController.show = show;
     [self.navigationController pushViewController:showOverviewViewController animated:YES];
 }
 
