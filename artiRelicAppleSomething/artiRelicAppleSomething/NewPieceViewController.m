@@ -59,6 +59,12 @@
 
 - (IBAction)pieceImageTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"Piece Image Tapped");
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {
@@ -113,6 +119,30 @@
             NSLog(@"Succesfully saved piece");
         }
     }
+}
+
+#pragma mark UIImagePickerController Delegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    
+    self.piece.image = UIImagePNGRepresentation(info[UIImagePickerControllerOriginalImage]);
+    self.pieceImage.image = (info[UIImagePickerControllerOriginalImage]);
+    
+    NSError *error;
+    [[NSManagedObjectContext managerContext] save:&error];
+    if (error) {
+        NSLog(@"Error saving image: %@", error);
+    } else {
+        NSLog(@"Saved image, error code: %@", error);
+    }
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

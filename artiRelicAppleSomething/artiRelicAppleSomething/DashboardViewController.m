@@ -33,9 +33,9 @@
 
 -(NSArray *)dataSource {
     // TODO: Hook this up to the core data dataSource!
-    UIImage *image = [UIImage imageNamed:@"picasso"];
-    UIImage *imageOne = [UIImage imageNamed:@"picasso1"];
-    UIImage *imageTwo = [UIImage imageNamed:@"picasso2"];
+    UIImage *image = [UIImage imageNamed:@"picasso.jpg"];
+    UIImage *imageOne = [UIImage imageNamed:@"picasso1.jpg"];
+    UIImage *imageTwo = [UIImage imageNamed:@"picasso2.jpg"];
 
     _dataSource = @[image, imageOne, imageTwo];
 
@@ -50,8 +50,8 @@
     return self.dataSource.count;
 }
 
-- (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier {
-}
+//- (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier {
+//}
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
