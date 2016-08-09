@@ -12,11 +12,14 @@
 #import "Curator.h"
 #import "Show.h"
 #import "Piece.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface NewPieceViewController : UIViewController
+@interface NewPieceViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
 
 @property (strong, nonatomic)Show *show;
 @property (strong, nonatomic)Curator *curator;
 @property (strong, nonatomic)Piece *piece;
+@property (strong, nonatomic) AVAudioRecorder *audioRecorder;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
 @end

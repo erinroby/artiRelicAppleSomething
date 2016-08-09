@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Aqm-KO-Q2h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QMX-Vc-rwu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -336,6 +336,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVF-eI-38l">
                                 <rect key="frame" x="206" y="493" width="49" height="30"/>
                                 <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="recordButtonPressed:" destination="QMX-Vc-rwu" eventType="touchUpInside" id="5lC-3I-fU5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pe-FB-rG6">
                                 <rect key="frame" x="284" y="493" width="32" height="30"/>
@@ -388,6 +391,7 @@
                         <barButtonItem title="Preview" id="p7o-Na-GXr"/>
                     </toolbarItems>
                     <connections>
+                        <outlet property="narrationLabel" destination="yDz-dZ-Tc7" id="7h6-Fm-pob"/>
                         <outlet property="pieceArtistTextField" destination="6ca-mn-IKw" id="07m-Hi-CEv"/>
                         <outlet property="pieceDescription" destination="i2g-9f-oLs" id="5bj-Xh-y5b"/>
                         <outlet property="pieceImage" destination="Pae-4G-H21" id="Cgf-YL-R6G"/>
@@ -397,6 +401,7 @@
                         <outlet property="playButton" destination="a2E-Dn-4b7" id="Pn4-uS-iB7"/>
                         <outlet property="previewButton" destination="p7o-Na-GXr" id="Smb-jr-ECJ"/>
                         <outlet property="previewButtonSelected" destination="p7o-Na-GXr" id="Q8c-yF-6CN"/>
+                        <outlet property="recordButton" destination="NVF-eI-38l" id="xom-e6-6NT"/>
                         <outlet property="saveButton" destination="D35-GD-e5b" id="3Bc-kx-EJi"/>
                         <outlet property="stopButton" destination="4pe-FB-rG6" id="reQ-bN-fmS"/>
                     </connections>
@@ -430,7 +435,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghw-os-Tp9" id="eIK-la-Llu">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
