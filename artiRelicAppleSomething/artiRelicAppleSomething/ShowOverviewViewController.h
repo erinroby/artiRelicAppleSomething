@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Show.h"
 
 @interface ShowOverviewViewController : UIViewController
+
+@property(strong, nonatomic)Show *show;
 
 @end

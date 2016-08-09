@@ -9,6 +9,11 @@
 #import "NewPieceViewController.h"
 
 @interface NewPieceViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *pieceImage;
+@property (weak, nonatomic) IBOutlet UITextField *pieceTitleTextField;
+@property (weak, nonatomic) IBOutlet UITextField *pieceArtistTextField;
+@property (weak, nonatomic) IBOutlet UITextField *piecePrice;
+@property (weak, nonatomic) IBOutlet UITextView *pieceDescription;
 
 @end
 
