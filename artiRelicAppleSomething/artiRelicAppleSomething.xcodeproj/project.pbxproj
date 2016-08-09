@@ -33,6 +33,7 @@
 		0DDE70081D5929E5002F51A2 /* NewPieceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE70071D5929E5002F51A2 /* NewPieceViewController.m */; };
 		0DDE700B1D592A0E002F51A2 /* PieceOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE700A1D592A0E002F51A2 /* PieceOverviewViewController.m */; };
 		0DDE700E1D592A84002F51A2 /* BeaconPairViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */; };
+		700DB6FF1D5A403C00B4916E /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700DB6FE1D5A403C00B4916E /* ImageHelper.m */; };
 		70AF430F1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF430E1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m */; };
 		70AF43141D59433A004999F1 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43131D59433A004999F1 /* CoreDataStack.m */; };
 		70AF433F1D594B88004999F1 /* Show+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43301D594B88004999F1 /* Show+CoreDataProperties.m */; };
@@ -132,6 +133,8 @@
 		0DDE700A1D592A0E002F51A2 /* PieceOverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieceOverviewViewController.m; sourceTree = "<group>"; };
 		0DDE700C1D592A84002F51A2 /* BeaconPairViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconPairViewController.h; sourceTree = "<group>"; };
 		0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconPairViewController.m; sourceTree = "<group>"; };
+		700DB6FD1D5A403C00B4916E /* ImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelper.h; sourceTree = "<group>"; };
+		700DB6FE1D5A403C00B4916E /* ImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHelper.m; sourceTree = "<group>"; };
 		70AF430D1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+NSManagedObjectContext.h"; sourceTree = "<group>"; };
 		70AF430E1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+NSManagedObjectContext.m"; sourceTree = "<group>"; };
 		70AF43121D59433A004999F1 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
@@ -340,6 +343,8 @@
 				70AF430E1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m */,
 				70AF43121D59433A004999F1 /* CoreDataStack.h */,
 				70AF43131D59433A004999F1 /* CoreDataStack.m */,
+				700DB6FD1D5A403C00B4916E /* ImageHelper.h */,
+				700DB6FE1D5A403C00B4916E /* ImageHelper.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -504,6 +509,7 @@
 				0D2FD0681D59085F004DF6B9 /* BeaconDetailsStaticFactory.m in Sources */,
 				70AF43401D594B88004999F1 /* Show.m in Sources */,
 				0D2FD06A1D59085F004DF6B9 /* BeaconID.m in Sources */,
+				700DB6FF1D5A403C00B4916E /* ImageHelper.m in Sources */,
 				0D2FD06C1D59085F004DF6B9 /* CachingContentFactory.m in Sources */,
 				0DDE700E1D592A84002F51A2 /* BeaconPairViewController.m in Sources */,
 				0D2FD06E1D59085F004DF6B9 /* NearestBeaconManager.m in Sources */,
