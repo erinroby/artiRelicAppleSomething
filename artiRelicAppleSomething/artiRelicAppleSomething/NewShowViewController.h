@@ -12,6 +12,7 @@
 #import "Curator.h"
 #import "Show.h"
 
+
 @interface NewShowViewController : UIViewController
 
 @property (strong, nonatomic)Show *show;

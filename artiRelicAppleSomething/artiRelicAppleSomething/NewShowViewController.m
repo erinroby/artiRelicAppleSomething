@@ -56,27 +56,39 @@
 }
 
 
-- (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
-    
-    //TODO: add form validation, check for values in text fields
-    NSString *title = self.titleTextField.text;
-    NSString *subtitle = self.subtitleTextField.text;
-    Show *show = [self createShow:title subtitle:subtitle];
-    self.show = show;
-    NSLog(@"Show created: %@", show);
-    NSLog(@"Self.show: %@", self.show);
-    
-    NSError *error;
-    [[NSManagedObjectContext managerContext]save:&error];
-    if (error) {
-        NSLog(@"Error saving show: %@", error);
-    } else {
-        NSLog(@"Succesfully saved show");
-    }
+- (void)presentAlert
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING" message:@"Please enter a show title before saving show." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *OK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alert addAction:OK];
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
 
-- (IBAction)savePressed:(id)sender {
+- (IBAction)savePressed:(id)sender
+{
+    NSString *title = self.titleTextField.text;
+    NSString *subtitle = self.subtitleTextField.text;
+    
+    if ([title  isEqual: @""] || !title) {
+        [self presentAlert];
+    } else {
+        Show *show = [self createShow:title subtitle:subtitle];
+        self.show = show;
+        NSLog(@"Show created: %@", show);
+        NSLog(@"Self.show: %@", self.show);
+        
+        NSError *error;
+        [[NSManagedObjectContext managerContext]save:&error];
+        if (error) {
+            NSLog(@"Error saving show: %@", error);
+        } else {
+            NSLog(@"Succesfully saved show");
+        }
+    }
+
 }
 - (IBAction)headerImageTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"Show Image Tapped!");
