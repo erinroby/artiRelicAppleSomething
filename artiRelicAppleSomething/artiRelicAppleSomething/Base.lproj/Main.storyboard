@@ -115,8 +115,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahd-YF-H41">
-                                                <rect key="frame" x="488" y="300" width="37" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahd-YF-H41">
+                                                <rect key="frame" x="460" y="300" width="37" height="30"/>
                                                 <state key="normal" title="SAVE"/>
                                                 <connections>
                                                     <action selector="savePressed:" destination="PuZ-ZL-qwv" eventType="touchUpInside" id="xd3-qM-ani"/>
@@ -132,7 +132,9 @@
                                             <constraint firstItem="g71-rR-c5E" firstAttribute="centerX" secondItem="hNj-Fl-DHz" secondAttribute="centerX" id="ZOa-ox-qHb"/>
                                             <constraint firstAttribute="trailing" secondItem="gpc-kg-etx" secondAttribute="trailing" constant="20" id="ciN-DZ-7Ra"/>
                                             <constraint firstAttribute="height" constant="600" id="eUJ-hd-PWT"/>
+                                            <constraint firstItem="ahd-YF-H41" firstAttribute="leading" secondItem="g71-rR-c5E" secondAttribute="trailing" constant="10" id="p2O-Fb-bAx"/>
                                             <constraint firstItem="A18-uz-1LO" firstAttribute="top" secondItem="i0u-HA-dER" secondAttribute="bottom" constant="25" id="pM9-B1-RlC"/>
+                                            <constraint firstItem="ahd-YF-H41" firstAttribute="bottom" secondItem="g71-rR-c5E" secondAttribute="bottom" id="qfQ-Tj-7Pp"/>
                                             <constraint firstItem="i0u-HA-dER" firstAttribute="centerX" secondItem="hNj-Fl-DHz" secondAttribute="centerX" id="sfd-K4-sGw"/>
                                             <constraint firstItem="i0u-HA-dER" firstAttribute="centerX" secondItem="gpc-kg-etx" secondAttribute="centerX" id="u8o-RB-O7A"/>
                                             <constraint firstAttribute="trailing" secondItem="A18-uz-1LO" secondAttribute="trailing" constant="20" id="uSq-nM-P4Q"/>
