@@ -8,6 +8,7 @@
 
 #import "DashboardViewController.h"
 #import "ShowOverviewViewController.h"
+#import "Show.h"
 
 @interface DashboardViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -20,10 +21,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.showCollectionView.delegate = self;
+    self.showCollectionView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+-(NSArray *)dataSource {
+    if (!_dataSource) {
+        // TODO: Replace the following line with the getting for the dataSource. i.e. from Core Data Hotel Assignment: [_datasource = [ReservationService reservationService:self.startDate endDate:self.endDate];]
+        _dataSource = nil;
+    }
+    return _dataSource;
 }
 
 #pragma MARK - UICollectionViewDelegate methods
@@ -35,12 +46,14 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [[UICollectionViewCell alloc]init];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    Show *show = self.dataSource[indexPath.row];
     ShowOverviewViewController *showOverviewViewController = [[ShowOverviewViewController alloc]init];
+    showOverviewViewController.show = show;
     [self.navigationController pushViewController:showOverviewViewController animated:YES];
 }
 

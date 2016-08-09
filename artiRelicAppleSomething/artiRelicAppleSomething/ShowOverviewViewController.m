@@ -8,10 +8,12 @@
 
 #import "ShowOverviewViewController.h"
 
-@interface ShowOverviewViewController ()
+@interface ShowOverviewViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UICollectionView *pieceCollectionView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 - (IBAction)editButtonSelected:(id)sender;
+@property(strong, nonatomic)NSArray *dataSource;
 
 @end
 
@@ -39,4 +41,19 @@
 
 - (IBAction)editButtonSelected:(id)sender {
 }
+
+#pragma MARK - UICollectionViewDelegate methods
+
+#pragma MARK - UICollectionViewDataSource methods
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.dataSource.count;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [[UICollectionViewCell alloc]init];
+    return cell;
+}
+
+
 @end
