@@ -8,7 +8,8 @@
 
 #import "NewPieceViewController.h"
 
-@interface NewPieceViewController ()
+@interface NewPieceViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *pieceImage;
 @property (weak, nonatomic) IBOutlet UITextField *pieceTitleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pieceArtistTextField;
