@@ -94,7 +94,6 @@
 {
     NSLog(@"Show Image Tapped!");
 
-    
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
     imagePicker.delegate = self;
     imagePicker.allowsEditing = YES;

@@ -23,7 +23,7 @@
     [super viewDidLoad];
     self.showCollectionView.delegate = self;
     self.showCollectionView.dataSource = self;
-    [self.showCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    [self.showCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"showCell"];
 
 }
 
@@ -32,14 +32,16 @@
 }
 
 -(NSArray *)dataSource {
-    // TODO: Hook this up to the core data dataSource!
-    UIImage *image = [UIImage imageNamed:@"picasso"];
-    UIImage *imageOne = [UIImage imageNamed:@"picasso1"];
-    UIImage *imageTwo = [UIImage imageNamed:@"picasso2"];
-
-    _dataSource = @[image, imageOne, imageTwo];
-
-    return _dataSource;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Show"];
+    NSError *error;
+    NSArray *results = [[NSManagedObjectContext managerContext]executeFetchRequest:request error:&error];
+    
+    if (error) {
+        NSLog(@"Error fetching shows: %@", error);
+        return nil;
+    } else {
+        return results;
+    }
 }
 
 #pragma MARK - UICollectionViewDelegate methods
@@ -50,11 +52,11 @@
     return self.dataSource.count;
 }
 
-- (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier {
-}
+//- (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier {
+//}
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"showCell" forIndexPath:indexPath];
     // TODO: Configure cell for reals here!
     cell.backgroundColor = [UIColor blackColor];
     return cell;
