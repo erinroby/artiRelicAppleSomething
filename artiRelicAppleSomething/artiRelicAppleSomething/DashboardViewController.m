@@ -63,7 +63,7 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Setup show and other things to be passed along here!
 //    Show *show = self.dataSource[indexPath.row];
-    ShowOverviewViewController *showOverviewViewController = [[ShowOverviewViewController alloc]init];
+    ShowOverviewViewController *showOverviewViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ShowOverviewViewController"];
 //    showOverviewViewController.show = show;
     [self.navigationController pushViewController:showOverviewViewController animated:YES];
 }
