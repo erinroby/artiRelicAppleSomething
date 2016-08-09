@@ -64,7 +64,13 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"showCell" forIndexPath:indexPath];
     // TODO: Configure cell for reals here!
+<<<<<<< HEAD
     cell.contentView.backgroundColor = [UIColor clearColor];
+=======
+    
+    
+    
+>>>>>>> 30e5117b6e3283b895a98c64c9ecb9c244261071
     Show *show = self.dataSource[indexPath.row];
     UIImage *thumb = [UIImage imageWithData:show.image];
     UIImageView *cellImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(0.0, 0.0, 150.0, 150.0))];
