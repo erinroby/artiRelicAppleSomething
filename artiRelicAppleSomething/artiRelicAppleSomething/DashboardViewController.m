@@ -24,9 +24,6 @@
     self.showCollectionView.delegate = self;
     self.showCollectionView.dataSource = self;
     
-    self.curator = [Curator curatorWithUserName:@"test1" password:@"test1" firstName:@"test1" lastName:@"test1"];
-    self.show = [Show showWithTitle:@"test1" subtitle:@"test1" desc:@"test1"];
-    //self.show.image = IMAGE HERE
 }
 
 - (void)didReceiveMemoryWarning {
