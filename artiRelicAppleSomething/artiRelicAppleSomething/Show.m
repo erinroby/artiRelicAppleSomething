@@ -12,7 +12,7 @@
 
 @implementation Show
 
-+ (instancetype)showWithTitle:(NSString *)title subtitle:(NSString *)subtitle desc:(NSString *)desc gallery:(NSString *)gallery dates:(NSString *)dates curator:(Curator *)curator
++ (instancetype)showWithTitle:(NSString *)title subtitle:(NSString *)subtitle desc:(NSString *)desc
 {
     Show *show = [NSEntityDescription insertNewObjectForEntityForName:@"Show" inManagedObjectContext:[NSManagedObjectContext managerContext]];
     
