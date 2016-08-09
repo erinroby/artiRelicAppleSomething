@@ -13,6 +13,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *save;
+- (IBAction)savePressed:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
@@ -71,4 +74,6 @@
     
 }
 
+- (IBAction)savePressed:(id)sender {
+}
 @end
