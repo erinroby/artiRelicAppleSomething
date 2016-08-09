@@ -19,9 +19,18 @@
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *pieceImageTapGesture;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previewButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previewButtonSelected;
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
+@property (weak, nonatomic) IBOutlet UILabel *narrationLabel;
+
+
 
 - (IBAction)pieceImageTapped:(UITapGestureRecognizer *)sender;
 - (IBAction)saveButtonPressed:(UIButton *)sender;
+- (IBAction)playButtonPressed:(UIButton *)sender;
+- (IBAction)stopButtonPressed:(UIButton *)sender;
+- (IBAction)recordButtonPressed:(UIButton *)sender;
 
 @end
 
@@ -53,6 +62,15 @@
 }
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {
+}
+
+- (IBAction)playButtonPressed:(UIButton *)sender {
+}
+
+- (IBAction)stopButtonPressed:(UIButton *)sender {
+}
+
+- (IBAction)recordButtonPressed:(UIButton *)sender {
 }
 
 - (void)presentAlert

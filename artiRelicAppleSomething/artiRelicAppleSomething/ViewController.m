@@ -43,6 +43,14 @@
     [self.proximityContentManager startContentUpdates];
 }
 
+- (NSUInteger)countOfProximityContentManager {
+    return 0;
+}
+
+-(NSArray *)proximityContentManagerAtIndexes:(NSIndexSet *)indexes {
+    return indexes;
+}
+
 - (void)proximityContentManager:(ProximityContentManager *)proximityContentManager didUpdateContent:(id)content {
     [self.activityIndicator stopAnimating];
     [self.activityIndicator removeFromSuperview];
