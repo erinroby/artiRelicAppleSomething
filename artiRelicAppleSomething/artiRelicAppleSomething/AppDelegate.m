@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <EstimoteSDK/EstimoteSDK.h>
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ESTConfig setupAppID:@"proximity-content-for-mult-ioa" andAppToken:@"b796ce4b2a572e8707b202a92fb80ee5"];
+    
+    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
+        configuration.applicationId =@"L41o5UblNSd2YS1x0yTtdG1kXgE1g56qoQxFwdm1";
+        configuration.clientKey = @"BurwhvrUWhdo6Ao7t0bNX61QnONTO9Db2TqT7Kwx";
+        configuration.server = @"https://parseapi.back4app.com";
+    }]];
+
     return YES;
 }
 
