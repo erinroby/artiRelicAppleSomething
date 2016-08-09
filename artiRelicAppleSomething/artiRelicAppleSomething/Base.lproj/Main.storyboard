@@ -297,7 +297,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ecd-Vf-tc8">
-                                <rect key="frame" x="20" y="493" width="54" height="30"/>
+                                <rect key="frame" x="20" y="493" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="SYB-1X-NgL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -307,11 +310,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D35-GD-e5b">
+                                <rect key="frame" x="460" y="320" width="37" height="30"/>
+                                <state key="normal" title="SAVE"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="QMX-Vc-rwu" eventType="touchUpInside" id="waG-Pc-b94"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="i2g-9f-oLs" secondAttribute="bottom" id="0Zt-K0-LUC"/>
                             <constraint firstItem="6ca-mn-IKw" firstAttribute="leading" secondItem="MOa-N2-r1o" secondAttribute="leading" constant="20" id="2gF-kp-k3e"/>
+                            <constraint firstItem="D35-GD-e5b" firstAttribute="bottom" secondItem="Pae-4G-H21" secondAttribute="bottom" id="5II-rM-M7q"/>
                             <constraint firstItem="i2g-9f-oLs" firstAttribute="leading" secondItem="MOa-N2-r1o" secondAttribute="leading" constant="20" id="9Cq-E1-44d"/>
                             <constraint firstAttribute="trailing" secondItem="6ca-mn-IKw" secondAttribute="trailing" constant="20" id="CoZ-gs-Cwe"/>
                             <constraint firstItem="Pae-4G-H21" firstAttribute="top" secondItem="XJz-4W-npO" secondAttribute="bottom" constant="30" id="IY1-8Y-80b"/>
@@ -321,6 +332,7 @@
                             <constraint firstAttribute="trailing" secondItem="i2g-9f-oLs" secondAttribute="trailing" constant="20" id="ZtS-ex-UqF"/>
                             <constraint firstItem="nLw-mk-8Tr" firstAttribute="leading" secondItem="MOa-N2-r1o" secondAttribute="leadingMargin" id="b8B-qu-9uA"/>
                             <constraint firstItem="6ca-mn-IKw" firstAttribute="top" secondItem="nLw-mk-8Tr" secondAttribute="bottom" constant="20" id="fIk-6Q-rEi"/>
+                            <constraint firstItem="D35-GD-e5b" firstAttribute="leading" secondItem="Pae-4G-H21" secondAttribute="trailing" constant="10" id="jkp-pp-AZp"/>
                             <constraint firstItem="Ecd-Vf-tc8" firstAttribute="leading" secondItem="MOa-N2-r1o" secondAttribute="leading" constant="20" id="m2W-lc-JD5"/>
                             <constraint firstItem="Ecd-Vf-tc8" firstAttribute="top" secondItem="6ca-mn-IKw" secondAttribute="bottom" constant="20" id="s4F-VJ-vxo"/>
                             <constraint firstItem="i2g-9f-oLs" firstAttribute="top" secondItem="Ecd-Vf-tc8" secondAttribute="bottom" constant="25" id="tEL-5l-XVG"/>
@@ -341,6 +353,7 @@
                         <outlet property="pieceImageTapGesture" destination="J86-KN-63z" id="Ura-oi-Bpb"/>
                         <outlet property="piecePrice" destination="Ecd-Vf-tc8" id="7yL-14-zf8"/>
                         <outlet property="pieceTitleTextField" destination="nLw-mk-8Tr" id="M7L-zb-9IB"/>
+                        <outlet property="saveButton" destination="D35-GD-e5b" id="3Bc-kx-EJi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxG-Kj-T1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
