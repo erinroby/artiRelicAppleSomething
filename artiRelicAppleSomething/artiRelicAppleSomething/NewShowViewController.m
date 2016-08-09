@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *subtitleTextField;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *headerImageTapGesture;
+- (IBAction)headerImageTapped:(UITapGestureRecognizer *)sender;
 
 @end
 
@@ -75,5 +77,8 @@
 }
 
 - (IBAction)savePressed:(id)sender {
+}
+- (IBAction)headerImageTapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"Show Image Tapped!");
 }
 @end

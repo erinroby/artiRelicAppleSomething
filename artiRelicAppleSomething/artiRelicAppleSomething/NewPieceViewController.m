@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *pieceArtistTextField;
 @property (weak, nonatomic) IBOutlet UITextField *piecePrice;
 @property (weak, nonatomic) IBOutlet UITextView *pieceDescription;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *pieceImageTapGesture;
+- (IBAction)pieceImageTapped:(UITapGestureRecognizer *)sender;
 
 @end
 
@@ -39,4 +41,7 @@
 }
 */
 
+- (IBAction)pieceImageTapped:(UITapGestureRecognizer *)sender {
+    NSLog(@"Piece Image Tapped");
+}
 @end
