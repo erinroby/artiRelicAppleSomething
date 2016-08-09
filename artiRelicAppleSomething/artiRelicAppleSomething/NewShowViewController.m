@@ -65,9 +65,8 @@
     
 }
 
-- (IBAction)savePressed:(id)sender {
-    
-    //TODO: add form validation, check for values in text fields
+- (IBAction)savePressed:(id)sender
+{
     NSString *title = self.titleTextField.text;
     NSString *subtitle = self.subtitleTextField.text;
     

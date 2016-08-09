@@ -39,4 +39,46 @@
 }
 */
 
+- (void)presentAlert
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING" message:@"Please enter a show title before saving show." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *OK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alert addAction:OK];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
+-(Piece*)createPieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price
+{
+    Piece *piece = [Piece pieceWithTitle:title desc:desc artist:artist price:price];
+    return piece;
+}
+
+-(void) savePressed {
+    NSString *title = self.pieceTitleTextField.text;
+    NSString *desc = self.pieceDescription.text;
+    NSString *artist = self.pieceArtistTextField.text;
+    NSString *price = self.piecePrice.text;
+    
+    if ([title isEqualToString:@""] || !title) {
+        [self presentAlert];
+    } else {
+        Piece *piece = [self createPieceWithTitle:title desc:desc artist:artist price:price];
+        self.piece = piece;
+        
+        NSLog(@"Piece created: %@", piece);
+        NSLog(@"Self.piece: %@", self.piece);
+        
+        NSError *error;
+        [[NSManagedObjectContext managerContext]save:&error];
+        if (error) {
+            NSLog(@"Error saving piece: %@", error);
+        } else {
+            NSLog(@"Succesfully saved piece");
+        }
+    }
+}
+
 @end
