@@ -53,11 +53,10 @@
 }
 
 - (void)proximityContentManager:(ProximityContentManager *)proximityContentManager didUpdateContent:(id)content {
-//    [self.activityIndicator stopAnimating];
-//    [self.activityIndicator removeFromSuperview];
     
     BeaconDetails *beaconDetails = content;
     if (beaconDetails) {
+        NSLog(@"%@", beaconDetails);
 //        self.view.backgroundColor = beaconDetails.backgroundColor;
 //        self.label.text = [NSString stringWithFormat:@"You're in %@'s range!", beaconDetails.beaconName];
 //        self.image.hidden = NO;
@@ -73,7 +72,7 @@
 }
 
 - (IBAction)saveButtonPressed:(id)sender {
-    
+    // send and/or attach beacon data to the piece here.
 }
 
 #pragma MARK - Estimote Location Management
@@ -84,6 +83,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"beaconCell" forIndexPath:indexPath];
     Beacon *currentBeacon = self.availableBeacons[indexPath.row];
+    // make the call to fetch the available beacons here...when is the availableBeacons array set?
     // do any cell formatting here.
     return cell;
 }

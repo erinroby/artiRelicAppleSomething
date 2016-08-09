@@ -58,6 +58,9 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"showCell" forIndexPath:indexPath];
     // TODO: Configure cell for reals here!
+    
+    
+    
     Show *show = self.dataSource[indexPath.row];
     return cell;
 }
