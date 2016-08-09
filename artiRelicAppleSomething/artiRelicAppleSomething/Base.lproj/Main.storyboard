@@ -324,25 +324,60 @@
                                     <action selector="saveButtonPressed:" destination="QMX-Vc-rwu" eventType="touchUpInside" id="waG-Pc-b94"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVF-eI-38l">
+                                <rect key="frame" x="215" y="285" width="49" height="30"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="recordButtonPressed:" destination="QMX-Vc-rwu" eventType="touchUpInside" id="hnf-fk-p9s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2E-Dn-4b7">
+                                <rect key="frame" x="336" y="285" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="QMX-Vc-rwu" eventType="touchUpInside" id="d1z-jW-Fwz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pe-FB-rG6">
+                                <rect key="frame" x="284" y="285" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopButtonPressed:" destination="QMX-Vc-rwu" eventType="touchUpInside" id="IBB-37-q4d"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record Narration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDz-dZ-Tc7">
+                                <rect key="frame" x="235" y="256" width="131" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="i2g-9f-oLs" secondAttribute="bottom" id="0Zt-K0-LUC"/>
+                            <constraint firstItem="a2E-Dn-4b7" firstAttribute="leading" secondItem="4pe-FB-rG6" secondAttribute="trailing" constant="20" id="2AA-4P-aAg"/>
                             <constraint firstItem="6ca-mn-IKw" firstAttribute="leading" secondItem="MOa-N2-r1o" secondAttribute="leading" constant="20" id="2gF-kp-k3e"/>
                             <constraint firstItem="D35-GD-e5b" firstAttribute="bottom" secondItem="Pae-4G-H21" secondAttribute="bottom" id="5II-rM-M7q"/>
                             <constraint firstItem="i2g-9f-oLs" firstAttribute="leading" secondItem="MOa-N2-r1o" secondAttribute="leading" constant="20" id="9Cq-E1-44d"/>
+                            <constraint firstItem="a2E-Dn-4b7" firstAttribute="centerY" secondItem="MOa-N2-r1o" secondAttribute="centerY" id="9pH-f6-rL3"/>
                             <constraint firstAttribute="trailing" secondItem="6ca-mn-IKw" secondAttribute="trailing" constant="20" id="CoZ-gs-Cwe"/>
                             <constraint firstItem="Pae-4G-H21" firstAttribute="top" secondItem="XJz-4W-npO" secondAttribute="bottom" constant="30" id="IY1-8Y-80b"/>
+                            <constraint firstItem="4pe-FB-rG6" firstAttribute="centerX" secondItem="MOa-N2-r1o" secondAttribute="centerX" id="LZ3-vW-cT0"/>
                             <constraint firstItem="nLw-mk-8Tr" firstAttribute="top" secondItem="Pae-4G-H21" secondAttribute="bottom" constant="43" id="SEC-VQ-dkR"/>
+                            <constraint firstItem="NVF-eI-38l" firstAttribute="centerY" secondItem="MOa-N2-r1o" secondAttribute="centerY" id="Ss0-Fq-u5k"/>
                             <constraint firstItem="nLw-mk-8Tr" firstAttribute="trailing" secondItem="MOa-N2-r1o" secondAttribute="trailingMargin" id="Una-Gr-RTT"/>
                             <constraint firstItem="Pae-4G-H21" firstAttribute="centerX" secondItem="MOa-N2-r1o" secondAttribute="centerX" id="WI3-TC-jj6"/>
+                            <constraint firstItem="4pe-FB-rG6" firstAttribute="centerY" secondItem="MOa-N2-r1o" secondAttribute="centerY" id="WvF-sR-nes"/>
                             <constraint firstAttribute="trailing" secondItem="i2g-9f-oLs" secondAttribute="trailing" constant="20" id="ZtS-ex-UqF"/>
                             <constraint firstItem="nLw-mk-8Tr" firstAttribute="leading" secondItem="MOa-N2-r1o" secondAttribute="leadingMargin" id="b8B-qu-9uA"/>
+                            <constraint firstItem="yDz-dZ-Tc7" firstAttribute="centerX" secondItem="MOa-N2-r1o" secondAttribute="centerX" id="dUc-GZ-NVd"/>
                             <constraint firstItem="6ca-mn-IKw" firstAttribute="top" secondItem="nLw-mk-8Tr" secondAttribute="bottom" constant="20" id="fIk-6Q-rEi"/>
+                            <constraint firstItem="4pe-FB-rG6" firstAttribute="leading" secondItem="NVF-eI-38l" secondAttribute="trailing" constant="20" id="jCr-nP-fju"/>
                             <constraint firstItem="D35-GD-e5b" firstAttribute="leading" secondItem="Pae-4G-H21" secondAttribute="trailing" constant="10" id="jkp-pp-AZp"/>
                             <constraint firstItem="Ecd-Vf-tc8" firstAttribute="leading" secondItem="MOa-N2-r1o" secondAttribute="leading" constant="20" id="m2W-lc-JD5"/>
                             <constraint firstItem="Ecd-Vf-tc8" firstAttribute="top" secondItem="6ca-mn-IKw" secondAttribute="bottom" constant="20" id="s4F-VJ-vxo"/>
                             <constraint firstItem="i2g-9f-oLs" firstAttribute="top" secondItem="Ecd-Vf-tc8" secondAttribute="bottom" constant="25" id="tEL-5l-XVG"/>
+                            <constraint firstItem="4pe-FB-rG6" firstAttribute="top" secondItem="yDz-dZ-Tc7" secondAttribute="bottom" constant="8" id="v9V-MG-erv"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -355,15 +390,19 @@
                         <barButtonItem title="Preview" id="p7o-Na-GXr"/>
                     </toolbarItems>
                     <connections>
+                        <outlet property="narrationLabel" destination="yDz-dZ-Tc7" id="bOj-13-sAX"/>
                         <outlet property="pieceArtistTextField" destination="6ca-mn-IKw" id="07m-Hi-CEv"/>
                         <outlet property="pieceDescription" destination="i2g-9f-oLs" id="5bj-Xh-y5b"/>
                         <outlet property="pieceImage" destination="Pae-4G-H21" id="Cgf-YL-R6G"/>
                         <outlet property="pieceImageTapGesture" destination="J86-KN-63z" id="Ura-oi-Bpb"/>
                         <outlet property="piecePrice" destination="Ecd-Vf-tc8" id="7yL-14-zf8"/>
                         <outlet property="pieceTitleTextField" destination="nLw-mk-8Tr" id="M7L-zb-9IB"/>
+                        <outlet property="playButton" destination="a2E-Dn-4b7" id="Pn4-uS-iB7"/>
                         <outlet property="previewButton" destination="p7o-Na-GXr" id="Smb-jr-ECJ"/>
                         <outlet property="previewButtonSelected" destination="p7o-Na-GXr" id="Q8c-yF-6CN"/>
+                        <outlet property="recordButton" destination="NVF-eI-38l" id="boQ-CR-yKo"/>
                         <outlet property="saveButton" destination="D35-GD-e5b" id="3Bc-kx-EJi"/>
+                        <outlet property="stopButton" destination="4pe-FB-rG6" id="reQ-bN-fmS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxG-Kj-T1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
