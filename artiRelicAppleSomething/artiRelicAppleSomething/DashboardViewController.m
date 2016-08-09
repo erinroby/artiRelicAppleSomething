@@ -24,6 +24,7 @@
     self.showCollectionView.delegate = self;
     self.showCollectionView.dataSource = self;
     [self.showCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,9 +36,9 @@
     UIImage *image = [UIImage imageNamed:@"picasso"];
     UIImage *imageOne = [UIImage imageNamed:@"picasso1"];
     UIImage *imageTwo = [UIImage imageNamed:@"picasso2"];
-    
+
     _dataSource = @[image, imageOne, imageTwo];
-    
+
     return _dataSource;
 }
 

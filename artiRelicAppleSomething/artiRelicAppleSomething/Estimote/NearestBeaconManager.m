@@ -4,7 +4,7 @@
 
 #import "NearestBeaconManager.h"
 
-@interface NearestBeaconManager () <ESTBeaconManagerDelegate>
+@interface NearestBeaconManager () <ESTBeaconManagerDelegate> 
 
 @property (copy, nonatomic) NSArray *beaconRegions;
 

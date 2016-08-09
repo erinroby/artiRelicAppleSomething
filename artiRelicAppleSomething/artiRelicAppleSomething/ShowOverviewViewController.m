@@ -15,6 +15,9 @@
 - (IBAction)editButtonSelected:(id)sender;
 @property(strong, nonatomic)NSArray *dataSource;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *publishButton;
+- (IBAction)publishButtonSelected:(UIBarButtonItem *)sender;
+
 @end
 
 @implementation ShowOverviewViewController
@@ -55,4 +58,6 @@
     return cell;
 }
 
+- (IBAction)publishButtonSelected:(UIBarButtonItem *)sender {
+}
 @end

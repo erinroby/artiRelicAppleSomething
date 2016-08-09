@@ -36,7 +36,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"iRelicCoreData" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"artiRelicAppleSomething" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -51,10 +51,10 @@
     
     // add *options Dict to enable icloud synch.
     
-    NSDictionary *options = @{NSPersistentStoreUbiquitousContentNameKey: @"jwmiRelic", NSPersistentStoreUbiquitousContentURLKey:@"logs"};
+    NSDictionary *options = @{NSPersistentStoreUbiquitousContentNameKey: @"jwmArtiRelicAppleSomething", NSPersistentStoreUbiquitousContentURLKey:@"logs"};
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"iRelicCoreData.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"artiRelicAppleSomething.sqlite"];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     
