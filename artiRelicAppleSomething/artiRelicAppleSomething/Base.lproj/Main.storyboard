@@ -239,15 +239,21 @@
                         </constraints>
                     </view>
                     <toolbarItems>
+                        <barButtonItem title="Item" systemItem="edit" id="wfc-K0-fBV">
+                            <connections>
+                                <action selector="editButtonSelected:" destination="cEN-iz-JuY" id="ifM-PU-G83"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="sHN-np-DJK"/>
                         <barButtonItem systemItem="add" id="32D-fq-kBj">
                             <connections>
                                 <segue destination="QMX-Vc-rwu" kind="show" identifier="NewPieceViewController" id="C3I-LS-UMl"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="U4A-58-DWu"/>
-                        <barButtonItem title="Item" systemItem="edit" id="wfc-K0-fBV">
+                        <barButtonItem title="Publish" id="8kE-eT-621">
                             <connections>
-                                <action selector="editButtonSelected:" destination="cEN-iz-JuY" id="ifM-PU-G83"/>
+                                <action selector="publishButtonSelected:" destination="cEN-iz-JuY" id="e56-xV-FgO"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -256,6 +262,7 @@
                         <outlet property="editButton" destination="wfc-K0-fBV" id="uVq-vg-IX3"/>
                         <outlet property="pieceCollectionView" destination="bYQ-nO-UiV" id="CbW-WR-pg4"/>
                         <outlet property="pieceCollectionViewController" destination="bYQ-nO-UiV" id="eXi-MO-86x"/>
+                        <outlet property="publishButton" destination="8kE-eT-621" id="YJF-8n-CYM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBb-HU-OWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -339,12 +346,13 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="hGn-M0-ktX"/>
                         <barButtonItem title="Beacon!" id="hWM-lS-c9D">
                             <connections>
                                 <segue destination="KDP-VB-VGr" kind="show" identifier="BeaconPairViewController" id="G9a-3Z-aTl"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="hGn-M0-ktX"/>
+                        <barButtonItem title="Preview" id="p7o-Na-GXr"/>
                     </toolbarItems>
                     <connections>
                         <outlet property="pieceArtistTextField" destination="6ca-mn-IKw" id="07m-Hi-CEv"/>
@@ -353,6 +361,8 @@
                         <outlet property="pieceImageTapGesture" destination="J86-KN-63z" id="Ura-oi-Bpb"/>
                         <outlet property="piecePrice" destination="Ecd-Vf-tc8" id="7yL-14-zf8"/>
                         <outlet property="pieceTitleTextField" destination="nLw-mk-8Tr" id="M7L-zb-9IB"/>
+                        <outlet property="previewButton" destination="p7o-Na-GXr" id="Smb-jr-ECJ"/>
+                        <outlet property="previewButtonSelected" destination="p7o-Na-GXr" id="Q8c-yF-6CN"/>
                         <outlet property="saveButton" destination="D35-GD-e5b" id="3Bc-kx-EJi"/>
                     </connections>
                 </viewController>
