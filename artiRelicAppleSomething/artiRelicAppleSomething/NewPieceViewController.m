@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *pieceDescription;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *pieceImageTapGesture;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *previewButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *previewButtonSelected;
 
 - (IBAction)pieceImageTapped:(UITapGestureRecognizer *)sender;
 - (IBAction)saveButtonPressed:(UIButton *)sender;
