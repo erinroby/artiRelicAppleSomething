@@ -18,5 +18,7 @@
 
 @property (strong, nonatomic)Show *show;
 @property (strong, nonatomic)Curator *curator;
+@property (strong, nonatomic)UIImage *image;
+@property (strong, nonatomic)UIImage *thumb;
 
 @end

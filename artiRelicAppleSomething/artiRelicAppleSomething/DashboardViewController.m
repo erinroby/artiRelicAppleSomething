@@ -31,6 +31,12 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    self.showCollectionView.reloadData;
+}
+
 -(NSArray *)dataSource {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Show"];
     NSError *error;
@@ -58,7 +64,13 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"showCell" forIndexPath:indexPath];
     // TODO: Configure cell for reals here!
+    cell.contentView.backgroundColor = [UIColor clearColor];
     Show *show = self.dataSource[indexPath.row];
+    UIImage *thumb = [UIImage imageWithData:show.image];
+    UIImageView *cellImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(0.0, 0.0, 150.0, 150.0))];
+    cellImageView.image = thumb;
+    [cell.contentView addSubview:cellImageView];
+    
     return cell;
 }
 

@@ -12,4 +12,9 @@
 
 @interface ImageHelper : NSObject
 
++ (instancetype)shared;
+- (UIImage *)thumbFromImage:(UIImage *)image;
+- (NSData*)dataFromImage:(UIImage *)image;
+- (UIImage *)imageFromdata:(NSData *)data;
+
 @end
