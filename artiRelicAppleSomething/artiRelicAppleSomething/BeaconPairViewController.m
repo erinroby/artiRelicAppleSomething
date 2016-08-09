@@ -7,8 +7,13 @@
 //
 
 #import "BeaconPairViewController.h"
+#import "Beacon.h"
 
-@interface BeaconPairViewController ()
+@interface BeaconPairViewController () <UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *availableBeacons;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 - (IBAction)saveButtonPressed:(id)sender;
 
@@ -18,6 +23,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.dataSource = self;
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    // setup beacon call to see what beacons are available here.
+    //
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,6 +39,19 @@
 
 - (IBAction)saveButtonPressed:(id)sender {
     
+}
+
+#pragma MARK - UITableViewDataSource
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"beaconCell" forIndexPath:indexPath];
+    Beacon *currentBeacon = self.availableBeacons[indexPath.row];
+    // do any cell formatting here.
+    return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.availableBeacons.count;
 }
 
 /*
