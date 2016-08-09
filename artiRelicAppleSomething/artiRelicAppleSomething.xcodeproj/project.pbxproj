@@ -45,7 +45,6 @@
 		70AF43441D594B88004999F1 /* Piece.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF433A1D594B88004999F1 /* Piece.m */; };
 		70AF43451D594B88004999F1 /* Beacon+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF433C1D594B88004999F1 /* Beacon+CoreDataProperties.m */; };
 		70AF43461D594B88004999F1 /* Beacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF433E1D594B88004999F1 /* Beacon.m */; };
-		851CFB351D5A442400F57892 /* AudioPlayRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 851CFB341D5A442400F57892 /* AudioPlayRecord.m */; };
 		EE9B0FE81D5912E600B3AF83 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE51D5912E600B3AF83 /* Bolts.framework */; };
 		EE9B0FE91D5912E600B3AF83 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE61D5912E600B3AF83 /* Parse.framework */; };
 		EE9B0FEA1D5912E600B3AF83 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE71D5912E600B3AF83 /* Stripe.framework */; };
@@ -159,8 +158,6 @@
 		70AF433C1D594B88004999F1 /* Beacon+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Beacon+CoreDataProperties.m"; sourceTree = "<group>"; };
 		70AF433D1D594B88004999F1 /* Beacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beacon.h; sourceTree = "<group>"; };
 		70AF433E1D594B88004999F1 /* Beacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beacon.m; sourceTree = "<group>"; };
-		851CFB331D5A442400F57892 /* AudioPlayRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioPlayRecord.h; path = ../AudioPlayRecord.h; sourceTree = "<group>"; };
-		851CFB341D5A442400F57892 /* AudioPlayRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioPlayRecord.m; path = ../AudioPlayRecord.m; sourceTree = "<group>"; };
 		EE9B0FE51D5912E600B3AF83 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		EE9B0FE61D5912E600B3AF83 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		EE9B0FE71D5912E600B3AF83 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = Carthage/Build/iOS/Stripe.framework; sourceTree = "<group>"; };
@@ -347,8 +344,6 @@
 		70AF430C1D594242004999F1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				851CFB331D5A442400F57892 /* AudioPlayRecord.h */,
-				851CFB341D5A442400F57892 /* AudioPlayRecord.m */,
 				70AF430D1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.h */,
 				70AF430E1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m */,
 				70AF43121D59433A004999F1 /* CoreDataStack.h */,
@@ -532,7 +527,6 @@
 				0D2FD0231D5907E2004DF6B9 /* ViewController.m in Sources */,
 				0D2FD0201D5907E2004DF6B9 /* AppDelegate.m in Sources */,
 				0D2FD01D1D5907E2004DF6B9 /* main.m in Sources */,
-				851CFB351D5A442400F57892 /* AudioPlayRecord.m in Sources */,
 				70AF43411D594B88004999F1 /* Curator+CoreDataProperties.m in Sources */,
 				700DB7051D5A77F500B4916E /* Piece+CoreDataProperties.m in Sources */,
 				0D2FD0291D5907E2004DF6B9 /* artiRelicAppleSomething.xcdatamodeld in Sources */,
