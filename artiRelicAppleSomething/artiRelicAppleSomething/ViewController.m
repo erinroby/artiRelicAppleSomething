@@ -13,6 +13,7 @@
 #import "CachingContentFactory.h"
 #import "ProximityContentManager.h"
 
+
 @interface ViewController () <ProximityContentManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *label;

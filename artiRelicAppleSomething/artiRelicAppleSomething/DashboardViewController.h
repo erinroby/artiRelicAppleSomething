@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataStack.h"
+#import "NSManagedObjectContext+NSManagedObjectContext.h"
+#import "Curator.h"
+#import "Show.h"
 
 @interface DashboardViewController : UIViewController
+
+@property (strong, nonatomic)Show *show;
+@property (strong, nonatomic)Curator *curator;
 
 @end

@@ -75,5 +75,23 @@
 }
 
 - (IBAction)savePressed:(id)sender {
+    
+    //TODO: add form validation, check for values in text fields
+    NSString *title = self.titleTextField.text;
+    NSString *subtitle = self.subtitleTextField.text;
+    Show *show = [self createShow:title subtitle:subtitle];
+    self.show = show;
+    NSLog(@"Show created: %@", show);
+    NSLog(@"Self.show: %@", self.show);
+    
+    NSError *error;
+    [[NSManagedObjectContext managerContext]save:&error];
+    if (error) {
+        NSLog(@"Error saving show: %@", error);
+    } else {
+        NSLog(@"Succesfully saved show");
+    }
+    
+
 }
 @end
