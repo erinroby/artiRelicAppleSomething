@@ -10,7 +10,7 @@
 
 @implementation AudioPlayRecord
 
-- (void) setupAudio:(NSString *)fileName{
+- (NSString *) setupAudio:(NSString *)fileName{
     NSArray *dirPaths;
     NSString *docsDir;
     
@@ -48,6 +48,8 @@
     } else {
         [_audioRecorder prepareToRecord];
     }
+    
+    return soundFilePath;
 }
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
@@ -86,7 +88,7 @@
     }
 }
 
-- (IBAction)stopAudio:(id)sender {
+- (void)stopAudio:(id)sender {
     
     if (_audioRecorder.recording){
         [_audioRecorder stop];
