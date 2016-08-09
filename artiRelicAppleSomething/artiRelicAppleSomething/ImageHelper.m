@@ -11,7 +11,7 @@
 @implementation ImageHelper
 
 
--(UIImage *)thumbFromImage:(UIImage *)image
++(UIImage *)thumbFromImage:(UIImage *)image
 {
 
     CGSize thumbSize = CGSizeMake(50.0, 50.0);
@@ -22,12 +22,12 @@
     return thumbImage;
 }
 
--(NSData*)dataFromImage:(UIImage *)image
++(NSData*)dataFromImage:(UIImage *)image
 {
     return UIImageJPEGRepresentation(image, 0.7);
 }
 
--(UIImage *)imageFromdata:(NSData *)data
++(UIImage *)imageFromdata:(NSData *)data
 {
     return [UIImage imageWithData:data];
 }

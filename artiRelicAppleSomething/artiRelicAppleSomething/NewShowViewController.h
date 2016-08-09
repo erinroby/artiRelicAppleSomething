@@ -11,6 +11,7 @@
 #import "NSManagedObjectContext+NSManagedObjectContext.h"
 #import "Curator.h"
 #import "Show.h"
+#import "ImageHelper.h"
 
 
 @interface NewShowViewController : UIViewController

@@ -8,10 +8,10 @@
 
 #import "NewShowViewController.h"
 
-@interface NewShowViewController () <UIScrollViewDelegate>
+@interface NewShowViewController () <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
-- (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
+//@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+//- (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *save;
 - (IBAction)savePressed:(id)sender;
@@ -90,7 +90,40 @@
     }
 
 }
-- (IBAction)headerImageTapped:(UITapGestureRecognizer *)sender {
+- (IBAction)headerImageTapped:(UITapGestureRecognizer *)sender
+{
     NSLog(@"Show Image Tapped!");
+
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
+
+#pragma mark UIImagePickerController Delegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+
+    self.show.image = UIImagePNGRepresentation(info[UIImagePickerControllerOriginalImage]);
+    self.headerImage.image = (info[UIImagePickerControllerOriginalImage]);
+    
+    NSError *error;
+    [[NSManagedObjectContext managerContext] save:&error];
+    if (error) {
+        NSLog(@"Error saving image: %@", error);
+    } else {
+        NSLog(@"Saved image, error code: %@", error);
+    }
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
