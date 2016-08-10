@@ -23,7 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UILabel *narrationLabel;
-
+@property (strong, nonatomic) NSURL *soundFileURL;
 
 
 - (IBAction)pieceImageTapped:(UITapGestureRecognizer *)sender;
@@ -109,6 +109,48 @@
 }
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {
+    NSString *title = self.pieceTitleTextField.text;
+    NSString *desc = self.pieceDescription.text;
+    NSString *artist = self.pieceArtistTextField.text;
+    NSString *price = self.piecePrice.text;
+//    NSFileManager *filemgr = [NSFileManager defaultManager];
+//    
+//    NSArray *dirPaths;
+//    NSString *docsDir;
+//    
+//    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    docsDir = dirPaths[0];
+//    
+//    NSString *titleCAF = [NSString stringWithFormat:@"%@.caf", title];
+//    
+//    NSString *soundFilePath = [docsDir stringByAppendingPathComponent:titleCAF];
+//    NSLog(@"%@", soundFilePath);
+//    
+//    NSURL *titleCAFURL = [NSURL fileURLWithPath:soundFilePath];
+//    
+//    [filemgr moveItemAtURL:_soundFileURL toURL:titleCAFURL error:nil];
+    
+    if ([title isEqualToString:@""] || !title) {
+        [self presentAlert];
+    } else {
+        Piece *piece = [self createPieceWithTitle:title desc:desc artist:artist price:price];
+        self.piece = piece;
+        
+        piece.audio = [NSData dataWithContentsOfURL:_soundFileURL];
+        piece.image = [[ImageHelper shared]dataFromImage:self.image];
+        piece.thumbnail = [[ImageHelper shared]dataFromImage:self.thumb];
+        
+        NSLog(@"Piece created: %@", piece);
+        NSLog(@"Self.piece: %@", self.piece);
+        
+        NSError *error;
+        [[NSManagedObjectContext managerContext]save:&error];
+        if (error) {
+            NSLog(@"Error saving piece: %@", error);
+        } else {
+            NSLog(@"Succesfully saved piece");
+        }
+    }
 }
 
 - (IBAction)playButtonPressed:(UIButton *)sender {
@@ -166,30 +208,30 @@
     return piece;
 }
 
--(void) savePressed {
-    NSString *title = self.pieceTitleTextField.text;
-    NSString *desc = self.pieceDescription.text;
-    NSString *artist = self.pieceArtistTextField.text;
-    NSString *price = self.piecePrice.text;
-
-    if ([title isEqualToString:@""] || !title) {
-        [self presentAlert];
-    } else {
-        Piece *piece = [self createPieceWithTitle:title desc:desc artist:artist price:price];
-        self.piece = piece;
-
-        NSLog(@"Piece created: %@", piece);
-        NSLog(@"Self.piece: %@", self.piece);
-
-        NSError *error;
-        [[NSManagedObjectContext managerContext]save:&error];
-        if (error) {
-            NSLog(@"Error saving piece: %@", error);
-        } else {
-            NSLog(@"Succesfully saved piece");
-        }
-    }
-}
+//-(void) savePressed {
+//    NSString *title = self.pieceTitleTextField.text;
+//    NSString *desc = self.pieceDescription.text;
+//    NSString *artist = self.pieceArtistTextField.text;
+//    NSString *price = self.piecePrice.text;
+//
+//    if ([title isEqualToString:@""] || !title) {
+//        [self presentAlert];
+//    } else {
+//        Piece *piece = [self createPieceWithTitle:title desc:desc artist:artist price:price];
+//        self.piece = piece;
+//
+//        NSLog(@"Piece created: %@", piece);
+//        NSLog(@"Self.piece: %@", self.piece);
+//
+//        NSError *error;
+//        [[NSManagedObjectContext managerContext]save:&error];
+//        if (error) {
+//            NSLog(@"Error saving piece: %@", error);
+//        } else {
+//            NSLog(@"Succesfully saved piece");
+//        }
+//    }
+//}
 
 #pragma mark UIImagePickerController Delegate
 

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Show.h"
+#import "ImageHelper.h"
+#import "Piece.h"
+#import "Beacon.h"
 
 @interface ShowOverviewViewController : UIViewController
 
