@@ -33,7 +33,7 @@
 
 - (NSData*)dataFromImage:(UIImage *)image
 {
-    return UIImageJPEGRepresentation(image, 0.7);
+    return UIImagePNGRepresentation(image);
 }
 
 - (UIImage *)imageFromdata:(NSData *)data

@@ -10,16 +10,16 @@
 
 @implementation Piece
 
-@synthesize show;
-@synthesize title;
-@synthesize subtitle;
-@synthesize desc;
-@synthesize artist;
-@synthesize price;
-@synthesize image;
-@synthesize thumbnail;
-@synthesize audio;
-@synthesize beacon;
+@dynamic show;
+@dynamic title;
+@dynamic subtitle;
+@dynamic desc;
+@dynamic artist;
+@dynamic price;
+@dynamic image;
+@dynamic thumbnail;
+@dynamic audio;
+@dynamic beacon;
 
 + (void)load
 {

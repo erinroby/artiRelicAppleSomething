@@ -10,9 +10,9 @@
 
 @implementation Beacon
 
-@synthesize uiid;
-@synthesize major;
-@synthesize minor;
+@dynamic uiid;
+@dynamic major;
+@dynamic minor;
 
 + (void)load
 {

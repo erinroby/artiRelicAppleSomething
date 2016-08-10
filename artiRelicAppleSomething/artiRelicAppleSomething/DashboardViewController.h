@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import <Bolts/Bolts.h>
 #import "Curator.h"
 #import "Show.h"
 

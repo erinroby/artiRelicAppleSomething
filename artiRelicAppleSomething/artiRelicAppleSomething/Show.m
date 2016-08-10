@@ -10,13 +10,13 @@
 
 @implementation Show
 
-@synthesize title;
-@synthesize subtitle;
-@synthesize desc;
-@synthesize thumbnail;
-@synthesize image;
-@synthesize curator;
-@synthesize pieces;
+@dynamic title;
+@dynamic subtitle;
+@dynamic desc;
+@dynamic thumbnail;
+@dynamic image;
+@dynamic curator;
+@dynamic pieces;
 
 +(void)load
 {

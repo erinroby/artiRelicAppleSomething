@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *showCollectionView;
 @property (strong, nonatomic) NSArray *dataSource;
+@property (strong, nonatomic) BFTask *parseShows;
 
 @end
 
@@ -23,7 +24,26 @@
     [super viewDidLoad];
     self.showCollectionView.delegate = self;
     self.showCollectionView.dataSource = self;
-//    [self.showCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"showCell"];
+//    PFQuery *query = [PFQuery queryWithClassName:@"Show"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            self.dataSource = objects;
+//            [self.showCollectionView reloadData];
+//            NSLog(@"Should have reloaded data from viewDidLoad");
+//        } else {
+//            NSLog(@"Error: failed to load parse");
+//        }
+//    }];
+//    PFQuery *query = [PFQuery queryWithClassName:@"Show"];
+//    [[[query findObjectsInBackground]continueWithSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
+//        NSArray *results = t.result;
+//        NSMutableArray *saveTasks = [NSMutableArray arrayWithCapacity:[results count]];
+//        return [BFTask taskForCompletionOfAllTasks:saveTasks];
+//    }] continueWithExecutor:[BFExecutor mainThreadExecutor]withSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
+//        self.dataSource = t.result;
+//        self.showCollectionView.reloadData;
+//        return t;
+//    }];
 
 }
 
@@ -34,18 +54,19 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    self.showCollectionView.reloadData;
-}
-
--(NSArray *)dataSource {
     PFQuery *query = [PFQuery queryWithClassName:@"Show"];
-     [[[query findObjectsInBackground]continueWithSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
-        NSArray *results = t.result;
-        NSMutableArray *saveTasks = [NSMutableArray arrayWithCapacity:[results count]];
-        return [BFTask taskForCompletionOfAllTasks:saveTasks];
-    }] continueWithExecutor:[BFExecutor mainThreadExecutor]withSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
-        return t;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.dataSource = objects;
+            [self.showCollectionView reloadData];
+            NSLog(@"Should have reloaded data from viewDidLoad");
+        } else {
+            NSLog(@"Error: failed to load parse");
+        }
     }];
+
+    [self.showCollectionView reloadData];
+    NSLog(@"Should have reloaded from viewWillAppear");
 }
 
 
@@ -65,9 +86,16 @@
     // TODO: Configure cell for reals here!
 
     Show *show = self.dataSource[indexPath.row];
-    UIImage *thumb = [UIImage imageWithData:show.image];
     UIImageView *cellImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(0.0, 0.0, 150.0, 150.0))];
-    cellImageView.image = thumb;
+    PFFile *pfThumb = show.thumbnail;
+    [pfThumb getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (!data) {
+            return NSLog(@"Error getting PFFile for thumbnail");
+        }
+        cellImageView.image = [UIImage imageWithData:data];
+    }];
+    
+    
     [cell.contentView addSubview:cellImageView];
     
     return cell;

@@ -62,14 +62,13 @@
     } else {
         Show *show = [Show publishShowWithTitle:title subtitle:subtitle desc:desc];
         if (self.image) {
-            show.image = [[ImageHelper shared]dataFromImage:self.image];
+            show.image = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.image]];;
         }
         if (self.thumb) {
-            show.thumbnail = [[ImageHelper shared]dataFromImage:self.thumb];
+            show.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
         }
         
-        NSLog(@"Show created: %@", show);
-        NSLog(@"Self.show: %@", self.show);
+        NSLog(@"Show created: %@", show.title);
         
         [show saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             if (succeeded) {

@@ -136,7 +136,7 @@
         NSLog(@"Piece created");
         NSLog(@"Self.piece: %@", self.piece);
         
-        [piece saveInBackground];
+        [piece save];
     }
     [self.navigationController popViewControllerAnimated:YES];
 }

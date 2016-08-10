@@ -11,7 +11,6 @@
 #import <Parse/Parse.h>
 
 #import "Curator.h"
-//#import "Piece.h"
 #import "Beacon.h"
 
 
@@ -20,8 +19,8 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *subtitle;
 @property (strong, nonatomic) NSString *desc;
-@property (strong, nonatomic) NSData *image;
-@property (strong, nonatomic) NSData *thumbnail;
+@property (strong, nonatomic) PFFile *image;
+@property (strong, nonatomic) PFFile *thumbnail;
 @property (strong, nonatomic) Curator *curator;
 
 @property (strong, nonatomic) NSMutableArray *pieces;
