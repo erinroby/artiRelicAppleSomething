@@ -6,11 +6,6 @@
 
 @interface NearestBeaconManager () <ESTBeaconManagerDelegate> 
 
-@property (copy, nonatomic) NSArray *beaconRegions;
-
-@property (nonatomic) ESTBeaconManager *beaconManager;
-
-@property (nonatomic) BeaconID *nearestBeaconID;
 @property (nonatomic) BOOL firstEventSent;
 
 @end
@@ -25,7 +20,7 @@
         self.beaconManager = [ESTBeaconManager new];
         self.beaconManager.delegate = self;
         self.beaconManager.returnAllRangedBeaconsAtOnce = YES;
-        [self.beaconManager requestWhenInUseAuthorization];
+        [self.beaconManager requestAlwaysAuthorization];
 
         self.firstEventSent = false;
     }
