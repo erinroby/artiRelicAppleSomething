@@ -24,6 +24,7 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) ProximityContentManager *proximityContentManager;
+@property (weak, nonatomic) IBOutlet UILabel *UIID;
 
 @property (strong, nonatomic) NSMutableArray *availableBeacons;
 
@@ -72,9 +73,7 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
     BeaconDetails *beaconDetails = content;
     if (beaconDetails) {
         NSLog(@"%@", beaconDetails.beaconName);
-        
-        // where the beacon ids, yo?
-        
+        self.UIID.text = self.proximityContentManager.beaconId.description;
         self.view.backgroundColor = beaconDetails.backgroundColor;
         self.tableView.backgroundColor = beaconDetails.backgroundColor;
         [self.tableView reloadData];
@@ -90,6 +89,7 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
 - (IBAction)saveButtonPressed:(id)sender {
     NSLog(@"saveButton pressed.");
+    
     // send and/or attach beacon data to the piece here.
     // do setup in prepare for segue and then call here?
     [self.navigationController popViewControllerAnimated:YES];

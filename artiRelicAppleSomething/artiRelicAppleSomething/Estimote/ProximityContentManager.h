@@ -6,6 +6,7 @@
 
 #import "NearestBeaconManager.h"
 #import "BeaconContentFactory.h"
+#import "BeaconID.h"
 
 @class ProximityContentManager;
 
@@ -19,7 +20,7 @@
 
 @property (weak, nonatomic) id<ProximityContentManagerDelegate> delegate;
 @property (nonatomic) NearestBeaconManager *nearestBeaconManager;
-
+@property (nonatomic) BeaconID *beaconId;
 
 
 + (instancetype)new NS_UNAVAILABLE;
