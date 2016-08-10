@@ -352,7 +352,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record Narration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDz-dZ-Tc7">
                                 <rect key="frame" x="235" y="464" width="131" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2E-Dn-4b7">
@@ -437,7 +437,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kP3-wE-gcd">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="174"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="beaconCell" id="ghw-os-Tp9">
@@ -450,19 +450,36 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4f-58-TKb">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="F8e-o3-4Pc"/>
+                                    <barButtonItem systemItem="save" id="Av6-ii-EOx">
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="KDP-VB-VGr" id="8FW-2k-hBe"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdw-0d-xDW">
+                                <rect key="frame" x="269" y="316" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sdw-0d-xDW" firstAttribute="centerX" secondItem="RWH-Qc-1mA" secondAttribute="centerX" id="UK9-c0-wDu"/>
+                            <constraint firstItem="o4f-58-TKb" firstAttribute="leading" secondItem="RWH-Qc-1mA" secondAttribute="leading" id="ZlQ-tY-Nq5"/>
+                            <constraint firstAttribute="trailing" secondItem="o4f-58-TKb" secondAttribute="trailing" id="i29-Hx-w9g"/>
+                            <constraint firstItem="fVf-0k-7hI" firstAttribute="top" secondItem="o4f-58-TKb" secondAttribute="bottom" id="tu1-Wr-Gza"/>
+                        </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="F8e-o3-4Pc"/>
-                        <barButtonItem systemItem="save" id="Av6-ii-EOx">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="KDP-VB-VGr" id="8FW-2k-hBe"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <connections>
-                        <outlet property="saveButton" destination="Av6-ii-EOx" id="0Ow-os-AxU"/>
+                        <outlet property="UIID" destination="Sdw-0d-xDW" id="gwV-as-p3z"/>
+                        <outlet property="saveButton" destination="o4f-58-TKb" id="3ep-Se-9Ce"/>
                         <outlet property="tableView" destination="kP3-wE-gcd" id="QAm-RH-f5N"/>
                     </connections>
                 </viewController>

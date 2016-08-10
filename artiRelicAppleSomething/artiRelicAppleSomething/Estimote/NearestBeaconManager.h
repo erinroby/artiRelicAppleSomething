@@ -21,6 +21,7 @@
 @property (copy, nonatomic) NSArray *beaconRegions;
 @property (nonatomic) ESTBeaconManager *beaconManager;
 @property (nonatomic) BeaconID *nearestBeaconID;
+@property (nonatomic) NSMutableArray *beacons;
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
