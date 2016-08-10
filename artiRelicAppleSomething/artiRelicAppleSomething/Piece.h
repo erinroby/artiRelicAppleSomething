@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Piece : NSManagedObject
 
-+ (instancetype)pieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price;
++ (instancetype)pieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price narration:(NSURL *)narration;
 
 @end
 
