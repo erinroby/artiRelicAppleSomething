@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UILabel *narrationLabel;
+@property (weak, nonatomic) NSURL *soundFileURL;
 
 
 
@@ -50,7 +51,7 @@
     NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
     NSLog(@"%@", soundFilePath);
     
-    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    _soundFileURL = [NSURL fileURLWithPath:soundFilePath];
     
     NSDictionary *recordSettings  = [NSDictionary dictionaryWithObjectsAndKeys:
                                      [NSNumber numberWithInt:AVAudioQualityMin],
@@ -68,7 +69,7 @@
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     
-    _audioRecorder = [[AVAudioRecorder alloc]initWithURL:soundFileURL settings:recordSettings error:&error];
+    _audioRecorder = [[AVAudioRecorder alloc]initWithURL:_soundFileURL settings:recordSettings error:&error];
     
     if (error) {
         NSLog (@"error: %@", [error localizedDescription]);
@@ -135,6 +136,9 @@
     _recordButton.enabled = YES;
     
     if (_audioRecorder.recording){
+        [_narrationLabel.layer removeAllAnimations];
+        _narrationLabel.textColor = [UIColor blackColor];
+        _narrationLabel.text = @"Record Narration";
         [_audioRecorder stop];
     } else if (_audioPlayer.playing) {
         [_audioPlayer stop];
@@ -143,6 +147,12 @@
 
 - (IBAction)recordButtonPressed:(UIButton *)sender {
     if (!_audioRecorder.recording) {
+        _narrationLabel.text = @"RECORDING...";
+        _narrationLabel.textColor = [UIColor redColor];
+        _narrationLabel.alpha = 0;
+        [UIView animateWithDuration:0.5 delay:0.1 options:UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse animations:^{
+            _narrationLabel.alpha = 1;
+        } completion:nil];
         _playButton.enabled = NO;
         _stopButton.enabled = YES;
         [_audioRecorder record];
@@ -162,7 +172,7 @@
 
 -(Piece*)createPieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price
 {
-    Piece *piece = [Piece pieceWithTitle:title desc:desc artist:artist price:price];
+    Piece *piece = [Piece pieceWithTitle:title desc:desc artist:artist price:price narration:narration];
     return piece;
 }
 
@@ -171,6 +181,28 @@
     NSString *desc = self.pieceDescription.text;
     NSString *artist = self.pieceArtistTextField.text;
     NSString *price = self.piecePrice.text;
+    
+    //rename audio file
+    NSFileManager *filemgr = [NSFileManager defaultManager];
+    
+    NSArray *dirPaths;
+    NSString *docsDir;
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = dirPaths[0];
+    
+    NSString *titleCAF = [NSString stringWithFormat:@"%@.caf", title];
+    
+    NSString *soundFilePath = [docsDir stringByAppendingPathComponent:titleCAF];
+    NSLog(@"%@", soundFilePath);
+    
+    NSURL *titleCAFURL = [NSURL fileURLWithPath:soundFilePath];
+    
+    [filemgr moveItemAtURL:_soundFileURL toURL:titleCAFURL error:nil];
+    
+    
+
+    
 
     if ([title isEqualToString:@""] || !title) {
         [self presentAlert];
