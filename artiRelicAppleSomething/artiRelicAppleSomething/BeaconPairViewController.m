@@ -23,9 +23,9 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 @interface BeaconPairViewController () <UITableViewDataSource, ProximityContentManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *availableBeacons;
 @property (nonatomic) ProximityContentManager *proximityContentManager;
 
+@property (strong, nonatomic) NSMutableArray *availableBeacons;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 - (IBAction)saveButtonPressed:(id)sender;
@@ -66,11 +66,14 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 }
 
 - (void)proximityContentManager:(ProximityContentManager *)proximityContentManager didUpdateContent:(id)content {
+    
+//    [self.proximityContentManager nearestBeaconManager:proximityContentManager.nearestBeaconManager didUpdateNearestBeaconID:nil];
+    
     BeaconDetails *beaconDetails = content;
     if (beaconDetails) {
         NSLog(@"%@", beaconDetails.beaconName);
         
-        // where the beacon ids yo?
+        // where the beacon ids, yo?
         
         self.view.backgroundColor = beaconDetails.backgroundColor;
         self.tableView.backgroundColor = beaconDetails.backgroundColor;
@@ -99,6 +102,7 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"beaconCell" forIndexPath:indexPath];
     // bah! how to get at the beaconDetails from here!
+    
     return cell;
 }
 

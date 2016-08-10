@@ -42,8 +42,7 @@
 
 - (void)beaconManager:(id)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
     CLBeacon *nearestBeacon = beacons.firstObject;
-    _beacons = beacons;
-
+    
     if (!(nearestBeacon.beaconID == nil && self.nearestBeaconID == nil)
             || ![nearestBeacon.beaconID isEqual:self.nearestBeaconID]
             || !self.firstEventSent) {
@@ -54,6 +53,7 @@
     }
     
 }
+
 
 //- (void)beaconManager:(id)manager didRangeBeacons:(NSArray *)beacons
 //             inRegion:(CLBeaconRegion *)region {

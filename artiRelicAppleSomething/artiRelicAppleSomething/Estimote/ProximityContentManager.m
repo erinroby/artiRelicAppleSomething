@@ -42,6 +42,7 @@
 
 - (void)nearestBeaconManager:(NearestBeaconManager *)nearestBeaconManager didUpdateNearestBeaconID:(BeaconID *)beaconID {
     if (beaconID) {
+        NSLog(@"ID: %@", beaconID);
         [self.beaconContentFactory contentForBeaconID:beaconID completion:^(id content) {
             [self.delegate proximityContentManager:self didUpdateContent:content];
         }];
