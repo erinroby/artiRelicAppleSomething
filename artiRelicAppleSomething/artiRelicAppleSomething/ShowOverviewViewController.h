@@ -11,6 +11,10 @@
 #import "ImageHelper.h"
 #import "Piece.h"
 #import "Beacon.h"
+#import "NewPieceViewController.h"
+#import <Parse/Parse.h>
+#import "ShowToPublish.h"
+#import "Curator.h"
 
 @interface ShowOverviewViewController : UIViewController
 

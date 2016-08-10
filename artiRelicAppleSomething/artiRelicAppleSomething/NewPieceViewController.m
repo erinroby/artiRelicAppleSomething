@@ -137,8 +137,13 @@
         self.piece = piece;
         
         piece.audio = [NSData dataWithContentsOfURL:_soundFileURL];
+        if (self.image) {
         piece.image = [[ImageHelper shared]dataFromImage:self.image];
-        piece.thumbnail = [[ImageHelper shared]dataFromImage:self.thumb];
+        }
+        if (self.thumb) {
+            piece.thumbnail = [[ImageHelper shared]dataFromImage:self.thumb];
+        }
+        piece.show = self.show;
         
         NSLog(@"Piece created: %@", piece);
         NSLog(@"Self.piece: %@", self.piece);
@@ -151,6 +156,7 @@
             NSLog(@"Succesfully saved piece");
         }
     }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)playButtonPressed:(UIButton *)sender {
@@ -232,6 +238,8 @@
 //        }
 //    }
 //}
+
+
 
 #pragma mark UIImagePickerController Delegate
 
