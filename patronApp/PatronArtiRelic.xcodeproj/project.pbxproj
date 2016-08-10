@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE9764611C216F5E0058A4DC /* BeaconDetailsStaticFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9764601C216F5E0058A4DC /* BeaconDetailsStaticFactory.m */; };
+		AECA38231B9477B7009A9324 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA38221B9477B7009A9324 /* EstimoteSDK.framework */; };
+		AECA38461B95BC33009A9324 /* BeaconID.m in Sources */ = {isa = PBXBuildFile; fileRef = AECA38451B95BC33009A9324 /* BeaconID.m */; };
+		AECA384A1B95C146009A9324 /* CachingContentFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AECA38491B95C146009A9324 /* CachingContentFactory.m */; };
+		AECA384D1B95C4E6009A9324 /* BeaconDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = AECA384C1B95C4E6009A9324 /* BeaconDetails.m */; };
+		AECA38501B95C5E7009A9324 /* BeaconDetailsCloudFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AECA384F1B95C5E7009A9324 /* BeaconDetailsCloudFactory.m */; };
+		AECA38531B95C91D009A9324 /* NearestBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AECA38521B95C91D009A9324 /* NearestBeaconManager.m */; };
+		AECA38561B95D59E009A9324 /* ProximityContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AECA38551B95D59E009A9324 /* ProximityContentManager.m */; };
+		AECF16921B0E0C0200CC83B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AECF16911B0E0C0200CC83B2 /* main.m */; };
+		AECF16951B0E0C0200CC83B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AECF16941B0E0C0200CC83B2 /* AppDelegate.m */; };
+		AECF16981B0E0C0200CC83B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AECF16971B0E0C0200CC83B2 /* ViewController.m */; };
+		AECF169B1B0E0C0200CC83B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AECF16991B0E0C0200CC83B2 /* Main.storyboard */; };
+		AECF169D1B0E0C0200CC83B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECF169C1B0E0C0200CC83B2 /* Assets.xcassets */; };
+		AEFD99631BC59AA600BC1771 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEFD99611BC59AA600BC1771 /* LaunchScreen.storyboard */; };
+		EE26F0091D5A484E000E81A0 /* ApplePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE26F0081D5A484E000E81A0 /* ApplePayViewController.m */; };
+		EE4B478F1D5A52EA000CF527 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4B478C1D5A52EA000CF527 /* Bolts.framework */; };
+		EE4B47901D5A52EA000CF527 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4B478D1D5A52EA000CF527 /* Parse.framework */; };
+		EE4B47911D5A52EA000CF527 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4B478E1D5A52EA000CF527 /* Stripe.framework */; };
+		EE4B47921D5A52F3000CF527 /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EE4B478C1D5A52EA000CF527 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EE4B47931D5A52F3000CF527 /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EE4B478D1D5A52EA000CF527 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EE4B47941D5A52F3000CF527 /* Stripe.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EE4B478E1D5A52EA000CF527 /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EE26F00A1D5A4E32000E81A0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EE4B47921D5A52F3000CF527 /* Bolts.framework in CopyFiles */,
+				EE4B47931D5A52F3000CF527 /* Parse.framework in CopyFiles */,
+				EE4B47941D5A52F3000CF527 /* Stripe.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AE97645F1C216F5E0058A4DC /* BeaconDetailsStaticFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconDetailsStaticFactory.h; sourceTree = "<group>"; };
+		AE9764601C216F5E0058A4DC /* BeaconDetailsStaticFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconDetailsStaticFactory.m; sourceTree = "<group>"; };
+		AECA38221B9477B7009A9324 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
+		AECA38441B95BC33009A9324 /* BeaconID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconID.h; sourceTree = "<group>"; };
+		AECA38451B95BC33009A9324 /* BeaconID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconID.m; sourceTree = "<group>"; };
+		AECA38471B95C06D009A9324 /* BeaconContentFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeaconContentFactory.h; sourceTree = "<group>"; };
+		AECA38481B95C146009A9324 /* CachingContentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CachingContentFactory.h; sourceTree = "<group>"; };
+		AECA38491B95C146009A9324 /* CachingContentFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CachingContentFactory.m; sourceTree = "<group>"; };
+		AECA384B1B95C4E6009A9324 /* BeaconDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconDetails.h; sourceTree = "<group>"; };
+		AECA384C1B95C4E6009A9324 /* BeaconDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconDetails.m; sourceTree = "<group>"; };
+		AECA384E1B95C5E7009A9324 /* BeaconDetailsCloudFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconDetailsCloudFactory.h; sourceTree = "<group>"; };
+		AECA384F1B95C5E7009A9324 /* BeaconDetailsCloudFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconDetailsCloudFactory.m; sourceTree = "<group>"; };
+		AECA38511B95C91D009A9324 /* NearestBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearestBeaconManager.h; sourceTree = "<group>"; };
+		AECA38521B95C91D009A9324 /* NearestBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearestBeaconManager.m; sourceTree = "<group>"; };
+		AECA38541B95D59E009A9324 /* ProximityContentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProximityContentManager.h; sourceTree = "<group>"; };
+		AECA38551B95D59E009A9324 /* ProximityContentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProximityContentManager.m; sourceTree = "<group>"; };
+		AECF168C1B0E0C0200CC83B2 /* PatronArtiRelic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatronArtiRelic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AECF16901B0E0C0200CC83B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AECF16911B0E0C0200CC83B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AECF16931B0E0C0200CC83B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AECF16941B0E0C0200CC83B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AECF16961B0E0C0200CC83B2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AECF16971B0E0C0200CC83B2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AECF169A1B0E0C0200CC83B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AECF169C1B0E0C0200CC83B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AEFD99621BC59AA600BC1771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE26F0061D5A45CB000E81A0 /* PatronArtiRelic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PatronArtiRelic.entitlements; sourceTree = "<group>"; };
+		EE26F0071D5A484E000E81A0 /* ApplePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplePayViewController.h; sourceTree = "<group>"; };
+		EE26F0081D5A484E000E81A0 /* ApplePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplePayViewController.m; sourceTree = "<group>"; };
+		EE4B478C1D5A52EA000CF527 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
+		EE4B478D1D5A52EA000CF527 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
+		EE4B478E1D5A52EA000CF527 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = Carthage/Build/iOS/Stripe.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AECF16891B0E0C0200CC83B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE4B478F1D5A52EA000CF527 /* Bolts.framework in Frameworks */,
+				EE4B47901D5A52EA000CF527 /* Parse.framework in Frameworks */,
+				EE4B47911D5A52EA000CF527 /* Stripe.framework in Frameworks */,
+				AECA38231B9477B7009A9324 /* EstimoteSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AECA38211B9477B7009A9324 /* Estimote */ = {
+			isa = PBXGroup;
+			children = (
+				AECA38221B9477B7009A9324 /* EstimoteSDK.framework */,
+				AECA38471B95C06D009A9324 /* BeaconContentFactory.h */,
+				AECA384B1B95C4E6009A9324 /* BeaconDetails.h */,
+				AECA384C1B95C4E6009A9324 /* BeaconDetails.m */,
+				AECA384E1B95C5E7009A9324 /* BeaconDetailsCloudFactory.h */,
+				AECA384F1B95C5E7009A9324 /* BeaconDetailsCloudFactory.m */,
+				AE97645F1C216F5E0058A4DC /* BeaconDetailsStaticFactory.h */,
+				AE9764601C216F5E0058A4DC /* BeaconDetailsStaticFactory.m */,
+				AECA38441B95BC33009A9324 /* BeaconID.h */,
+				AECA38451B95BC33009A9324 /* BeaconID.m */,
+				AECA38481B95C146009A9324 /* CachingContentFactory.h */,
+				AECA38491B95C146009A9324 /* CachingContentFactory.m */,
+				AECA38511B95C91D009A9324 /* NearestBeaconManager.h */,
+				AECA38521B95C91D009A9324 /* NearestBeaconManager.m */,
+				AECA38541B95D59E009A9324 /* ProximityContentManager.h */,
+				AECA38551B95D59E009A9324 /* ProximityContentManager.m */,
+			);
+			path = Estimote;
+			sourceTree = "<group>";
+		};
+		AECF16831B0E0C0200CC83B2 = {
+			isa = PBXGroup;
+			children = (
+				EE4B478C1D5A52EA000CF527 /* Bolts.framework */,
+				EE4B478D1D5A52EA000CF527 /* Parse.framework */,
+				EE4B478E1D5A52EA000CF527 /* Stripe.framework */,
+				EE26F0061D5A45CB000E81A0 /* PatronArtiRelic.entitlements */,
+				AECF168E1B0E0C0200CC83B2 /* ProximityContentForMultIoa */,
+				AECF168D1B0E0C0200CC83B2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AECF168D1B0E0C0200CC83B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AECF168C1B0E0C0200CC83B2 /* PatronArtiRelic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AECF168E1B0E0C0200CC83B2 /* ProximityContentForMultIoa */ = {
+			isa = PBXGroup;
+			children = (
+				AECF16931B0E0C0200CC83B2 /* AppDelegate.h */,
+				AECF16941B0E0C0200CC83B2 /* AppDelegate.m */,
+				AECF16961B0E0C0200CC83B2 /* ViewController.h */,
+				AECF16971B0E0C0200CC83B2 /* ViewController.m */,
+				AECF16991B0E0C0200CC83B2 /* Main.storyboard */,
+				EE26F0071D5A484E000E81A0 /* ApplePayViewController.h */,
+				EE26F0081D5A484E000E81A0 /* ApplePayViewController.m */,
+				AECF169C1B0E0C0200CC83B2 /* Assets.xcassets */,
+				AEFD99611BC59AA600BC1771 /* LaunchScreen.storyboard */,
+				AECF16901B0E0C0200CC83B2 /* Info.plist */,
+				AECF168F1B0E0C0200CC83B2 /* Supporting Files */,
+				AECA38211B9477B7009A9324 /* Estimote */,
+			);
+			path = ProximityContentForMultIoa;
+			sourceTree = "<group>";
+		};
+		AECF168F1B0E0C0200CC83B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AECF16911B0E0C0200CC83B2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AECF168B1B0E0C0200CC83B2 /* PatronArtiRelic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AECF16AF1B0E0C0200CC83B2 /* Build configuration list for PBXNativeTarget "PatronArtiRelic" */;
+			buildPhases = (
+				AECF16881B0E0C0200CC83B2 /* Sources */,
+				AECF16891B0E0C0200CC83B2 /* Frameworks */,
+				AECF168A1B0E0C0200CC83B2 /* Resources */,
+				EE26F00A1D5A4E32000E81A0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PatronArtiRelic;
+			productName = ProximityContentForMultIoa;
+			productReference = AECF168C1B0E0C0200CC83B2 /* PatronArtiRelic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AECF16841B0E0C0200CC83B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "erin.a.roby@gmail.com";
+				TargetAttributes = {
+					AECF168B1B0E0C0200CC83B2 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 6AQ4PTS4W4;
+						SystemCapabilities = {
+							com.apple.OMC = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = AECF16871B0E0C0200CC83B2 /* Build configuration list for PBXProject "PatronArtiRelic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AECF16831B0E0C0200CC83B2;
+			productRefGroup = AECF168D1B0E0C0200CC83B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AECF168B1B0E0C0200CC83B2 /* PatronArtiRelic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AECF168A1B0E0C0200CC83B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEFD99631BC59AA600BC1771 /* LaunchScreen.storyboard in Resources */,
+				AECF169B1B0E0C0200CC83B2 /* Main.storyboard in Resources */,
+				AECF169D1B0E0C0200CC83B2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AECF16881B0E0C0200CC83B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AECF16981B0E0C0200CC83B2 /* ViewController.m in Sources */,
+				AECF16951B0E0C0200CC83B2 /* AppDelegate.m in Sources */,
+				AECA38501B95C5E7009A9324 /* BeaconDetailsCloudFactory.m in Sources */,
+				EE26F0091D5A484E000E81A0 /* ApplePayViewController.m in Sources */,
+				AECA384A1B95C146009A9324 /* CachingContentFactory.m in Sources */,
+				AECA38461B95BC33009A9324 /* BeaconID.m in Sources */,
+				AE9764611C216F5E0058A4DC /* BeaconDetailsStaticFactory.m in Sources */,
+				AECA38561B95D59E009A9324 /* ProximityContentManager.m in Sources */,
+				AECA384D1B95C4E6009A9324 /* BeaconDetails.m in Sources */,
+				AECA38531B95C91D009A9324 /* NearestBeaconManager.m in Sources */,
+				AECF16921B0E0C0200CC83B2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AECF16991B0E0C0200CC83B2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AECF169A1B0E0C0200CC83B2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AEFD99611BC59AA600BC1771 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEFD99621BC59AA600BC1771 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AECF16AD1B0E0C0200CC83B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AECF16AE1B0E0C0200CC83B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AECF16B01B0E0C0200CC83B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = PatronArtiRelic.entitlements;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProximityContentForMultIoa/Estimote",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = ProximityContentForMultIoa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ErinARobyGmailCom.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = PatronArtiRelic;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AECF16B11B0E0C0200CC83B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = PatronArtiRelic.entitlements;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProximityContentForMultIoa/Estimote",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = ProximityContentForMultIoa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ErinARobyGmailCom.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = PatronArtiRelic;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AECF16871B0E0C0200CC83B2 /* Build configuration list for PBXProject "PatronArtiRelic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AECF16AD1B0E0C0200CC83B2 /* Debug */,
+				AECF16AE1B0E0C0200CC83B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AECF16AF1B0E0C0200CC83B2 /* Build configuration list for PBXNativeTarget "PatronArtiRelic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AECF16B01B0E0C0200CC83B2 /* Debug */,
+				AECF16B11B0E0C0200CC83B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AECF16841B0E0C0200CC83B2 /* Project object */;
+}

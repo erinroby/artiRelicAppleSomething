@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Apple Pay View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ApplePayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrF-2p-u8N">
+                                <rect key="frame" x="203" y="467" width="194" height="57"/>
+                                <state key="normal" title="Button" image="ApplePayBTN_64pt__black_logo_"/>
+                                <connections>
+                                    <action selector="payPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0vq-V1-p9J"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mrF-2p-u8N" secondAttribute="bottom" constant="76" id="OWs-JI-N1z"/>
+                            <constraint firstItem="mrF-2p-u8N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="447" id="iww-pK-anz"/>
+                            <constraint firstItem="mrF-2p-u8N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rBx-ZO-kvq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="applePayButton" destination="mrF-2p-u8N" id="cNb-Ti-3e3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="408" y="449"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ApplePayBTN_64pt__black_logo_" width="140" height="64"/>
+    </resources>
+</document>
