@@ -45,8 +45,11 @@
             NSLog(@"%@",error.description);
             completion(PKPaymentAuthorizationStatusFailure);
         } else {
-            [PFCloud callFunctionInBackground:@"finalizePurchase" withParameters:@{@"amount":@1225, @"cardToken":token.tokenId} block:^(id  _Nullable object, NSError * _Nullable error) {
+            [PFCloud callFunctionInBackground:@"finalizePurchase"
+                               withParameters:@{@"amount":@1225, @"cardToken":token.tokenId}
+                                        block:^(id  _Nullable object, NSError * _Nullable error) {
                 if (error) {
+                    NSLog(@"test😎");
                     NSLog(@"%@", error.localizedDescription);
                 } else {
                     NSLog(@"%@", object);

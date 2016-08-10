@@ -8,6 +8,8 @@
 
 @import Stripe;
 
+@import Parse;
+
 @interface AppDelegate ()
 
 @end
@@ -19,6 +21,12 @@
     
     [[STPPaymentConfiguration sharedConfiguration] setPublishableKey:@"pk_test_TGCXR26srXhXwWm0goG29cDi"];
     [[STPPaymentConfiguration sharedConfiguration] setAppleMerchantIdentifier:@"merchant.com.patronapp"];
+    
+    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
+        configuration.applicationId =@"L41o5UblNSd2YS1x0yTtdG1kXgE1g56qoQxFwdm1";
+        configuration.clientKey = @"BurwhvrUWhdo6Ao7t0bNX61QnONTO9Db2TqT7Kwx";
+        configuration.server = @"https://parseapi.back4app.com";
+    }]];
 
 
     return YES;
