@@ -2,25 +2,16 @@
 //  Beacon.h
 //  artiRelicAppleSomething
 //
-//  Created by Jeremy Moore on 8/8/16.
+//  Created by David Swaintek on 8/10/16.
 //  Copyright © 2016 Erin Roby. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-#import "CoreDataStack.h"
-#import "NSManagedObjectContext+NSManagedObjectContext.h"
+#import <Parse/Parse.h>
 
-@class Piece;
+@interface Beacon : PFObject <PFSubclassing>
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface Beacon : NSManagedObject
-
-+ (instancetype)beaconWithUIID: (NSString *)uiid major:(NSString *)major minor:(NSString *)minor;
+@property (strong, nonatomic)NSString *uiid;
+@property (strong, nonatomic)NSString *major;
+@property (strong, nonatomic)NSString *minor;
 
 @end
-
-NS_ASSUME_NONNULL_END
-
-#import "Beacon+CoreDataProperties.h"

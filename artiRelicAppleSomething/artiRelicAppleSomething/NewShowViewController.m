@@ -39,23 +39,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
--(Show *)createShow:(NSString *)title subtitle:(NSString *)subtitle
-{
-    
-    Show *show = [Show showWithTitle:title subtitle:subtitle desc:@""];
-    return show;
-}
-
 
 - (void)presentAlert
 {
@@ -77,24 +60,23 @@
     if ([title  isEqual: @""] || !title) {
         [self presentAlert];
     } else {
-        Show *show = [Show showWithTitle:title subtitle:subtitle desc:desc];
+        Show *show = [Show publishShowWithTitle:title subtitle:subtitle desc:desc];
         if (self.image) {
-            show.image = [[ImageHelper shared]dataFromImage:self.image];
+            show.image = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.image]];;
         }
         if (self.thumb) {
-            show.thumbnail = [[ImageHelper shared]dataFromImage:self.thumb];
+            show.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
         }
         
-        NSLog(@"Show created: %@", show);
-        NSLog(@"Self.show: %@", self.show);
+        NSLog(@"Show created: %@", show.title);
         
-        NSError *error;
-        [[NSManagedObjectContext managerContext]save:&error];
-        if (error) {
-            NSLog(@"Error saving show: %@", error);
-        } else {
-            NSLog(@"Succesfully saved show");
-        }
+        [show saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"Show saved to parse");
+            } else {
+                NSLog(@"Show failed to save to parse");
+            }
+        }];
     }
 
 }
@@ -114,18 +96,10 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
 
-    self.image = info[UIImagePickerControllerOriginalImage];
+    self.image = info[UIImagePickerControllerEditedImage];
     self.thumb = [[ImageHelper shared] thumbFromImage:self.image];
     
     self.headerImage.image = self.image;
-    
-    NSError *error;
-    [[NSManagedObjectContext managerContext] save:&error];
-    if (error) {
-        NSLog(@"Error saving image: %@", error);
-    } else {
-        NSLog(@"Saved image, error code: %@", error);
-    }
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
