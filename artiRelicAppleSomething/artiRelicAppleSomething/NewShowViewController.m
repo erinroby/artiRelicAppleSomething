@@ -8,10 +8,10 @@
 
 #import "NewShowViewController.h"
 
+
 @interface NewShowViewController () <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-//@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
-//- (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *save;
 - (IBAction)savePressed:(id)sender;
@@ -72,12 +72,19 @@
 {
     NSString *title = self.titleTextField.text;
     NSString *subtitle = self.subtitleTextField.text;
+    NSString *desc = self.descriptionTextField.text;
     
     if ([title  isEqual: @""] || !title) {
         [self presentAlert];
     } else {
-        Show *show = [self createShow:title subtitle:subtitle];
-        self.show = show;
+        Show *show = [Show showWithTitle:title subtitle:subtitle desc:desc];
+        if (self.image) {
+            show.image = [[ImageHelper shared]dataFromImage:self.image];
+        }
+        if (self.thumb) {
+            show.thumbnail = [[ImageHelper shared]dataFromImage:self.thumb];
+        }
+        
         NSLog(@"Show created: %@", show);
         NSLog(@"Self.show: %@", self.show);
         
@@ -107,8 +114,10 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
 
-    self.show.image = UIImagePNGRepresentation(info[UIImagePickerControllerOriginalImage]);
-    self.headerImage.image = (info[UIImagePickerControllerOriginalImage]);
+    self.image = info[UIImagePickerControllerOriginalImage];
+    self.thumb = [[ImageHelper shared] thumbFromImage:self.image];
+    
+    self.headerImage.image = self.image;
     
     NSError *error;
     [[NSManagedObjectContext managerContext] save:&error];
