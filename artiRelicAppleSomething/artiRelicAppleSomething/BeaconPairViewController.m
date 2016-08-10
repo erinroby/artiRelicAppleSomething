@@ -73,6 +73,8 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
     BeaconDetails *beaconDetails = content;
     if (beaconDetails) {
         NSLog(@"%@", beaconDetails.beaconName);
+        CLBeaconRegion *region = [self.proximityContentManager.beaconId asBeaconRegion];
+        NSLog(@"%@", region);
         self.UIID.text = self.proximityContentManager.beaconId.description;
         self.view.backgroundColor = beaconDetails.backgroundColor;
         self.tableView.backgroundColor = beaconDetails.backgroundColor;
