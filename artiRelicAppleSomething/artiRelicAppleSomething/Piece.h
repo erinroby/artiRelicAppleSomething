@@ -2,25 +2,30 @@
 //  Piece.h
 //  artiRelicAppleSomething
 //
-//  Created by Jeremy Moore on 8/8/16.
+//  Created by David Swaintek on 8/10/16.
 //  Copyright © 2016 Erin Roby. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-#import "CoreDataStack.h"
-#import "NSManagedObjectContext+NSManagedObjectContext.h"
+#import <Parse/Parse.h>
 
-@class Beacon, Show;
+#import "Show.h"
+#import "Beacon.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@interface Piece : PFObject <PFSubclassing>
 
-@interface Piece : NSManagedObject
 
-+ (instancetype)pieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price narration:(NSURL *)narration;
+@property (strong, nonatomic)Show *show;
+@property (strong, nonatomic)NSString *title;
+@property (strong, nonatomic)NSString *subtitle;
+@property (strong, nonatomic)NSString *desc;
+@property (strong, nonatomic)NSString *artist;
+@property (strong, nonatomic)NSString *price;
+@property (strong, nonatomic)NSData *image;
+@property (strong, nonatomic)NSData *thumbnail;
+@property (strong, nonatomic)NSData *audio;
+@property (strong, nonatomic)Beacon *beacon;
+
++(instancetype)pieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price;
+
 
 @end
-
-NS_ASSUME_NONNULL_END
-
-#import "Piece+CoreDataProperties.h"

@@ -2,26 +2,42 @@
 //  Curator.m
 //  artiRelicAppleSomething
 //
-//  Created by Jeremy Moore on 8/8/16.
+//  Created by David Swaintek on 8/10/16.
 //  Copyright © 2016 Erin Roby. All rights reserved.
 //
 
 #import "Curator.h"
-#import "Show.h"
+
+@interface Curator() <PFSubclassing>
+
+@end
 
 @implementation Curator
 
-+ (instancetype) curatorWithUserName:(NSString *)userName password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName
-{
-    Curator *curator = [NSEntityDescription insertNewObjectForEntityForName:@"Curator" inManagedObjectContext:[NSManagedObjectContext managerContext]];
-    curator.userName = userName;
-    curator.password = password;
+@synthesize firstName;
+@synthesize lastName;
+@synthesize userName;
+@synthesize password;
+
++ (void)load {
+    
+    [self registerSubclass];
+    
+}
+
++ (NSString *)parseClassName {
+    return @"Curator";
+}
+
++ (instancetype)curatorWithFirstName:(NSString *)firstName lastName:(NSString *)lastName userName:(NSString *)userName password:(NSString *)password {
+    Curator *curator = [[Curator alloc]init];
     curator.firstName = firstName;
     curator.lastName = lastName;
+    curator.userName = userName;
+    curator.password = password;
     
     return curator;
 }
-
 
 
 @end

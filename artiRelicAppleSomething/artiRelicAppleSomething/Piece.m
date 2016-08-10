@@ -2,27 +2,63 @@
 //  Piece.m
 //  artiRelicAppleSomething
 //
-//  Created by Jeremy Moore on 8/8/16.
+//  Created by David Swaintek on 8/10/16.
 //  Copyright © 2016 Erin Roby. All rights reserved.
 //
 
 #import "Piece.h"
-#import "Beacon.h"
-#import "Show.h"
 
 @implementation Piece
 
-+ (instancetype)pieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price narration:(NSURL *)narration
+@synthesize show;
+@synthesize title;
+@synthesize subtitle;
+@synthesize desc;
+@synthesize artist;
+@synthesize price;
+@synthesize image;
+@synthesize thumbnail;
+@synthesize audio;
+@synthesize beacon;
+
++ (void)load
 {
-    Piece *piece = [NSEntityDescription insertNewObjectForEntityForName:@"Piece" inManagedObjectContext:[NSManagedObjectContext managerContext]];
-    
+    [self registerSubclass];
+}
+
++(NSString *)parseClassName
+{
+    return @"Piece";
+}
+
++(instancetype)pieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price
+{
+    Piece *piece = [[Piece alloc]init];
     piece.title = title;
     piece.desc = desc;
     piece.artist = artist;
     piece.price = price;
-    piece.narration = narration;
     
     return piece;
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

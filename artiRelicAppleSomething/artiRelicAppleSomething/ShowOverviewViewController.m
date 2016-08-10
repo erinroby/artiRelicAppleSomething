@@ -43,7 +43,7 @@
 
 
 -(NSArray *)dataSource {
-    return [self.show.pieces allObjects];
+    return self.show.pieces;
 }
 
 - (IBAction)editButtonSelected:(id)sender {
@@ -82,21 +82,9 @@
 - (IBAction)publishButtonSelected:(UIBarButtonItem *)sender {
     if (self.show)
     {
-        ShowToPublish *showToPublish = [ShowToPublish publishShowWithTitle:self.show.title subtitle:self.show.subtitle desc:self.show.desc];
-        showToPublish.curator = self.show.curator;
-        showToPublish.image = self.show.image;
-        showToPublish.pieces = [self.show.pieces allObjects];
-       
-        
-        
-        [showToPublish saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            if (succeeded) {
-                NSLog(@"Show published!!");
-            } else {
-                NSLog(@"Error publishing show: %@", error);
-            }
-        }];
-        
+        [self.show saveInBackground];
+    } else {
+        NSLog (@"Show failed to save to parse");
     }
 }
 

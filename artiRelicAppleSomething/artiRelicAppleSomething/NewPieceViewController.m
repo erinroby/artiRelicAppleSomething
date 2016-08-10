@@ -38,6 +38,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //Audio setup
     _playButton.enabled = NO;
     _stopButton.enabled = NO;
 
@@ -113,34 +115,39 @@
     NSString *desc = self.pieceDescription.text;
     NSString *artist = self.pieceArtistTextField.text;
     NSString *price = self.piecePrice.text;
-
+    
     if ([title isEqualToString:@""] || !title) {
         [self presentAlert];
     } else {
-        Piece *piece = [self createPieceWithTitle:title desc:desc artist:artist price:price];
+        Piece *piece = [Piece pieceWithTitle:title desc:desc artist:artist price:price];
         self.piece = piece;
-
+        
         piece.audio = [NSData dataWithContentsOfURL:_soundFileURL];
+        
         if (self.image) {
-        piece.image = [[ImageHelper shared]dataFromImage:self.image];
+            piece.image = [[ImageHelper shared]dataFromImage:self.image];
         }
         if (self.thumb) {
             piece.thumbnail = [[ImageHelper shared]dataFromImage:self.thumb];
         }
         piece.show = self.show;
-
-        NSLog(@"Piece created: %@", piece);
+        [self.show.pieces addObject:piece];
+        
+        NSLog(@"Piece created");
         NSLog(@"Self.piece: %@", self.piece);
-
-        NSError *error;
-        [[NSManagedObjectContext managerContext]save:&error];
-        if (error) {
-            NSLog(@"Error saving piece: %@", error);
-        } else {
-            NSLog(@"Succesfully saved piece");
-        }
+        
+        [piece saveInBackground];
     }
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:@"ShowOverviewViewController"]){
+        ShowOverviewViewController *showOverviewViewController = [segue destinationViewController];
+        showOverviewViewController.show = self.show;
+    }
+    
 }
 
 - (IBAction)playButtonPressed:(UIButton *)sender {
@@ -201,11 +208,6 @@
 
 }
 
--(Piece*)createPieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price
-{
-    Piece *piece = [Piece pieceWithTitle:title desc:desc artist:artist price:price narration:narration];
-    return piece;
-}
 
 
 
@@ -213,17 +215,9 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
-    self.image = info[UIImagePickerControllerOriginalImage];
+    self.image = info[UIImagePickerControllerEditedImage];
     self.thumb = [[ImageHelper shared] thumbFromImage:self.image];
     self.pieceImage.image = self.image;
-
-    NSError *error;
-    [[NSManagedObjectContext managerContext] save:&error];
-    if (error) {
-        NSLog(@"Error saving image: %@", error);
-    } else {
-        NSLog(@"Saved image, error code: %@", error);
-    }
 
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

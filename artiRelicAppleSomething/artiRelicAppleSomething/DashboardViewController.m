@@ -38,17 +38,16 @@
 }
 
 -(NSArray *)dataSource {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Show"];
-    NSError *error;
-    NSArray *results = [[NSManagedObjectContext managerContext]executeFetchRequest:request error:&error];
-    
-    if (error) {
-        NSLog(@"Error fetching shows: %@", error);
-        return nil;
-    } else {
-        return results;
-    }
+    PFQuery *query = [PFQuery queryWithClassName:@"Show"];
+     [[[query findObjectsInBackground]continueWithSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
+        NSArray *results = t.result;
+        NSMutableArray *saveTasks = [NSMutableArray arrayWithCapacity:[results count]];
+        return [BFTask taskForCompletionOfAllTasks:saveTasks];
+    }] continueWithExecutor:[BFExecutor mainThreadExecutor]withSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
+        return t;
+    }];
 }
+
 
 #pragma MARK - UICollectionViewDelegate methods
 
