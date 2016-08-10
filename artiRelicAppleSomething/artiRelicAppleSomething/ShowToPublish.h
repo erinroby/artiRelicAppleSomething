@@ -22,4 +22,7 @@
 @property (strong, nonatomic) Curator *curator;
 @property (strong, nonatomic) NSArray<Piece *> *pieces;
 
++(instancetype)publishShowWithTitle:(NSString *)title subtitle:(NSString *)subtitle desc:(NSString *)desc;
+
+
 @end

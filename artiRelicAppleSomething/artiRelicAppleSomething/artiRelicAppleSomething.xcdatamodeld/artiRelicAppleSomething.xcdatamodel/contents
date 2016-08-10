@@ -18,6 +18,7 @@
         <attribute name="audio" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="narration" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumbnail" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -36,7 +37,7 @@
     <elements>
         <element name="Beacon" positionX="-110" positionY="-144" width="128" height="103"/>
         <element name="Curator" positionX="-758" positionY="-144" width="128" height="118"/>
-        <element name="Piece" positionX="-326" positionY="-144" width="128" height="178"/>
+        <element name="Piece" positionX="-326" positionY="-144" width="128" height="180"/>
         <element name="Show" positionX="-560" positionY="-144" width="128" height="148"/>
     </elements>
 </model>

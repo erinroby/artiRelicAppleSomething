@@ -24,7 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.pieceCollectionView.delegate = self;
+    self.pieceCollectionView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,17 +34,28 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    self.pieceCollectionView.reloadData;
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
+
+-(NSArray *)dataSource {
+    return [self.show.pieces allObjects];
+}
 
 - (IBAction)editButtonSelected:(id)sender {
+}
+
+#pragma mark Prepare for Segue
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"NewPieceViewController"]) {
+        NewPieceViewController *newPieceViewController = [segue destinationViewController];
+        newPieceViewController.show = self.show;
+    }
 }
 
 #pragma MARK - UICollectionViewDelegate methods
@@ -50,14 +63,45 @@
 #pragma MARK - UICollectionViewDataSource methods
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
     return self.dataSource.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [[UICollectionViewCell alloc]init];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"pieceCell" forIndexPath:indexPath];
+    
+    UIImageView *cellImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(0.0, 0.0, 150.0, 150.0))];
+    Piece *piece = self.dataSource[indexPath.row];
+    UIImage *thumb = [UIImage imageWithData:piece.image];
+    cellImageView.image = thumb;
+    [cell.contentView addSubview:cellImageView];
+    
     return cell;
 }
 
 - (IBAction)publishButtonSelected:(UIBarButtonItem *)sender {
+    if (self.show)
+    {
+        ShowToPublish *showToPublish = [ShowToPublish publishShowWithTitle:self.show.title subtitle:self.show.subtitle desc:self.show.desc];
+        showToPublish.curator = self.show.curator;
+        showToPublish.image = self.show.image;
+        showToPublish.pieces = [self.show.pieces allObjects];
+       
+        
+        
+        [showToPublish saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"Show published!!");
+            } else {
+                NSLog(@"Error publishing show: %@", error);
+            }
+        }];
+        
+    }
 }
+
 @end
+
+
+
+
