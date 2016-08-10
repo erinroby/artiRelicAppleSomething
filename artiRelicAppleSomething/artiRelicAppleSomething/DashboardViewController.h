@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CoreDataStack.h"
-#import "NSManagedObjectContext+NSManagedObjectContext.h"
+#import <Parse/Parse.h>
 #import "Curator.h"
 #import "Show.h"
 
