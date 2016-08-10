@@ -12,7 +12,7 @@
 
 @implementation Piece
 
-+ (instancetype)pieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price
++ (instancetype)pieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price narration:(NSURL *)narration
 {
     Piece *piece = [NSEntityDescription insertNewObjectForEntityForName:@"Piece" inManagedObjectContext:[NSManagedObjectContext managerContext]];
     
@@ -20,6 +20,7 @@
     piece.desc = desc;
     piece.artist = artist;
     piece.price = price;
+    piece.narration = narration;
     
     return piece;
 }
