@@ -17,17 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsX-id-HbS">
-                                <rect key="frame" x="294" y="289" width="33" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsX-id-HbS">
+                                <rect key="frame" x="284" y="289" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rsX-id-HbS" firstAttribute="top" secondItem="MIK-0O-en7" secondAttribute="bottom" constant="225" id="PgT-h8-WwI"/>
+                            <constraint firstItem="rsX-id-HbS" firstAttribute="centerY" secondItem="hys-hi-MR7" secondAttribute="centerY" id="jHy-hc-ZXO"/>
+                            <constraint firstItem="rsX-id-HbS" firstAttribute="centerX" secondItem="hys-hi-MR7" secondAttribute="centerX" id="sOF-Zq-7H5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ynm-pM-llW">
-                        <barButtonItem key="rightBarButtonItem" title="To Show -&gt;" id="Chy-IW-OeN">
+                        <barButtonItem key="rightBarButtonItem" title="To Show" id="Chy-IW-OeN">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="vRv-NT-t6t"/>
                             </connections>
@@ -50,8 +55,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrF-2p-u8N">
-                                <rect key="frame" x="203" y="467" width="194" height="57"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrF-2p-u8N">
+                                <rect key="frame" x="230" y="467" width="140" height="57"/>
                                 <state key="normal" title="Button" image="ApplePayBTN_64pt__black_logo_"/>
                                 <connections>
                                     <action selector="payPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0vq-V1-p9J"/>

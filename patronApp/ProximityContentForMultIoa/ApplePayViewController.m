@@ -46,15 +46,32 @@
             completion(PKPaymentAuthorizationStatusFailure);
         } else {
             [PFCloud callFunctionInBackground:@"finalizePurchase"
-                               withParameters:@{@"amount":@1225, @"cardToken":token.tokenId}
+                               withParameters:@{@"cardToken":token.tokenId}
                                         block:^(id  _Nullable object, NSError * _Nullable error) {
+                                                if (error) {
+                                                    NSLog(@"test😎");
+                                                    NSLog(@"%@", error.localizedDescription);
+                                                } else {
+                                                    NSLog(@"This is the object: %@", object);
+                                                }
+            }];
+            
+            [PFCloud callFunctionInBackground:@"hello" withParameters:nil block:^(id  _Nullable object, NSError * _Nullable error) {
                 if (error) {
-                    NSLog(@"test😎");
                     NSLog(@"%@", error.localizedDescription);
                 } else {
                     NSLog(@"%@", object);
                 }
             }];
+            
+//            [PFCloud callFunctionInBackground:@"hello" withParameters:nil block:^(id  _Nullable object, NSError * _Nullable error) {
+//                if (error) {
+//                    NSLog(@"%@", error.localizedDescription);
+//                } else {
+//                    NSLog(@"%@", object);
+//                }
+//            }];
+            
             NSLog(@"%@", token);
             completion(PKPaymentAuthorizationStatusSuccess);
         }

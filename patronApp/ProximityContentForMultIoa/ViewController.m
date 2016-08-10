@@ -9,6 +9,8 @@
 #import "CachingContentFactory.h"
 #import "ProximityContentManager.h"
 
+@import Parse;
+
 @interface ViewController () <ProximityContentManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
@@ -36,6 +38,12 @@
     self.proximityContentManager.delegate = self;
 
     [self.proximityContentManager startContentUpdates];
+    
+    PFObject *testObject = [[PFObject alloc]initWithClassName:@"testObjectHannah"];
+    testObject[@"TestTest"] = @"test";
+    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        NSLog(@"HannahCCTestCompleted");
+    }];
 }
 
 - (void)proximityContentManager:(ProximityContentManager *)proximityContentManager didUpdateContent:(id)content {

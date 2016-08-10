@@ -19,9 +19,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ESTConfig setupAppID:@"proximity-content-for-mult-ioa" andAppToken:@"b796ce4b2a572e8707b202a92fb80ee5"];
     
+    // apply pay and stripe
     [[STPPaymentConfiguration sharedConfiguration] setPublishableKey:@"pk_test_TGCXR26srXhXwWm0goG29cDi"];
     [[STPPaymentConfiguration sharedConfiguration] setAppleMerchantIdentifier:@"merchant.com.patronapp"];
     
+    //parse
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
         configuration.applicationId =@"L41o5UblNSd2YS1x0yTtdG1kXgE1g56qoQxFwdm1";
         configuration.clientKey = @"BurwhvrUWhdo6Ao7t0bNX61QnONTO9Db2TqT7Kwx";
