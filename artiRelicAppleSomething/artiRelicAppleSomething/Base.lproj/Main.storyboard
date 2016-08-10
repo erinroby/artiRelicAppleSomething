@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QMX-Vc-rwu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Aqm-KO-Q2h">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -352,7 +352,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record Narration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDz-dZ-Tc7">
                                 <rect key="frame" x="235" y="464" width="131" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2E-Dn-4b7">
@@ -450,19 +450,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4f-58-TKb">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="F8e-o3-4Pc"/>
+                                    <barButtonItem systemItem="save" id="Av6-ii-EOx">
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="KDP-VB-VGr" id="8FW-2k-hBe"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o4f-58-TKb" firstAttribute="leading" secondItem="RWH-Qc-1mA" secondAttribute="leading" id="ZlQ-tY-Nq5"/>
+                            <constraint firstAttribute="trailing" secondItem="o4f-58-TKb" secondAttribute="trailing" id="i29-Hx-w9g"/>
+                            <constraint firstItem="fVf-0k-7hI" firstAttribute="top" secondItem="o4f-58-TKb" secondAttribute="bottom" id="tu1-Wr-Gza"/>
+                        </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="F8e-o3-4Pc"/>
-                        <barButtonItem systemItem="save" id="Av6-ii-EOx">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="KDP-VB-VGr" id="8FW-2k-hBe"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <connections>
-                        <outlet property="saveButton" destination="Av6-ii-EOx" id="0Ow-os-AxU"/>
+                        <outlet property="saveButton" destination="o4f-58-TKb" id="3ep-Se-9Ce"/>
                         <outlet property="tableView" destination="kP3-wE-gcd" id="QAm-RH-f5N"/>
                     </connections>
                 </viewController>

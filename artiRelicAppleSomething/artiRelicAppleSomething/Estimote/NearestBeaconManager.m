@@ -8,6 +8,7 @@
 
 @property (nonatomic) BOOL firstEventSent;
 
+
 @end
 
 @implementation NearestBeaconManager
@@ -41,6 +42,7 @@
 
 - (void)beaconManager:(id)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
     CLBeacon *nearestBeacon = beacons.firstObject;
+    _beacons = beacons;
 
     if (!(nearestBeacon.beaconID == nil && self.nearestBeaconID == nil)
             || ![nearestBeacon.beaconID isEqual:self.nearestBeaconID]
@@ -48,8 +50,20 @@
         self.nearestBeaconID = nearestBeacon.beaconID;
         [self.delegate nearestBeaconManager:self didUpdateNearestBeaconID:self.nearestBeaconID];
         self.firstEventSent = true;
+
     }
+    
 }
+
+//- (void)beaconManager:(id)manager didRangeBeacons:(NSArray *)beacons
+//             inRegion:(CLBeaconRegion *)region {
+//    CLBeacon *nearestBeacon = beacons.firstObject;
+//    if (nearestBeacon) {
+//        NSArray *places = [self placesNearBeacon:nearestBeacon];
+//        // TODO: update the UI here
+//        NSLog(@"%@", places); // TODO: remove after implementing the UI
+//    }
+//}
 
 - (void)beaconManager:(id)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted) {
