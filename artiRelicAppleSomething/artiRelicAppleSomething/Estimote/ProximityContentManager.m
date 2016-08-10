@@ -5,12 +5,10 @@
 #import "ProximityContentManager.h"
 
 #import "BeaconContentFactory.h"
-#import "NearestBeaconManager.h"
 
 @interface ProximityContentManager () <NearestBeaconManagerDelegate>
 
 @property (nonatomic) id<BeaconContentFactory> beaconContentFactory;
-@property (nonatomic) NearestBeaconManager *nearestBeaconManager;
 
 @end
 

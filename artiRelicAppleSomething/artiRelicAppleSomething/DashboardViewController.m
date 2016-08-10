@@ -23,7 +23,7 @@
     [super viewDidLoad];
     self.showCollectionView.delegate = self;
     self.showCollectionView.dataSource = self;
-    [self.showCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"showCell"];
+//    [self.showCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"showCell"];
 
 }
 
@@ -58,7 +58,10 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"showCell" forIndexPath:indexPath];
     // TODO: Configure cell for reals here!
-    cell.backgroundColor = [UIColor blackColor];
+    
+    
+    
+    Show *show = self.dataSource[indexPath.row];
     return cell;
 }
 

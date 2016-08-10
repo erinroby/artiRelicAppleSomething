@@ -4,6 +4,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "NearestBeaconManager.h"
 #import "BeaconContentFactory.h"
 
 @class ProximityContentManager;
@@ -17,6 +18,9 @@
 @interface ProximityContentManager : NSObject
 
 @property (weak, nonatomic) id<ProximityContentManagerDelegate> delegate;
+@property (nonatomic) NearestBeaconManager *nearestBeaconManager;
+
+
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
