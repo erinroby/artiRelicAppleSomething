@@ -15,6 +15,7 @@
     </entity>
     <entity name="Piece" representedClassName="Piece" syncable="YES">
         <attribute name="artist" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="audio" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="narration" optional="YES" attributeType="Binary" syncable="YES"/>

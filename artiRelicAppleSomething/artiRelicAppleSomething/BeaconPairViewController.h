@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProximityContentManager.h"
 
 @interface BeaconPairViewController : UIViewController
+
 
 @end

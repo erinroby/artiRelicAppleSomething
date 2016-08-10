@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QMX-Vc-rwu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Aqm-KO-Q2h">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="jmZ-rd-G87">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="showCell" id="jmZ-rd-G87">
                                         <rect key="frame" x="0.0" y="64" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -111,6 +111,13 @@
                                                     <outletCollection property="gestureRecognizers" destination="4PZ-qE-anl" appends="YES" id="9Bx-kI-45o"/>
                                                 </connections>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahd-YF-H41">
+                                                <rect key="frame" x="460" y="300" width="37" height="30"/>
+                                                <state key="normal" title="SAVE"/>
+                                                <connections>
+                                                    <action selector="savePressed:" destination="PuZ-ZL-qwv" eventType="touchUpInside" id="xd3-qM-ani"/>
+                                                </connections>
+                                            </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A18-uz-1LO">
                                                 <rect key="frame" x="20" y="470" width="560" height="100"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,13 +128,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahd-YF-H41">
-                                                <rect key="frame" x="460" y="300" width="37" height="30"/>
-                                                <state key="normal" title="SAVE"/>
-                                                <connections>
-                                                    <action selector="savePressed:" destination="PuZ-ZL-qwv" eventType="touchUpInside" id="xd3-qM-ani"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -170,6 +170,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="descriptionTextField" destination="A18-uz-1LO" id="kF4-gR-PRx"/>
                         <outlet property="headerImage" destination="g71-rR-c5E" id="mvE-C4-Top"/>
                         <outlet property="headerImageTapGesture" destination="4PZ-qE-anl" id="PaR-uT-8KC"/>
                         <outlet property="save" destination="ahd-YF-H41" id="Vmo-JU-ybo"/>
@@ -209,7 +210,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1o2-bT-rL1">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="showCell" reuseIdentifier="pieceCell" id="1o2-bT-rL1">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -292,6 +293,7 @@
                         <subviews>
                             <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pae-4G-H21">
                                 <rect key="frame" x="150" y="50" width="300" height="300"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="DrB-9F-T9x"/>
@@ -360,15 +362,30 @@
                                     <action selector="playButtonPressed:" destination="QMX-Vc-rwu" eventType="touchUpInside" id="d1z-jW-Fwz"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCl-5j-A6o">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Beacon!" id="hWM-lS-c9D">
+                                        <connections>
+                                            <segue destination="KDP-VB-VGr" kind="show" identifier="BeaconPairViewController" id="G9a-3Z-aTl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="osQ-fB-bwx"/>
+                                    <barButtonItem title="Preview" id="p7o-Na-GXr"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="i2g-9f-oLs" secondAttribute="bottom" id="0Zt-K0-LUC"/>
+                            <constraint firstAttribute="trailing" secondItem="vCl-5j-A6o" secondAttribute="trailing" id="11e-Dm-tY6"/>
                             <constraint firstItem="6ca-mn-IKw" firstAttribute="leading" secondItem="MOa-N2-r1o" secondAttribute="leading" constant="20" id="2gF-kp-k3e"/>
                             <constraint firstItem="D35-GD-e5b" firstAttribute="bottom" secondItem="Pae-4G-H21" secondAttribute="bottom" id="5II-rM-M7q"/>
                             <constraint firstItem="i2g-9f-oLs" firstAttribute="leading" secondItem="MOa-N2-r1o" secondAttribute="leading" constant="20" id="9Cq-E1-44d"/>
+                            <constraint firstItem="vCl-5j-A6o" firstAttribute="leading" secondItem="MOa-N2-r1o" secondAttribute="leading" id="9VV-hv-KAP"/>
                             <constraint firstAttribute="trailing" secondItem="6ca-mn-IKw" secondAttribute="trailing" constant="20" id="CoZ-gs-Cwe"/>
                             <constraint firstItem="Pae-4G-H21" firstAttribute="top" secondItem="XJz-4W-npO" secondAttribute="bottom" constant="30" id="IY1-8Y-80b"/>
+                            <constraint firstItem="gWT-Dr-OhH" firstAttribute="top" secondItem="vCl-5j-A6o" secondAttribute="bottom" id="Qaq-8x-bnW"/>
                             <constraint firstItem="nLw-mk-8Tr" firstAttribute="top" secondItem="Pae-4G-H21" secondAttribute="bottom" constant="43" id="SEC-VQ-dkR"/>
                             <constraint firstItem="nLw-mk-8Tr" firstAttribute="trailing" secondItem="MOa-N2-r1o" secondAttribute="trailingMargin" id="Una-Gr-RTT"/>
                             <constraint firstItem="Pae-4G-H21" firstAttribute="centerX" secondItem="MOa-N2-r1o" secondAttribute="centerX" id="WI3-TC-jj6"/>
@@ -381,15 +398,7 @@
                             <constraint firstItem="i2g-9f-oLs" firstAttribute="top" secondItem="Ecd-Vf-tc8" secondAttribute="bottom" constant="25" id="tEL-5l-XVG"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Beacon!" id="hWM-lS-c9D">
-                            <connections>
-                                <segue destination="KDP-VB-VGr" kind="show" identifier="BeaconPairViewController" id="G9a-3Z-aTl"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="hGn-M0-ktX"/>
-                        <barButtonItem title="Preview" id="p7o-Na-GXr"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <connections>
                         <outlet property="narrationLabel" destination="yDz-dZ-Tc7" id="7h6-Fm-pob"/>
                         <outlet property="pieceArtistTextField" destination="6ca-mn-IKw" id="07m-Hi-CEv"/>
@@ -431,11 +440,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ghw-os-Tp9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="beaconCell" id="ghw-os-Tp9">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghw-os-Tp9" id="eIK-la-Llu">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

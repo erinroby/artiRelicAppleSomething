@@ -34,16 +34,18 @@
 		0DDE700B1D592A0E002F51A2 /* PieceOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE700A1D592A0E002F51A2 /* PieceOverviewViewController.m */; };
 		0DDE700E1D592A84002F51A2 /* BeaconPairViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */; };
 		700DB6FF1D5A403C00B4916E /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700DB6FE1D5A403C00B4916E /* ImageHelper.m */; };
+		700DB7021D5A75D100B4916E /* ShowToPublish.m in Sources */ = {isa = PBXBuildFile; fileRef = 700DB7011D5A75D100B4916E /* ShowToPublish.m */; };
+		700DB7051D5A77F500B4916E /* Piece+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 700DB7041D5A77F500B4916E /* Piece+CoreDataProperties.m */; };
 		70AF430F1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF430E1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m */; };
 		70AF43141D59433A004999F1 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43131D59433A004999F1 /* CoreDataStack.m */; };
 		70AF433F1D594B88004999F1 /* Show+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43301D594B88004999F1 /* Show+CoreDataProperties.m */; };
 		70AF43401D594B88004999F1 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43321D594B88004999F1 /* Show.m */; };
 		70AF43411D594B88004999F1 /* Curator+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43341D594B88004999F1 /* Curator+CoreDataProperties.m */; };
 		70AF43421D594B88004999F1 /* Curator.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43361D594B88004999F1 /* Curator.m */; };
-		70AF43431D594B88004999F1 /* Piece+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF43381D594B88004999F1 /* Piece+CoreDataProperties.m */; };
 		70AF43441D594B88004999F1 /* Piece.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF433A1D594B88004999F1 /* Piece.m */; };
 		70AF43451D594B88004999F1 /* Beacon+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF433C1D594B88004999F1 /* Beacon+CoreDataProperties.m */; };
 		70AF43461D594B88004999F1 /* Beacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AF433E1D594B88004999F1 /* Beacon.m */; };
+		70FC5EC61D5AA36C0082268D /* addAPiece.png in Resources */ = {isa = PBXBuildFile; fileRef = 70FC5EC51D5AA36C0082268D /* addAPiece.png */; };
 		EE9B0FE81D5912E600B3AF83 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE51D5912E600B3AF83 /* Bolts.framework */; };
 		EE9B0FE91D5912E600B3AF83 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE61D5912E600B3AF83 /* Parse.framework */; };
 		EE9B0FEA1D5912E600B3AF83 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE71D5912E600B3AF83 /* Stripe.framework */; };
@@ -135,6 +137,10 @@
 		0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconPairViewController.m; sourceTree = "<group>"; };
 		700DB6FD1D5A403C00B4916E /* ImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelper.h; sourceTree = "<group>"; };
 		700DB6FE1D5A403C00B4916E /* ImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHelper.m; sourceTree = "<group>"; };
+		700DB7001D5A75D100B4916E /* ShowToPublish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowToPublish.h; sourceTree = "<group>"; };
+		700DB7011D5A75D100B4916E /* ShowToPublish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowToPublish.m; sourceTree = "<group>"; };
+		700DB7031D5A77F500B4916E /* Piece+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Piece+CoreDataProperties.h"; sourceTree = "<group>"; };
+		700DB7041D5A77F500B4916E /* Piece+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Piece+CoreDataProperties.m"; sourceTree = "<group>"; };
 		70AF430D1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+NSManagedObjectContext.h"; sourceTree = "<group>"; };
 		70AF430E1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+NSManagedObjectContext.m"; sourceTree = "<group>"; };
 		70AF43121D59433A004999F1 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
@@ -147,14 +153,13 @@
 		70AF43341D594B88004999F1 /* Curator+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Curator+CoreDataProperties.m"; sourceTree = "<group>"; };
 		70AF43351D594B88004999F1 /* Curator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Curator.h; sourceTree = "<group>"; };
 		70AF43361D594B88004999F1 /* Curator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Curator.m; sourceTree = "<group>"; };
-		70AF43371D594B88004999F1 /* Piece+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Piece+CoreDataProperties.h"; sourceTree = "<group>"; };
-		70AF43381D594B88004999F1 /* Piece+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Piece+CoreDataProperties.m"; sourceTree = "<group>"; };
 		70AF43391D594B88004999F1 /* Piece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piece.h; sourceTree = "<group>"; };
 		70AF433A1D594B88004999F1 /* Piece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Piece.m; sourceTree = "<group>"; };
 		70AF433B1D594B88004999F1 /* Beacon+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Beacon+CoreDataProperties.h"; sourceTree = "<group>"; };
 		70AF433C1D594B88004999F1 /* Beacon+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Beacon+CoreDataProperties.m"; sourceTree = "<group>"; };
 		70AF433D1D594B88004999F1 /* Beacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beacon.h; sourceTree = "<group>"; };
 		70AF433E1D594B88004999F1 /* Beacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beacon.m; sourceTree = "<group>"; };
+		70FC5EC51D5AA36C0082268D /* addAPiece.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addAPiece.png; sourceTree = "<group>"; };
 		EE9B0FE51D5912E600B3AF83 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		EE9B0FE61D5912E600B3AF83 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		EE9B0FE71D5912E600B3AF83 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = Carthage/Build/iOS/Stripe.framework; sourceTree = "<group>"; };
@@ -279,6 +284,7 @@
 		0D3F74E11D59834D00CFB845 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				70FC5EC51D5AA36C0082268D /* addAPiece.png */,
 				0D3F74E21D59836300CFB845 /* picasso.jpg */,
 				0D3F74E31D59836300CFB845 /* picasso1.jpg */,
 				0D3F74E41D59836300CFB845 /* picasso2.jpg */,
@@ -332,6 +338,8 @@
 				70AF433D1D594B88004999F1 /* Beacon.h */,
 				70AF433E1D594B88004999F1 /* Beacon.m */,
 				0D2FD0271D5907E2004DF6B9 /* artiRelicAppleSomething.xcdatamodeld */,
+				700DB7001D5A75D100B4916E /* ShowToPublish.h */,
+				700DB7011D5A75D100B4916E /* ShowToPublish.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -352,12 +360,12 @@
 		70AF432E1D594B67004999F1 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				700DB7031D5A77F500B4916E /* Piece+CoreDataProperties.h */,
+				700DB7041D5A77F500B4916E /* Piece+CoreDataProperties.m */,
 				70AF432F1D594B88004999F1 /* Show+CoreDataProperties.h */,
 				70AF43301D594B88004999F1 /* Show+CoreDataProperties.m */,
 				70AF43331D594B88004999F1 /* Curator+CoreDataProperties.h */,
 				70AF43341D594B88004999F1 /* Curator+CoreDataProperties.m */,
-				70AF43371D594B88004999F1 /* Piece+CoreDataProperties.h */,
-				70AF43381D594B88004999F1 /* Piece+CoreDataProperties.m */,
 				70AF433B1D594B88004999F1 /* Beacon+CoreDataProperties.h */,
 				70AF433C1D594B88004999F1 /* Beacon+CoreDataProperties.m */,
 			);
@@ -474,6 +482,7 @@
 				0D2FD0261D5907E2004DF6B9 /* Main.storyboard in Resources */,
 				0D3F74E61D59836300CFB845 /* picasso1.jpg in Resources */,
 				0D3F74E71D59836300CFB845 /* picasso2.jpg in Resources */,
+				70FC5EC61D5AA36C0082268D /* addAPiece.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +516,7 @@
 				70AF43461D594B88004999F1 /* Beacon.m in Sources */,
 				0D2FD0661D59085F004DF6B9 /* BeaconDetailsCloudFactory.m in Sources */,
 				0D2FD0681D59085F004DF6B9 /* BeaconDetailsStaticFactory.m in Sources */,
+				700DB7021D5A75D100B4916E /* ShowToPublish.m in Sources */,
 				70AF43401D594B88004999F1 /* Show.m in Sources */,
 				0D2FD06A1D59085F004DF6B9 /* BeaconID.m in Sources */,
 				700DB6FF1D5A403C00B4916E /* ImageHelper.m in Sources */,
@@ -515,7 +525,6 @@
 				0D2FD06E1D59085F004DF6B9 /* NearestBeaconManager.m in Sources */,
 				70AF43451D594B88004999F1 /* Beacon+CoreDataProperties.m in Sources */,
 				0D2FD0701D59085F004DF6B9 /* ProximityContentManager.m in Sources */,
-				70AF43431D594B88004999F1 /* Piece+CoreDataProperties.m in Sources */,
 				0DDE70051D5929AC002F51A2 /* ShowOverviewViewController.m in Sources */,
 				0DDE6FFF1D59291B002F51A2 /* DashboardViewController.m in Sources */,
 				70AF43441D594B88004999F1 /* Piece.m in Sources */,
@@ -523,6 +532,7 @@
 				0D2FD0201D5907E2004DF6B9 /* AppDelegate.m in Sources */,
 				0D2FD01D1D5907E2004DF6B9 /* main.m in Sources */,
 				70AF43411D594B88004999F1 /* Curator+CoreDataProperties.m in Sources */,
+				700DB7051D5A77F500B4916E /* Piece+CoreDataProperties.m in Sources */,
 				0D2FD0291D5907E2004DF6B9 /* artiRelicAppleSomething.xcdatamodeld in Sources */,
 				70AF430F1D594259004999F1 /* NSManagedObjectContext+NSManagedObjectContext.m in Sources */,
 				70AF43141D59433A004999F1 /* CoreDataStack.m in Sources */,

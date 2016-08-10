@@ -8,7 +8,8 @@
 
 #import "NewPieceViewController.h"
 
-@interface NewPieceViewController ()
+@interface NewPieceViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *pieceImage;
 @property (weak, nonatomic) IBOutlet UITextField *pieceTitleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pieceArtistTextField;
@@ -100,6 +101,12 @@
 
 - (IBAction)pieceImageTapped:(UITapGestureRecognizer *)sender {
     NSLog(@"Piece Image Tapped");
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {
@@ -154,7 +161,7 @@
 
 - (void)presentAlert
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING" message:@"Please enter a show title before saving show." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING" message:@"Please enter a piece title before saving piece." preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *OK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
@@ -214,6 +221,30 @@
             NSLog(@"Succesfully saved piece");
         }
     }
+}
+
+#pragma mark UIImagePickerController Delegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    self.image = info[UIImagePickerControllerOriginalImage];
+    self.thumb = [[ImageHelper shared] thumbFromImage:self.image];
+    self.pieceImage.image = self.image;
+
+    NSError *error;
+    [[NSManagedObjectContext managerContext] save:&error];
+    if (error) {
+        NSLog(@"Error saving image: %@", error);
+    } else {
+        NSLog(@"Saved image, error code: %@", error);
+    }
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
