@@ -151,7 +151,7 @@
 
 - (void)presentAlert
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING" message:@"Please enter a show title before saving show." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING" message:@"Please enter a piece title before saving piece." preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *OK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
@@ -195,10 +195,10 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
-    
-    self.piece.image = UIImagePNGRepresentation(info[UIImagePickerControllerOriginalImage]);
-    self.pieceImage.image = (info[UIImagePickerControllerOriginalImage]);
-    
+    self.image = info[UIImagePickerControllerOriginalImage];
+    self.thumb = [[ImageHelper shared] thumbFromImage:self.image];
+    self.pieceImage.image = self.image;
+
     NSError *error;
     [[NSManagedObjectContext managerContext] save:&error];
     if (error) {

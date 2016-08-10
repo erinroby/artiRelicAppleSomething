@@ -72,12 +72,18 @@
 {
     NSString *title = self.titleTextField.text;
     NSString *subtitle = self.subtitleTextField.text;
-//    NSString *desc = self.
+    NSString *desc = self.descriptionTextField.text;
     
     if ([title  isEqual: @""] || !title) {
         [self presentAlert];
     } else {
-        Show *show = [Show showWithTitle:title subtitle:subtitle desc:subtitle];
+        Show *show = [Show showWithTitle:title subtitle:subtitle desc:desc];
+        if (self.image) {
+            show.image = [[ImageHelper shared]dataFromImage:self.image];
+        }
+        if (self.thumb) {
+            show.thumbnail = [[ImageHelper shared]dataFromImage:self.thumb];
+        }
         
         NSLog(@"Show created: %@", show);
         NSLog(@"Self.show: %@", self.show);
