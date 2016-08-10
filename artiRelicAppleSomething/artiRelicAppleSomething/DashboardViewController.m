@@ -31,6 +31,12 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    self.showCollectionView.reloadData;
+}
+
 -(NSArray *)dataSource {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Show"];
     NSError *error;
@@ -58,18 +64,21 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"showCell" forIndexPath:indexPath];
     // TODO: Configure cell for reals here!
-    
-    
-    
+
     Show *show = self.dataSource[indexPath.row];
+    UIImage *thumb = [UIImage imageWithData:show.image];
+    UIImageView *cellImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(0.0, 0.0, 150.0, 150.0))];
+    cellImageView.image = thumb;
+    [cell.contentView addSubview:cellImageView];
+    
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Setup show and other things to be passed along here!
-//    Show *show = self.dataSource[indexPath.row];
+    Show *show = self.dataSource[indexPath.row];
     ShowOverviewViewController *showOverviewViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ShowOverviewViewController"];
-//    showOverviewViewController.show = show;
+    showOverviewViewController.show = show;
     [self.navigationController pushViewController:showOverviewViewController animated:YES];
 }
 

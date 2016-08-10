@@ -13,6 +13,7 @@
 #import "Show.h"
 #import "Piece.h"
 #import <AVFoundation/AVFoundation.h>
+#import "ImageHelper.h"
 
 @interface NewPieceViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
 
@@ -21,5 +22,7 @@
 @property (strong, nonatomic)Piece *piece;
 @property (strong, nonatomic) AVAudioRecorder *audioRecorder;
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+@property (strong, nonatomic)UIImage *image;
+@property (strong, nonatomic)UIImage *thumb;
 
 @end
