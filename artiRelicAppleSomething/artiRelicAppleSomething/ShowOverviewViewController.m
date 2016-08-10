@@ -34,11 +34,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    self.pieceCollectionView.reloadData;
+
+}
+
+
 -(NSArray *)dataSource {
     return [self.show.pieces allObjects];
 }
 
 - (IBAction)editButtonSelected:(id)sender {
+}
+
+#pragma mark Prepare for Segue
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"NewPieceViewController"]) {
+        NewPieceViewController *newPieceViewController = [segue destinationViewController];
+        newPieceViewController.show = self.show;
+    }
 }
 
 #pragma MARK - UICollectionViewDelegate methods
@@ -52,12 +69,39 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"pieceCell" forIndexPath:indexPath];
+    
     UIImageView *cellImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(0.0, 0.0, 150.0, 150.0))];
+    Piece *piece = self.dataSource[indexPath.row];
+    UIImage *thumb = [UIImage imageWithData:piece.image];
+    cellImageView.image = thumb;
     [cell.contentView addSubview:cellImageView];
     
     return cell;
 }
 
 - (IBAction)publishButtonSelected:(UIBarButtonItem *)sender {
+    if (self.show)
+    {
+        ShowToPublish *showToPublish = [ShowToPublish publishShowWithTitle:self.show.title subtitle:self.show.subtitle desc:self.show.desc];
+        showToPublish.curator = self.show.curator;
+        showToPublish.image = self.show.image;
+        showToPublish.pieces = [self.show.pieces allObjects];
+       
+        
+        
+        [showToPublish saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"Show published!!");
+            } else {
+                NSLog(@"Error publishing show: %@", error);
+            }
+        }];
+        
+    }
 }
+
 @end
+
+
+
+

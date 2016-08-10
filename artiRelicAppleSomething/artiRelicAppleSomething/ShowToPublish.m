@@ -8,6 +8,11 @@
 
 #import "ShowToPublish.h"
 
+@interface ShowToPublish()  <PFSubclassing>
+
+
+@end
+
 
 @implementation ShowToPublish
 
