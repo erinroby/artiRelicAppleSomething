@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Piece.h"
 @import PassKit;
 
 @interface ApplePayViewController : UIViewController
+
+@property (strong, nonatomic)Piece *piece;
 
 @end

@@ -15,6 +15,7 @@
 
 @interface ViewController () <ProximityContentManagerDelegate>
 - (IBAction)fetchButtonSelected:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *artistLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
@@ -29,6 +30,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+//Select show to be hosted by title
     PFQuery *query = [PFQuery queryWithClassName:@"Show"];
     [query whereKey:@"title" equalTo:@"Flower"];
     [query includeKey:@"pieces"];
@@ -38,6 +41,9 @@
             NSLog(@"Show: %@", self.show.pieces);
             NSString *showTitle = self.show.title;
             self.welcomeLabel.text = [self.welcomeLabel.text stringByAppendingString:showTitle];
+// can get artist from show, I forgot to input for this show...
+            NSString *artistName = @" B. Watterson";
+            self.artistLabel.text = [self.artistLabel.text stringByAppendingString:artistName];
             UIImage *showImage = [UIImage imageWithData:[self.show.image getData]];
             self.showImage.image = showImage;
             self.descriptionLabel.text = self.show.desc;
@@ -69,6 +75,15 @@
     
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"ApplePayViewController"]) {
+        ApplePayViewController *applePayViewController = [segue destinationViewController];
+        applePayViewController.piece = self.piece;
+    }
+    
+}
+
 - (void)proximityContentManager:(ProximityContentManager *)proximityContentManager didUpdateContent:(id)content {
     
     //    [self.proximityContentManager nearestBeaconManager:proximityContentManager.nearestBeaconManager didUpdateNearestBeaconID:nil];
@@ -78,18 +93,7 @@
         NSLog(@"%@", beaconDetails.beaconName);
         CLBeaconRegion *region = [self.proximityContentManager.beaconId asBeaconRegion];
         NSLog(@"%@", region);
-        NSString *beaconID = self.proximityContentManager.beaconId.description;
-        PFQuery *innerQuery = [PFQuery queryWithClassName:@"Piece"];
-        [innerQuery whereKey:@"beaconID" equalTo:beaconID];
-        PFQuery *query = [PFQuery queryWithClassName:@"Show"];
-        [query whereKey:@"pieces" matchesQuery:innerQuery];
-        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            if (!error) {
-                NSLog(@"%@",objects.firstObject);
-            } else {
-                NSLog(@"Error fetching piece: %@", error);
-            }
-        }];
+        NSLog(@"beaconID %@", self.proximityContentManager.beaconId.description);
     } else {
         NSLog(@"No Beacons in Range");
         
@@ -112,11 +116,14 @@
 
 - (IBAction)fetchButtonSelected:(id)sender
 {
+    // Rather than re-fetch to Parse, we can match the beaconID to a piece we already have attached to the show we initially downloaded.
     NSLog(@"Fetch button pressed");
-    NSString *ID = @"Label";
-    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"beaconID contains[cd] %@",ID];
+    NSString *beaconID = @"Label";
+    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"beaconID contains[cd] %@",beaconID];
     NSArray *filteredArray = [self.show.pieces filteredArrayUsingPredicate:bPredicate];
-    NSLog(@"filterArray: %@",filteredArray);
+    self.piece = [filteredArray firstObject];
+    NSLog(@"self.piece: %@",self.piece);
     
 }
+
 @end
