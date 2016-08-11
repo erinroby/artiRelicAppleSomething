@@ -9,21 +9,22 @@
 #import "NewShowViewController.h"
 
 
-@interface NewShowViewController () <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate>
-
-
+@interface NewShowViewController () <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *save;
 - (IBAction)savePressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-@property (weak, nonatomic) IBOutlet UITextView *descriptionTextField;
+
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *subtitleTextField;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextField;
+
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *headerImageTapGesture;
 - (IBAction)headerImageTapped:(UITapGestureRecognizer *)sender;
+
 
 @end
 
@@ -31,10 +32,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.descriptionTextField.delegate = self;
+
+    
     UIImage *placeholderImage = [UIImage imageNamed:@"frame"];
     self.headerImage.image = placeholderImage;
     self.title = @"Create Show";
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -124,24 +128,36 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField {
     CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
-    [self.scrollView setContentOffset:(CGPointMake(0.0, (0.0 - navBarHeight)))];
+    [self.scrollView setContentOffset:(CGPointMake(0.0, (45.0 - navBarHeight)))];
 }
 
 #pragma mark UITextViewDelegate
 
+-(BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    [self.descriptionTextField setReturnKeyType:UIReturnKeyDone];
+    return YES;
+}
+
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-//    [self.scrollView setContentOffset:(CGPointMake(0.0, 150.0))];
-
+    [self.scrollView setContentOffset:(CGPointMake(0.0, 150.0))];
+    [self.descriptionTextField setReturnKeyType:UIReturnKeyDefault];
 }
 
-- (void)textViewDidEndEditing:(UITextView *)textView {
-    CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
-    [self.scrollView setContentOffset:(CGPointMake(0.0, (0.0 - navBarHeight)))];
-}
-
-- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
-    // TODO: Handle hard return for textView
-    // add some kind of gesture to dismiss textView
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    int charINTtyped = 0;
+    
+    if([text length] > 0){
+        charINTtyped = (int)[text characterAtIndex:0];
+    }
+    
+    if(charINTtyped == 10){
+        [textView resignFirstResponder];
+        
+        CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
+        [self.scrollView setContentOffset:(CGPointMake(0.0, (45.0 - navBarHeight)))];
+        
+        return NO;
+    }
     return YES;
 }
 
