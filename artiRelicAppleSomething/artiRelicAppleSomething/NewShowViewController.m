@@ -9,7 +9,7 @@
 #import "NewShowViewController.h"
 
 
-@interface NewShowViewController () <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface NewShowViewController () <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate>
 
 
 
@@ -31,6 +31,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImage *placeholderImage = [UIImage imageNamed:@"frame"];
+    self.headerImage.image = placeholderImage;
+    self.title = @"Create Show";
     // Do any additional setup after loading the view.
 }
 
@@ -83,8 +86,6 @@
 }
 - (IBAction)headerImageTapped:(UITapGestureRecognizer *)sender
 {
-    NSLog(@"Show Image Tapped!");
-
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
     imagePicker.delegate = self;
     imagePicker.allowsEditing = YES;
@@ -109,5 +110,40 @@
 {
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark UITextFieldDelegate
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.scrollView setContentOffset:(CGPointMake(0.0, 50.0))];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
+    [self.scrollView setContentOffset:(CGPointMake(0.0, (0.0 - navBarHeight)))];
+}
+
+#pragma mark UITextViewDelegate
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+//    [self.scrollView setContentOffset:(CGPointMake(0.0, 150.0))];
+
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
+    [self.scrollView setContentOffset:(CGPointMake(0.0, (0.0 - navBarHeight)))];
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+    // TODO: Handle hard return for textView
+    // add some kind of gesture to dismiss textView
+    return YES;
+}
+
 
 @end
