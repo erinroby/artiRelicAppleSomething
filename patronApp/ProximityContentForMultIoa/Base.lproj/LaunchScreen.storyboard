@@ -16,7 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="LQO-MO-2gV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arti" translatesAutoresizingMaskIntoConstraints="NO" id="7ID-ov-iZ5">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="4ST-yS-vT1"/>
+                                    <constraint firstAttribute="width" constant="300" id="7hS-Ke-6bn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7ID-ov-iZ5" firstAttribute="centerX" secondItem="LQO-MO-2gV" secondAttribute="centerX" id="JRI-Hd-Fr1"/>
+                            <constraint firstItem="7ID-ov-iZ5" firstAttribute="centerY" secondItem="LQO-MO-2gV" secondAttribute="centerY" id="wd4-lz-odb"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ac-fr-qWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +37,7 @@
             <point key="canvasLocation" x="482" y="-40"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arti" width="140" height="64"/>
+    </resources>
 </document>

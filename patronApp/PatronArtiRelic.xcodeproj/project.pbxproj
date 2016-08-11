@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70DDC9431D5C5E2D00202892 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DDC9421D5C5E2D00202892 /* Show.m */; };
+		70DDC9461D5C5EE700202892 /* Piece.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DDC9451D5C5EE700202892 /* Piece.m */; };
+		70DDC9481D5C684900202892 /* arti.png in Resources */ = {isa = PBXBuildFile; fileRef = 70DDC9471D5C684900202892 /* arti.png */; };
 		AE9764611C216F5E0058A4DC /* BeaconDetailsStaticFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9764601C216F5E0058A4DC /* BeaconDetailsStaticFactory.m */; };
 		AECA38231B9477B7009A9324 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA38221B9477B7009A9324 /* EstimoteSDK.framework */; };
 		AECA38461B95BC33009A9324 /* BeaconID.m in Sources */ = {isa = PBXBuildFile; fileRef = AECA38451B95BC33009A9324 /* BeaconID.m */; };
@@ -46,6 +49,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		70DDC9411D5C5E2D00202892 /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Show.h; sourceTree = "<group>"; };
+		70DDC9421D5C5E2D00202892 /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
+		70DDC9441D5C5EE700202892 /* Piece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piece.h; sourceTree = "<group>"; };
+		70DDC9451D5C5EE700202892 /* Piece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Piece.m; sourceTree = "<group>"; };
+		70DDC9471D5C684900202892 /* arti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arti.png; sourceTree = "<group>"; };
 		AE97645F1C216F5E0058A4DC /* BeaconDetailsStaticFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconDetailsStaticFactory.h; sourceTree = "<group>"; };
 		AE9764601C216F5E0058A4DC /* BeaconDetailsStaticFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconDetailsStaticFactory.m; sourceTree = "<group>"; };
 		AECA38221B9477B7009A9324 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
@@ -95,6 +103,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70DDC93A1D5C5D7A00202892 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				AECF16931B0E0C0200CC83B2 /* AppDelegate.h */,
+				AECF16941B0E0C0200CC83B2 /* AppDelegate.m */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		70DDC93B1D5C5D8400202892 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				70DDC9411D5C5E2D00202892 /* Show.h */,
+				70DDC9421D5C5E2D00202892 /* Show.m */,
+				70DDC9441D5C5EE700202892 /* Piece.h */,
+				70DDC9451D5C5EE700202892 /* Piece.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		70DDC93C1D5C5D9E00202892 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AECF16961B0E0C0200CC83B2 /* ViewController.h */,
+				AECF16971B0E0C0200CC83B2 /* ViewController.m */,
+				EE26F0071D5A484E000E81A0 /* ApplePayViewController.h */,
+				EE26F0081D5A484E000E81A0 /* ApplePayViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		70DDC93D1D5C5DAA00202892 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AECF16991B0E0C0200CC83B2 /* Main.storyboard */,
+				AEFD99611BC59AA600BC1771 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		AECA38211B9477B7009A9324 /* Estimote */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,16 +189,10 @@
 		AECF168E1B0E0C0200CC83B2 /* ProximityContentForMultIoa */ = {
 			isa = PBXGroup;
 			children = (
-				AECF16931B0E0C0200CC83B2 /* AppDelegate.h */,
-				AECF16941B0E0C0200CC83B2 /* AppDelegate.m */,
-				AECF16961B0E0C0200CC83B2 /* ViewController.h */,
-				AECF16971B0E0C0200CC83B2 /* ViewController.m */,
-				AECF16991B0E0C0200CC83B2 /* Main.storyboard */,
-				EE26F0071D5A484E000E81A0 /* ApplePayViewController.h */,
-				EE26F0081D5A484E000E81A0 /* ApplePayViewController.m */,
-				AECF169C1B0E0C0200CC83B2 /* Assets.xcassets */,
-				AEFD99611BC59AA600BC1771 /* LaunchScreen.storyboard */,
-				AECF16901B0E0C0200CC83B2 /* Info.plist */,
+				70DDC93A1D5C5D7A00202892 /* Global */,
+				70DDC93B1D5C5D8400202892 /* Model */,
+				70DDC93D1D5C5DAA00202892 /* View */,
+				70DDC93C1D5C5D9E00202892 /* Controller */,
 				AECF168F1B0E0C0200CC83B2 /* Supporting Files */,
 				AECA38211B9477B7009A9324 /* Estimote */,
 			);
@@ -160,6 +202,9 @@
 		AECF168F1B0E0C0200CC83B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70DDC9471D5C684900202892 /* arti.png */,
+				AECF169C1B0E0C0200CC83B2 /* Assets.xcassets */,
+				AECF16901B0E0C0200CC83B2 /* Info.plist */,
 				AECF16911B0E0C0200CC83B2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -232,6 +277,7 @@
 				AEFD99631BC59AA600BC1771 /* LaunchScreen.storyboard in Resources */,
 				AECF169B1B0E0C0200CC83B2 /* Main.storyboard in Resources */,
 				AECF169D1B0E0C0200CC83B2 /* Assets.xcassets in Resources */,
+				70DDC9481D5C684900202892 /* arti.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +298,9 @@
 				AECA38561B95D59E009A9324 /* ProximityContentManager.m in Sources */,
 				AECA384D1B95C4E6009A9324 /* BeaconDetails.m in Sources */,
 				AECA38531B95C91D009A9324 /* NearestBeaconManager.m in Sources */,
+				70DDC9431D5C5E2D00202892 /* Show.m in Sources */,
 				AECF16921B0E0C0200CC83B2 /* main.m in Sources */,
+				70DDC9461D5C5EE700202892 /* Piece.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

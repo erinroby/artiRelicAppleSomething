@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="T7t-8r-qoY">
             <objects>
-                <viewController id="4kZ-D2-YXW" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="4kZ-D2-YXW" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MIK-0O-en7"/>
                         <viewControllerLayoutGuide type="bottom" id="Jo7-E3-NQm"/>
@@ -83,12 +83,23 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="ynm-pM-llW">
+                        <barButtonItem key="leftBarButtonItem" title="Fetch Piece" id="Mcv-Lw-glC">
+                            <connections>
+                                <action selector="fetchButtonSelected:" destination="4kZ-D2-YXW" id="gwy-IG-Jjm"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="To Show" id="Chy-IW-OeN">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="vRv-NT-t6t"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="ApplePayViewController" id="vRv-NT-t6t"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="artistLabel" destination="2DS-K4-rbd" id="Rej-d9-JqG"/>
+                        <outlet property="descriptionLabel" destination="Zik-g4-jP4" id="3es-R9-gcv"/>
+                        <outlet property="showImage" destination="oI6-7i-cFB" id="JI7-vX-t7i"/>
+                        <outlet property="welcomeLabel" destination="VgZ-UI-BPn" id="rzm-et-QM7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ub-er-a1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,7 +108,7 @@
         <!--Apple Pay View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ApplePayViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ApplePayViewController" id="BYZ-38-t0r" customClass="ApplePayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -169,6 +180,9 @@
                     </view>
                     <connections>
                         <outlet property="applePayButton" destination="mrF-2p-u8N" id="cNb-Ti-3e3"/>
+                        <outlet property="artistLabel" destination="rcW-6B-y8T" id="vop-Qo-kEW"/>
+                        <outlet property="descLabel" destination="ybr-ge-RSl" id="lw8-wW-6bu"/>
+                        <outlet property="pieceImage" destination="b10-Ge-sEQ" id="egG-dS-dc2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
