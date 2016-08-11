@@ -14,5 +14,6 @@
 @interface BeaconPairViewController : UIViewController
 
 @property (strong, nonatomic)Piece *piece;
+@property (strong, nonatomic)NSString *beaconID;
 
 @end

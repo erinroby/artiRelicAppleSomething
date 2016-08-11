@@ -50,7 +50,7 @@
     docsDir = dirPaths[0];
 
     NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
-    NSLog(@"%@", soundFilePath);
+//    NSLog(@"%@", soundFilePath);
 
     _soundFileURL = [NSURL fileURLWithPath:soundFilePath];
 
@@ -137,8 +137,15 @@
         if (self.thumb) {
             piece.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
         }
+        piece.beaconID = self.beaconID;
+        if (self.show.pieces == nil)
+        {
+            NSMutableArray *array = [[NSMutableArray alloc]init];
+        self.show.pieces = array;
+        }
+        [self.show.pieces addObject:piece];
         
-        [self.show.pieces insertObject:piece atIndex:0];
+        NSLog(@"%@",self.show.pieces);
         self.piece = piece;
         
         NSLog(@"Piece created");
@@ -154,12 +161,13 @@
     if([[segue identifier] isEqualToString:@"ShowOverviewViewController"]){
         ShowOverviewViewController *showOverviewViewController = [segue destinationViewController];
         showOverviewViewController.show = self.show;
-    } else {
-    if ([[segue identifier] isEqualToString:@"BeaconPairViewController"]) {
-        BeaconPairViewController *beaconPairViewController = [segue destinationViewController];
-        beaconPairViewController.piece = self.piece;
-        }
     }
+//    else {
+//    if ([[segue identifier] isEqualToString:@"BeaconPairViewController"]) {
+//        BeaconPairViewController *beaconPairViewController = [segue destinationViewController];
+//        beaconPairViewController.piece = self.piece;
+//        }
+//    }
 }
 
 - (IBAction)playButtonPressed:(UIButton *)sender {

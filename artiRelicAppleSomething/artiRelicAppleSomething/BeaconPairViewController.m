@@ -93,8 +93,8 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
     
     // send and/or attach beacon data to the piece here.
     // do setup in prepare for segue and then call here?
-    self.piece.beaconID = self.UIID.text;
- 
+    self.beaconID = self.UIID.text;
+    NSLog(@"self.beaconID: %@", self.beaconID);
 }
 
 #pragma MARK - Estimote Location Management
@@ -117,6 +117,8 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
     if([[segue identifier] isEqualToString:@"NewPieceViewController"]){
         NewPieceViewController *newPieceViewController = [segue destinationViewController];
         newPieceViewController.beaconID = self.UIID.text;
+        NSLog(@"newPieceViewController.beaconID: %@", newPieceViewController.beaconID);
+        
     }
 }
 
