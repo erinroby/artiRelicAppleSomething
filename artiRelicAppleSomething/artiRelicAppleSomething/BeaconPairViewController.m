@@ -117,7 +117,9 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
     if([[segue identifier] isEqualToString:@"NewPieceViewController"]){
         NewPieceViewController *newPieceViewController = [segue destinationViewController];
         newPieceViewController.beaconID = self.UIID.text;
+        newPieceViewController.show = self.show;
         NSLog(@"newPieceViewController.beaconID: %@", newPieceViewController.beaconID);
+        NSLog(@"newPieceViewController.show: %@", newPieceViewController.show);
         
     }
 }
