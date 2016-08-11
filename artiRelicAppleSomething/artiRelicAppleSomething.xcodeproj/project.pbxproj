@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1D88861D5CFACB00B12598 /* customTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D88851D5CFACB00B12598 /* customTextView.m */; };
+		0D1D88891D5CFAEA00B12598 /* customTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D88881D5CFAEA00B12598 /* customTextField.m */; };
+		0D1D888C1D5CFC7000B12598 /* customCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D888B1D5CFC7000B12598 /* customCollectionViewCell.m */; };
 		0D2FD01D1D5907E2004DF6B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD01C1D5907E2004DF6B9 /* main.m */; };
 		0D2FD0201D5907E2004DF6B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD01F1D5907E2004DF6B9 /* AppDelegate.m */; };
 		0D2FD0231D5907E2004DF6B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FD0221D5907E2004DF6B9 /* ViewController.m */; };
@@ -73,6 +76,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D1D88841D5CFACB00B12598 /* customTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customTextView.h; sourceTree = "<group>"; };
+		0D1D88851D5CFACB00B12598 /* customTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customTextView.m; sourceTree = "<group>"; };
+		0D1D88871D5CFAEA00B12598 /* customTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = customTextField.h; path = ../customTextField.h; sourceTree = "<group>"; };
+		0D1D88881D5CFAEA00B12598 /* customTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = customTextField.m; path = ../customTextField.m; sourceTree = "<group>"; };
+		0D1D888A1D5CFC7000B12598 /* customCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customCollectionViewCell.h; sourceTree = "<group>"; };
+		0D1D888B1D5CFC7000B12598 /* customCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customCollectionViewCell.m; sourceTree = "<group>"; };
 		0D2FD0181D5907E1004DF6B9 /* artiRelicAppleSomething.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = artiRelicAppleSomething.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2FD01C1D5907E2004DF6B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D2FD01E1D5907E2004DF6B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -157,6 +166,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1D88801D5CFA6700B12598 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D1D888A1D5CFC7000B12598 /* customCollectionViewCell.h */,
+				0D1D888B1D5CFC7000B12598 /* customCollectionViewCell.m */,
+				0D1D88871D5CFAEA00B12598 /* customTextField.h */,
+				0D1D88881D5CFAEA00B12598 /* customTextField.m */,
+				0D1D88841D5CFACB00B12598 /* customTextView.h */,
+				0D1D88851D5CFACB00B12598 /* customTextView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		0D2FD00F1D5907E1004DF6B9 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +206,7 @@
 		0D2FD01A1D5907E2004DF6B9 /* artiRelicAppleSomething */ = {
 			isa = PBXGroup;
 			children = (
+				0D1D88801D5CFA6700B12598 /* View */,
 				70AF430C1D594242004999F1 /* Utilities */,
 				0DC02B541D5928AA009B03BD /* Global */,
 				0DC02B531D59289D009B03BD /* Controller */,
@@ -430,9 +453,11 @@
 				0DDE70081D5929E5002F51A2 /* NewPieceViewController.m in Sources */,
 				0D2FD0641D59085F004DF6B9 /* BeaconDetails.m in Sources */,
 				0DDE70021D59297D002F51A2 /* NewShowViewController.m in Sources */,
+				0D1D88861D5CFACB00B12598 /* customTextView.m in Sources */,
 				0D2FD0661D59085F004DF6B9 /* BeaconDetailsCloudFactory.m in Sources */,
 				851CFB441D5BA4B600F57892 /* Piece.m in Sources */,
 				0D2FD0681D59085F004DF6B9 /* BeaconDetailsStaticFactory.m in Sources */,
+				0D1D888C1D5CFC7000B12598 /* customCollectionViewCell.m in Sources */,
 				0D2FD06A1D59085F004DF6B9 /* BeaconID.m in Sources */,
 				851CFB3E1D5BA2F100F57892 /* Show.m in Sources */,
 				700DB6FF1D5A403C00B4916E /* ImageHelper.m in Sources */,
@@ -446,6 +471,7 @@
 				0D2FD0231D5907E2004DF6B9 /* ViewController.m in Sources */,
 				0D2FD0201D5907E2004DF6B9 /* AppDelegate.m in Sources */,
 				0D2FD01D1D5907E2004DF6B9 /* main.m in Sources */,
+				0D1D88891D5CFAEA00B12598 /* customTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

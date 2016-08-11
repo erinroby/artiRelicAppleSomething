@@ -18,6 +18,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
+
     [ESTConfig setupAppID:@"proximity-content-for-mult-ioa" andAppToken:@"b796ce4b2a572e8707b202a92fb80ee5"];
     
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
