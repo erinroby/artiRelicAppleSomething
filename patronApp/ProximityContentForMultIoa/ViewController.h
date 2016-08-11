@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic)Show *show;
 @property (strong, nonatomic)Piece *piece;
+@property (strong, nonatomic)NSString *UIID;
 
 
 @end

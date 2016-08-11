@@ -33,12 +33,18 @@
 
 //Select show to be hosted by title
     PFQuery *query = [PFQuery queryWithClassName:@"Show"];
-    [query whereKey:@"title" equalTo:@"Flower"];
-    [query includeKey:@"pieces"];
+//    [query whereKey:@"title" equalTo:@"Flower"];
+//    [query includeKey:@"pieces"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
+            NSLog(@"show results: %@", objects);
             self.show = [objects firstObject];
-            NSLog(@"Show: %@", self.show.pieces);
+            NSLog(@"Show: %@", self.show);
+            NSLog(@"Fetching pieces");
+            for (id object in self.show.pieces){
+                [object fetchIfNeeded];
+            }
+            
             NSString *showTitle = self.show.title;
             self.welcomeLabel.text = [self.welcomeLabel.text stringByAppendingString:showTitle];
 // can get artist from show, I forgot to input for this show...
@@ -84,16 +90,18 @@
     
 }
 
+
 - (void)proximityContentManager:(ProximityContentManager *)proximityContentManager didUpdateContent:(id)content {
     
     //    [self.proximityContentManager nearestBeaconManager:proximityContentManager.nearestBeaconManager didUpdateNearestBeaconID:nil];
     
     BeaconDetails *beaconDetails = content;
     if (beaconDetails) {
-        NSLog(@"%@", beaconDetails.beaconName);
-        CLBeaconRegion *region = [self.proximityContentManager.beaconId asBeaconRegion];
-        NSLog(@"%@", region);
-        NSLog(@"beaconID %@", self.proximityContentManager.beaconId.description);
+//        NSLog(@"%@", beaconDetails.beaconName);
+//        CLBeaconRegion *region = [self.proximityContentManager.beaconId asBeaconRegion];
+//        NSLog(@"%@", region);
+        self.UIID = self.proximityContentManager.beaconId.description;
+        NSLog(@"self.UIID set to: %@",self.UIID);
     } else {
         NSLog(@"No Beacons in Range");
         
@@ -118,7 +126,10 @@
 {
     // Rather than re-fetch to Parse, we can match the beaconID to a piece we already have attached to the show we initially downloaded.
     NSLog(@"Fetch button pressed");
-    NSString *beaconID = @"Label";
+    
+    
+    
+    NSString *beaconID = self.UIID;
     NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"beaconID contains[cd] %@",beaconID];
     NSArray *filteredArray = [self.show.pieces filteredArrayUsingPredicate:bPredicate];
     self.piece = [filteredArray firstObject];
