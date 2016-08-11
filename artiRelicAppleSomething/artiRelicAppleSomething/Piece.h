@@ -22,6 +22,7 @@
 @property (strong, nonatomic)PFFile *image;
 @property (strong, nonatomic)PFFile *thumbnail;
 @property (strong, nonatomic)PFFile *audio;
+@property (strong, nonatomic)NSString *beaconID;
 
 +(instancetype)pieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price;
 

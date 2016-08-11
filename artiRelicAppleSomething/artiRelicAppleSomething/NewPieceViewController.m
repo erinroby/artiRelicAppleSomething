@@ -79,6 +79,14 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    [super viewWillAppear:YES];
+    
+    
+}
+
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     _recordButton.enabled = YES;
     _stopButton.enabled = YES;
@@ -120,7 +128,6 @@
         [self presentAlert];
     } else {
         Piece *piece = [Piece pieceWithTitle:title desc:desc artist:artist price:price];
-        self.piece = piece;
         
         piece.audio = [PFFile fileWithData:[NSData dataWithContentsOfURL:_soundFileURL]];
         
@@ -130,8 +137,9 @@
         if (self.thumb) {
             piece.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
         }
-        piece.show = self.show;
-        [self.show.pieces addObject:piece];
+        
+        [self.show.pieces insertObject:piece atIndex:0];
+        self.piece = piece;
         
         NSLog(@"Piece created");
         NSLog(@"Self.piece: %@", self.piece);
@@ -146,8 +154,12 @@
     if([[segue identifier] isEqualToString:@"ShowOverviewViewController"]){
         ShowOverviewViewController *showOverviewViewController = [segue destinationViewController];
         showOverviewViewController.show = self.show;
+    } else {
+    if ([[segue identifier] isEqualToString:@"BeaconPairViewController"]) {
+        BeaconPairViewController *beaconPairViewController = [segue destinationViewController];
+        beaconPairViewController.piece = self.piece;
+        }
     }
-    
 }
 
 - (IBAction)playButtonPressed:(UIButton *)sender {

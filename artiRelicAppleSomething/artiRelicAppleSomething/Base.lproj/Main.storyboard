@@ -444,7 +444,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghw-os-Tp9" id="eIK-la-Llu">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -464,13 +464,24 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdw-0d-xDW">
                                 <rect key="frame" x="269" y="316" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52h-in-5PR">
+                                <rect key="frame" x="486" y="285" width="94" height="30"/>
+                                <state key="normal" title="All Done Here">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="QMX-Vc-rwu" kind="show" id="cOc-Ef-9eq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="52h-in-5PR" secondAttribute="trailing" constant="20" id="DZd-eo-xYs"/>
                             <constraint firstItem="Sdw-0d-xDW" firstAttribute="centerX" secondItem="RWH-Qc-1mA" secondAttribute="centerX" id="UK9-c0-wDu"/>
+                            <constraint firstItem="52h-in-5PR" firstAttribute="centerY" secondItem="RWH-Qc-1mA" secondAttribute="centerY" id="Uf3-aZ-cKR"/>
                             <constraint firstItem="o4f-58-TKb" firstAttribute="leading" secondItem="RWH-Qc-1mA" secondAttribute="leading" id="ZlQ-tY-Nq5"/>
                             <constraint firstAttribute="trailing" secondItem="o4f-58-TKb" secondAttribute="trailing" id="i29-Hx-w9g"/>
                             <constraint firstItem="fVf-0k-7hI" firstAttribute="top" secondItem="o4f-58-TKb" secondAttribute="bottom" id="tu1-Wr-Gza"/>
@@ -524,4 +535,7 @@
             <point key="canvasLocation" x="449" y="984"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cOc-Ef-9eq"/>
+    </inferredMetricsTieBreakers>
 </document>

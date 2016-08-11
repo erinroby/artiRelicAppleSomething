@@ -93,7 +93,8 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
     
     // send and/or attach beacon data to the piece here.
     // do setup in prepare for segue and then call here?
-    [self.navigationController popViewControllerAnimated:YES];
+    self.piece.beaconID = self.UIID.text;
+ 
 }
 
 #pragma MARK - Estimote Location Management
@@ -111,15 +112,13 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
     return self.availableBeacons.count;
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:@"NewPieceViewController"]){
+        NewPieceViewController *newPieceViewController = [segue destinationViewController];
+        newPieceViewController.beaconID = self.UIID.text;
+    }
+}
 
 @end
 

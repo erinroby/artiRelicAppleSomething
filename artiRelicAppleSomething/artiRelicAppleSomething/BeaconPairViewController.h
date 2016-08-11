@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ProximityContentManager.h"
+#import "Piece.h"
+#import "NewPieceViewController.h"
 
 @interface BeaconPairViewController : UIViewController
 
+@property (strong, nonatomic)Piece *piece;
 
 @end

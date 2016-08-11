@@ -27,7 +27,6 @@
 		0DDE70021D59297D002F51A2 /* NewShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE70011D59297D002F51A2 /* NewShowViewController.m */; };
 		0DDE70051D5929AC002F51A2 /* ShowOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE70041D5929AC002F51A2 /* ShowOverviewViewController.m */; };
 		0DDE70081D5929E5002F51A2 /* NewPieceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE70071D5929E5002F51A2 /* NewPieceViewController.m */; };
-		0DDE700B1D592A0E002F51A2 /* PieceOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE700A1D592A0E002F51A2 /* PieceOverviewViewController.m */; };
 		0DDE700E1D592A84002F51A2 /* BeaconPairViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */; };
 		700DB6FF1D5A403C00B4916E /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700DB6FE1D5A403C00B4916E /* ImageHelper.m */; };
 		851CFB3B1D5BA0F300F57892 /* Curator.m in Sources */ = {isa = PBXBuildFile; fileRef = 851CFB3A1D5BA0F300F57892 /* Curator.m */; };
@@ -114,8 +113,6 @@
 		0DDE70041D5929AC002F51A2 /* ShowOverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowOverviewViewController.m; sourceTree = "<group>"; };
 		0DDE70061D5929E5002F51A2 /* NewPieceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPieceViewController.h; sourceTree = "<group>"; };
 		0DDE70071D5929E5002F51A2 /* NewPieceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPieceViewController.m; sourceTree = "<group>"; };
-		0DDE70091D592A0E002F51A2 /* PieceOverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieceOverviewViewController.h; sourceTree = "<group>"; };
-		0DDE700A1D592A0E002F51A2 /* PieceOverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieceOverviewViewController.m; sourceTree = "<group>"; };
 		0DDE700C1D592A84002F51A2 /* BeaconPairViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconPairViewController.h; sourceTree = "<group>"; };
 		0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconPairViewController.m; sourceTree = "<group>"; };
 		700DB6FD1D5A403C00B4916E /* ImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelper.h; sourceTree = "<group>"; };
@@ -259,8 +256,6 @@
 				0DDE70041D5929AC002F51A2 /* ShowOverviewViewController.m */,
 				0DDE70061D5929E5002F51A2 /* NewPieceViewController.h */,
 				0DDE70071D5929E5002F51A2 /* NewPieceViewController.m */,
-				0DDE70091D592A0E002F51A2 /* PieceOverviewViewController.h */,
-				0DDE700A1D592A0E002F51A2 /* PieceOverviewViewController.m */,
 				0DDE700C1D592A84002F51A2 /* BeaconPairViewController.h */,
 				0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */,
 			);
@@ -434,7 +429,6 @@
 			files = (
 				0DDE70081D5929E5002F51A2 /* NewPieceViewController.m in Sources */,
 				0D2FD0641D59085F004DF6B9 /* BeaconDetails.m in Sources */,
-				0DDE700B1D592A0E002F51A2 /* PieceOverviewViewController.m in Sources */,
 				0DDE70021D59297D002F51A2 /* NewShowViewController.m in Sources */,
 				0D2FD0661D59085F004DF6B9 /* BeaconDetailsCloudFactory.m in Sources */,
 				851CFB441D5BA4B600F57892 /* Piece.m in Sources */,

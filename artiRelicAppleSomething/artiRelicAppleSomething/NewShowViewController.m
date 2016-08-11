@@ -67,6 +67,7 @@
         if (self.thumb) {
             show.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
         }
+        show.pieces = [[NSMutableArray alloc]init];
         
         NSLog(@"Show created: %@", show.title);
         

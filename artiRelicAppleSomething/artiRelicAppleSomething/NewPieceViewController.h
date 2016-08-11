@@ -11,6 +11,7 @@
 #import "Curator.h"
 #import "Show.h"
 #import "ShowOverviewViewController.h"
+#import "BeaconPairViewController.h"
 #import "Piece.h"
 #import <AVFoundation/AVFoundation.h>
 #import "ImageHelper.h"
@@ -25,5 +26,6 @@
 @property (strong, nonatomic)AVAudioPlayer *audioPlayer;
 @property (strong, nonatomic)UIImage *image;
 @property (strong, nonatomic)UIImage *thumb;
+@property (strong, nonatomic)NSString *beaconID;
 
 @end

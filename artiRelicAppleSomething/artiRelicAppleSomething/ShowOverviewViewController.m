@@ -43,7 +43,10 @@
 
 
 -(NSArray *)dataSource {
+  
+    
     return self.show.pieces;
+    
 }
 
 - (IBAction)editButtonSelected:(id)sender {
