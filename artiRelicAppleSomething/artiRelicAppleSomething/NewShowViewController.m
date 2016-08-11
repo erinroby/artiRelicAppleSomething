@@ -69,13 +69,13 @@
         }
         show.pieces = [[NSMutableArray alloc]init];
         
-        NSLog(@"Show created: %@", show.title);
+        NSLog(@"Show created: %@", show);
         
         [show saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             if (succeeded) {
                 NSLog(@"Show saved to parse");
             } else {
-                NSLog(@"Show failed to save to parse");
+                NSLog(@"Show failed to save to parse: %@", error);
             }
         }];
     }

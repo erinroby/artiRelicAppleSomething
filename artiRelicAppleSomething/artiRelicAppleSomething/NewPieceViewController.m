@@ -138,12 +138,9 @@
             piece.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
         }
         piece.beaconID = self.beaconID;
-        if (self.show.pieces == nil)
-        {
-            NSMutableArray *array = [[NSMutableArray alloc]init];
-        self.show.pieces = array;
-        }
-        [self.show.pieces addObject:piece];
+        
+        NSArray *newPiece = @[piece];
+        self.show.pieces = [self.show.pieces arrayByAddingObjectsFromArray:newPiece];
         
         NSLog(@"%@",self.show.pieces);
         self.piece = piece;
@@ -151,7 +148,7 @@
         NSLog(@"Piece created");
         NSLog(@"Self.piece: %@", self.piece);
         
-        [piece save];
+//        [self.show save];
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
