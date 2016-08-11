@@ -94,10 +94,9 @@
         }
         cellImageView.image = [UIImage imageWithData:data];
     }];
-    
-    
+
     [cell.contentView addSubview:cellImageView];
-    
+
     return cell;
 }
 
@@ -106,7 +105,7 @@
     Show *show = self.dataSource[indexPath.row];
     ShowOverviewViewController *showOverviewViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ShowOverviewViewController"];
     showOverviewViewController.show = show;
-    
+
     [self.navigationController pushViewController:showOverviewViewController animated:YES];
 }
 

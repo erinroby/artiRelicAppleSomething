@@ -48,10 +48,11 @@
 }
 
 -(NSArray *)dataSource {
-  
-    
+    if (!self.show.pieces) {
+        // TODO: Handle what happens when there are no pieces in a show. The view crashes when this array is nil.
+        return self.show.pieces;
+    }
     return self.show.pieces;
-    
 }
 
 - (IBAction)editButtonSelected:(id)sender {

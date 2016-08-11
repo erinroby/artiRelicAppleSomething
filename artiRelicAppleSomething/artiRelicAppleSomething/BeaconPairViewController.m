@@ -17,18 +17,10 @@
 
 #import "NearestBeaconManager.h"
 
-NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+@interface BeaconPairViewController () <ProximityContentManagerDelegate>
 
-@interface BeaconPairViewController () <UITableViewDataSource, ProximityContentManagerDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) ProximityContentManager *proximityContentManager;
 @property (weak, nonatomic) IBOutlet UILabel *UIID;
-
-@property (strong, nonatomic) NSMutableArray *availableBeacons;
-
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
-- (IBAction)saveButtonPressed:(id)sender;
 
 @end
 
@@ -36,12 +28,12 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.dataSource = self;
+    self.title = @"Choose Beacon";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
     self.proximityContentManager = [[ProximityContentManager alloc]
                                     initWithBeaconIDs:@[
                                                         [[BeaconID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D" major:21640 minor:54671],
@@ -61,26 +53,17 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
     [self.proximityContentManager stopContentUpdates];
 }
 
--(void)contentForBeaconID:(BeaconID *)beaconID completion:(void (^)(id))completion {
-    
-}
-
 - (void)proximityContentManager:(ProximityContentManager *)proximityContentManager didUpdateContent:(id)content {
-    
-//    [self.proximityContentManager nearestBeaconManager:proximityContentManager.nearestBeaconManager didUpdateNearestBeaconID:nil];
-    
     BeaconDetails *beaconDetails = content;
     if (beaconDetails) {
-        NSLog(@"%@", beaconDetails.beaconName);
         CLBeaconRegion *region = [self.proximityContentManager.beaconId asBeaconRegion];
         NSLog(@"%@", region);
-        self.UIID.text = self.proximityContentManager.beaconId.description;
+        // self.UIID.text = self.proximityContentManager.beaconId.description;
+        self.UIID.text = beaconDetails.beaconName;
+        // write a switch statement to handle the image, etc.
         self.view.backgroundColor = beaconDetails.backgroundColor;
-        self.tableView.backgroundColor = beaconDetails.backgroundColor;
-        [self.tableView reloadData];
     } else {
-        NSLog(@"No Beacons in Range");
-        
+        self.UIID.text = @"No Beacons in Range";
     }
 }
 
@@ -90,7 +73,7 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
 - (IBAction)saveButtonPressed:(id)sender {
     NSLog(@"saveButton pressed.");
-    
+
     // send and/or attach beacon data to the piece here.
     // do setup in prepare for segue and then call here?
     self.beaconID = self.UIID.text;
@@ -104,7 +87,7 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"beaconCell" forIndexPath:indexPath];
     // bah! how to get at the beaconDetails from here!
-    
+
     return cell;
 }
 
@@ -116,11 +99,8 @@ NSString const *kUUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 {
     if([[segue identifier] isEqualToString:@"NewPieceViewController"]){
         NewPieceViewController *newPieceViewController = [segue destinationViewController];
-        newPieceViewController.beaconID = self.UIID.text;
-        NSLog(@"newPieceViewController.beaconID: %@", newPieceViewController.beaconID);
-        
+        newPieceViewController.beaconID = self.proximityContentManager.beaconId.asString;
     }
 }
 
 @end
-
