@@ -33,7 +33,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
     self.proximityContentManager = [[ProximityContentManager alloc]
                                     initWithBeaconIDs:@[
                                                         [[BeaconID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D" major:21640 minor:54671],
@@ -71,15 +71,36 @@
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)saveButtonPressed:(id)sender {
+    NSLog(@"saveButton pressed.");
+
+    // send and/or attach beacon data to the piece here.
+    // do setup in prepare for segue and then call here?
+    self.beaconID = self.UIID.text;
+    NSLog(@"self.beaconID: %@", self.beaconID);
+}
+
+#pragma MARK - Estimote Location Management
+
+
+#pragma MARK - UITableViewDataSource
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"beaconCell" forIndexPath:indexPath];
+    // bah! how to get at the beaconDetails from here!
+
+    return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.availableBeacons.count;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([[segue identifier] isEqualToString:@"NewPieceViewController"]){
         NewPieceViewController *newPieceViewController = [segue destinationViewController];
         newPieceViewController.beaconID = self.proximityContentManager.beaconId.asString;
-        // newPieceViewController.beaconID = self.UIID.text;
-        // the above can't be tied to a label text because the label text is sometimes not an id.
     }
 }
 
 @end
-

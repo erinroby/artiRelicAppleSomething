@@ -21,7 +21,7 @@
 @property (strong, nonatomic) PFFile *thumbnail;
 @property (strong, nonatomic) Curator *curator;
 
-@property (strong, nonatomic) NSMutableArray *pieces;
+@property (strong, nonatomic) NSArray *pieces;
 
 +(instancetype)publishShowWithTitle:(NSString *)title subtitle:(NSString *)subtitle desc:(NSString *)desc;
 

@@ -55,14 +55,14 @@
 {
     [super viewWillAppear:YES];
     PFQuery *query = [PFQuery queryWithClassName:@"Show"];
+    [query includeKey:@"pieces"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            // TODO: what happens here when the datasource is nil?
+            NSLog(@"Fetched shows from Parse");
             self.dataSource = objects;
             [self.showCollectionView reloadData];
-            NSLog(@"Should have reloaded data from viewDidLoad");
         } else {
-            NSLog(@"Error: failed to load parse");
+            NSLog(@"Error: failed to load parse-- %@",error);
         }
     }];
 
@@ -79,8 +79,6 @@
     return self.dataSource.count;
 }
 
-//- (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier {
-//}
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"showCell" forIndexPath:indexPath];
@@ -88,6 +86,7 @@
 
     Show *show = self.dataSource[indexPath.row];
     UIImageView *cellImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(0.0, 0.0, 150.0, 150.0))];
+    cellImageView.contentMode = UIViewContentModeScaleAspectFit;
     PFFile *pfThumb = show.thumbnail;
     [pfThumb getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (!data) {
@@ -95,9 +94,9 @@
         }
         cellImageView.image = [UIImage imageWithData:data];
     }];
-    
+
     [cell.contentView addSubview:cellImageView];
-    
+
     return cell;
 }
 
@@ -106,7 +105,7 @@
     Show *show = self.dataSource[indexPath.row];
     ShowOverviewViewController *showOverviewViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ShowOverviewViewController"];
     showOverviewViewController.show = show;
-    
+
     [self.navigationController pushViewController:showOverviewViewController animated:YES];
 }
 

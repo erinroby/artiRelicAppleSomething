@@ -474,7 +474,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="QMX-Vc-rwu" kind="show" id="cOc-Ef-9eq"/>
+                                    <segue destination="QMX-Vc-rwu" kind="show" identifier="NewPieceViewController" id="cOc-Ef-9eq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Searching for nearest beacon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdw-0d-xDW">
@@ -541,6 +541,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cOc-Ef-9eq"/>
+        <segue reference="C3I-LS-UMl"/>
     </inferredMetricsTieBreakers>
 </document>
