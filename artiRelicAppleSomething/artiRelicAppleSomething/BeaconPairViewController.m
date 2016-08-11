@@ -7,7 +7,6 @@
 //
 
 #import "BeaconPairViewController.h"
-#import "Beacon.h"
 #import <EstimoteSDK/EstimoteSDK.h>
 
 // Estomote

@@ -11,8 +11,6 @@
 #import <Parse/Parse.h>
 
 #import "Curator.h"
-#import "Beacon.h"
-
 
 @interface Show : PFObject <PFSubclassing>
 

@@ -19,7 +19,6 @@
 @dynamic image;
 @dynamic thumbnail;
 @dynamic audio;
-@dynamic beacon;
 
 + (void)load
 {

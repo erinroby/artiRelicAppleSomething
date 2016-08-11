@@ -72,7 +72,7 @@
     
     UIImageView *cellImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(0.0, 0.0, 150.0, 150.0))];
     Piece *piece = self.dataSource[indexPath.row];
-    UIImage *thumb = [UIImage imageWithData:piece.image];
+    UIImage *thumb = [UIImage imageWithData:[piece.image getData]];
     cellImageView.image = thumb;
     [cell.contentView addSubview:cellImageView];
     

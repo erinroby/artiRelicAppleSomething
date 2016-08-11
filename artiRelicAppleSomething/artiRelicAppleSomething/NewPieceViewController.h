@@ -14,7 +14,6 @@
 #import "Piece.h"
 #import <AVFoundation/AVFoundation.h>
 #import "ImageHelper.h"
-#import "Beacon.h"
 
 
 @interface NewPieceViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>

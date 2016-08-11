@@ -9,7 +9,6 @@
 #import <Parse/Parse.h>
 
 #import "Show.h"
-#import "Beacon.h"
 
 @interface Piece : PFObject <PFSubclassing>
 
@@ -23,7 +22,6 @@
 @property (strong, nonatomic)PFFile *image;
 @property (strong, nonatomic)PFFile *thumbnail;
 @property (strong, nonatomic)PFFile *audio;
-@property (strong, nonatomic)Beacon *beacon;
 
 +(instancetype)pieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price;
 
