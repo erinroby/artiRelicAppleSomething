@@ -122,13 +122,13 @@
         Piece *piece = [Piece pieceWithTitle:title desc:desc artist:artist price:price];
         self.piece = piece;
         
-        piece.audio = [NSData dataWithContentsOfURL:_soundFileURL];
+        piece.audio = [PFFile fileWithData:[NSData dataWithContentsOfURL:_soundFileURL]];
         
         if (self.image) {
-            piece.image = [[ImageHelper shared]dataFromImage:self.image];
+            piece.image = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.image]];
         }
         if (self.thumb) {
-            piece.thumbnail = [[ImageHelper shared]dataFromImage:self.thumb];
+            piece.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
         }
         piece.show = self.show;
         [self.show.pieces addObject:piece];

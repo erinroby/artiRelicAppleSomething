@@ -32,7 +32,6 @@
 		700DB6FF1D5A403C00B4916E /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700DB6FE1D5A403C00B4916E /* ImageHelper.m */; };
 		851CFB3B1D5BA0F300F57892 /* Curator.m in Sources */ = {isa = PBXBuildFile; fileRef = 851CFB3A1D5BA0F300F57892 /* Curator.m */; };
 		851CFB3E1D5BA2F100F57892 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 851CFB3D1D5BA2F100F57892 /* Show.m */; };
-		851CFB411D5BA31900F57892 /* Beacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 851CFB401D5BA31900F57892 /* Beacon.m */; };
 		851CFB441D5BA4B600F57892 /* Piece.m in Sources */ = {isa = PBXBuildFile; fileRef = 851CFB431D5BA4B600F57892 /* Piece.m */; };
 		EE9B0FE81D5912E600B3AF83 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE51D5912E600B3AF83 /* Bolts.framework */; };
 		EE9B0FE91D5912E600B3AF83 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9B0FE61D5912E600B3AF83 /* Parse.framework */; };
@@ -125,8 +124,6 @@
 		851CFB3A1D5BA0F300F57892 /* Curator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Curator.m; sourceTree = "<group>"; };
 		851CFB3C1D5BA2F100F57892 /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Show.h; sourceTree = "<group>"; };
 		851CFB3D1D5BA2F100F57892 /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
-		851CFB3F1D5BA31900F57892 /* Beacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beacon.h; sourceTree = "<group>"; };
-		851CFB401D5BA31900F57892 /* Beacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beacon.m; sourceTree = "<group>"; };
 		851CFB421D5BA4B600F57892 /* Piece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piece.h; sourceTree = "<group>"; };
 		851CFB431D5BA4B600F57892 /* Piece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Piece.m; sourceTree = "<group>"; };
 		EE9B0FE51D5912E600B3AF83 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
@@ -287,8 +284,6 @@
 			children = (
 				851CFB391D5BA0F300F57892 /* Curator.h */,
 				851CFB3A1D5BA0F300F57892 /* Curator.m */,
-				851CFB3F1D5BA31900F57892 /* Beacon.h */,
-				851CFB401D5BA31900F57892 /* Beacon.m */,
 				851CFB421D5BA4B600F57892 /* Piece.h */,
 				851CFB431D5BA4B600F57892 /* Piece.m */,
 				851CFB3C1D5BA2F100F57892 /* Show.h */,
@@ -455,7 +450,6 @@
 				0DDE70051D5929AC002F51A2 /* ShowOverviewViewController.m in Sources */,
 				0DDE6FFF1D59291B002F51A2 /* DashboardViewController.m in Sources */,
 				0D2FD0231D5907E2004DF6B9 /* ViewController.m in Sources */,
-				851CFB411D5BA31900F57892 /* Beacon.m in Sources */,
 				0D2FD0201D5907E2004DF6B9 /* AppDelegate.m in Sources */,
 				0D2FD01D1D5907E2004DF6B9 /* main.m in Sources */,
 			);

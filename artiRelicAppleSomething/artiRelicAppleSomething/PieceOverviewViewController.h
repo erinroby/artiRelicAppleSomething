@@ -7,6 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Show.h"
+#import "ImageHelper.h"
+#import "Piece.h"
+#import "Beacon.h"
+#import "NewPieceViewController.h"
+#import <Parse/Parse.h>
+#import "Curator.h"
 
 @interface PieceOverviewViewController : UIViewController
 

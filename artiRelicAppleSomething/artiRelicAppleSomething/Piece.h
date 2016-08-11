@@ -20,9 +20,9 @@
 @property (strong, nonatomic)NSString *desc;
 @property (strong, nonatomic)NSString *artist;
 @property (strong, nonatomic)NSString *price;
-@property (strong, nonatomic)NSData *image;
-@property (strong, nonatomic)NSData *thumbnail;
-@property (strong, nonatomic)NSData *audio;
+@property (strong, nonatomic)PFFile *image;
+@property (strong, nonatomic)PFFile *thumbnail;
+@property (strong, nonatomic)PFFile *audio;
 @property (strong, nonatomic)Beacon *beacon;
 
 +(instancetype)pieceWithTitle:(NSString *)title desc:(NSString *)desc artist:(NSString *)artist price:(NSString *)price;
