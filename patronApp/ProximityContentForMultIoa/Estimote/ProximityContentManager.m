@@ -5,12 +5,10 @@
 #import "ProximityContentManager.h"
 
 #import "BeaconContentFactory.h"
-#import "NearestBeaconManager.h"
 
 @interface ProximityContentManager () <NearestBeaconManagerDelegate>
 
 @property (nonatomic) id<BeaconContentFactory> beaconContentFactory;
-@property (nonatomic) NearestBeaconManager *nearestBeaconManager;
 
 @end
 
@@ -44,6 +42,7 @@
 
 - (void)nearestBeaconManager:(NearestBeaconManager *)nearestBeaconManager didUpdateNearestBeaconID:(BeaconID *)beaconID {
     if (beaconID) {
+        _beaconId = beaconID;
         [self.beaconContentFactory contentForBeaconID:beaconID completion:^(id content) {
             [self.delegate proximityContentManager:self didUpdateContent:content];
         }];

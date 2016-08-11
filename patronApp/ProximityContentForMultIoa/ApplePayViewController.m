@@ -20,6 +20,9 @@
 @property(weak, nonatomic)NSString *applePayMerchID;
 @property(nonatomic, assign) PKMerchantCapability merchantCapabilities;
 @property(nonatomic, copy) NSArray<PKPaymentSummaryItem *> *paymentSummaryItems;
+@property (weak, nonatomic) IBOutlet UIImageView *pieceImage;
+@property (weak, nonatomic) IBOutlet UILabel *artistLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
 
 
 @end
@@ -28,8 +31,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = self.piece.title;
+    self.artistLabel.text = self.piece.artist;
+    self.descLabel.text = self.piece.desc;
+    self.pieceImage.image = [UIImage imageWithData:[self.piece.image getData]];
     
-
 }
 
 - (void)didReceiveMemoryWarning {
