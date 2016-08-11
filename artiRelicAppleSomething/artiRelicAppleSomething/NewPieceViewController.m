@@ -39,6 +39,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImage *placeholderImage = [UIImage imageNamed:@"frame"];
+    self.pieceImage.image = placeholderImage;
+    self.title = @"Create Artwork";
+    
     //Audio setup
     _playButton.enabled = NO;
     _stopButton.enabled = NO;
@@ -217,11 +221,7 @@
     }];
     [alert addAction:OK];
     [self presentViewController:alert animated:YES completion:nil];
-
 }
-
-
-
 
 #pragma mark UIImagePickerController Delegate
 

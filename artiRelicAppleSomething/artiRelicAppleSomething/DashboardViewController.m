@@ -57,6 +57,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Show"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
+            // TODO: what happens here when the datasource is nil?
             self.dataSource = objects;
             [self.showCollectionView reloadData];
             NSLog(@"Should have reloaded data from viewDidLoad");
@@ -94,7 +95,6 @@
         }
         cellImageView.image = [UIImage imageWithData:data];
     }];
-    
     
     [cell.contentView addSubview:cellImageView];
     
