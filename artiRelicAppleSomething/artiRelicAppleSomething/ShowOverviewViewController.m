@@ -41,6 +41,11 @@
 
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    
+}
 
 -(NSArray *)dataSource {
   
@@ -57,6 +62,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"NewPieceViewController"]) {
         NewPieceViewController *newPieceViewController = [segue destinationViewController];
+        
         newPieceViewController.show = self.show;
     }
 }
@@ -85,12 +91,21 @@
 - (IBAction)publishButtonSelected:(UIBarButtonItem *)sender {
     if (self.show)
     {
-        [self.show saveInBackground];
-    } else {
-        NSLog (@"Show failed to save to parse");
+//        Show *saveThisShow = self.show;
+        
+        NSLog(@"Saving show: %@",self.show);
+        [self.show saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"Show saved");
+            } else {
+                NSLog(@"Error saving show %@", error);
+            }
+        }];
     }
 }
 
+
+         
 @end
 
 
