@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,19 +18,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsX-id-HbS">
-                                <rect key="frame" x="284" y="289" width="33" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="DFPn-ts7B_92ECGhxbw8-KAtLGT3LL3NUuXM2-_06Ck" translatesAutoresizingMaskIntoConstraints="NO" id="KlW-nT-84N">
+                                <rect key="frame" x="48" y="127" width="504" height="268"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="268" id="OIl-NY-BDG"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OIl-NY-BDG"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modern Renaissance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsX-id-HbS">
+                                <rect key="frame" x="215" y="88" width="171" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adI-Yp-bIy">
+                                <rect key="frame" x="28" y="457" width="544" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="Hxx-QM-A3S"/>
+                                    <constraint firstAttribute="height" constant="100" id="KOQ-hr-tYj"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Hxx-QM-A3S"/>
+                                    </mask>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rsX-id-HbS" firstAttribute="top" secondItem="MIK-0O-en7" secondAttribute="bottom" constant="225" id="PgT-h8-WwI"/>
-                            <constraint firstItem="rsX-id-HbS" firstAttribute="centerY" secondItem="hys-hi-MR7" secondAttribute="centerY" id="jHy-hc-ZXO"/>
-                            <constraint firstItem="rsX-id-HbS" firstAttribute="centerX" secondItem="hys-hi-MR7" secondAttribute="centerX" id="sOF-Zq-7H5"/>
+                            <constraint firstItem="adI-Yp-bIy" firstAttribute="leading" secondItem="hys-hi-MR7" secondAttribute="leadingMargin" constant="8" id="0uo-pK-iLd"/>
+                            <constraint firstItem="KlW-nT-84N" firstAttribute="top" secondItem="rsX-id-HbS" secondAttribute="bottom" constant="18" id="GJa-b3-XTO"/>
+                            <constraint firstItem="adI-Yp-bIy" firstAttribute="top" secondItem="KlW-nT-84N" secondAttribute="bottom" constant="62" id="Sde-27-IZK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KlW-nT-84N" secondAttribute="trailing" constant="28" id="XBK-bG-VvO"/>
+                            <constraint firstAttribute="bottom" secondItem="adI-Yp-bIy" secondAttribute="bottom" constant="43" id="c37-wL-rje"/>
+                            <constraint firstItem="KlW-nT-84N" firstAttribute="leading" secondItem="hys-hi-MR7" secondAttribute="leadingMargin" constant="28" id="c8V-5y-k2i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="adI-Yp-bIy" secondAttribute="trailing" constant="8" id="d4Q-8b-eFB"/>
+                            <constraint firstItem="rsX-id-HbS" firstAttribute="centerX" secondItem="hys-hi-MR7" secondAttribute="centerX" id="enN-mC-Wg8"/>
+                            <constraint firstItem="KlW-nT-84N" firstAttribute="top" secondItem="rsX-id-HbS" secondAttribute="bottom" constant="18" id="hBE-9d-sUB"/>
+                            <constraint firstItem="Jo7-E3-NQm" firstAttribute="top" secondItem="adI-Yp-bIy" secondAttribute="bottom" constant="20" id="lO6-67-I7Q"/>
+                            <constraint firstItem="rsX-id-HbS" firstAttribute="top" secondItem="MIK-0O-en7" secondAttribute="bottom" constant="24" id="odm-fv-NX2"/>
+                            <constraint firstItem="rsX-id-HbS" firstAttribute="top" secondItem="MIK-0O-en7" secondAttribute="bottom" constant="46" id="uNp-YG-Ggl"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hBE-9d-sUB"/>
+                                <exclude reference="uNp-YG-Ggl"/>
+                                <exclude reference="lO6-67-I7Q"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="ynm-pM-llW">
                         <barButtonItem key="rightBarButtonItem" title="To Show" id="Chy-IW-OeN">
@@ -55,20 +106,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrF-2p-u8N">
-                                <rect key="frame" x="230" y="467" width="140" height="57"/>
-                                <state key="normal" title="Button" image="ApplePayBTN_64pt__black_logo_"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrF-2p-u8N">
+                                <rect key="frame" x="202" y="461" width="196" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="HGh-XG-f5f"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="ApplePayBTN_64pt__black_textLogo_"/>
                                 <connections>
                                     <action selector="payPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0vq-V1-p9J"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qip-eA-SIU">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="vBP-v4-5dt"/>
+                                    <barButtonItem systemItem="play" id="pTz-fY-dwv"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6TH-p1-RBZ"/>
+                                </items>
+                            </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUf-iu-rpl">
+                                <rect key="frame" x="82" y="361" width="436" height="84"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="7so-2A-9R1"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="DFPn-ts7B_92ECGhxbw8-KAtLGT3LL3NUuXM2-_06Ck" translatesAutoresizingMaskIntoConstraints="NO" id="ZWA-x1-UlX">
+                                <rect key="frame" x="82" y="122" width="436" height="231"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mrF-2p-u8N" secondAttribute="bottom" constant="76" id="OWs-JI-N1z"/>
-                            <constraint firstItem="mrF-2p-u8N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="447" id="iww-pK-anz"/>
-                            <constraint firstItem="mrF-2p-u8N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rBx-ZO-kvq"/>
+                            <constraint firstItem="qip-eA-SIU" firstAttribute="top" secondItem="mrF-2p-u8N" secondAttribute="bottom" constant="31" id="3uR-FC-crJ"/>
+                            <constraint firstItem="ZWA-x1-UlX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="58" id="4Fn-qW-w7z"/>
+                            <constraint firstItem="mrF-2p-u8N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CyG-gS-l6O"/>
+                            <constraint firstItem="mrF-2p-u8N" firstAttribute="centerX" secondItem="qip-eA-SIU" secondAttribute="centerX" id="JAq-jl-gVW"/>
+                            <constraint firstItem="qip-eA-SIU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JDc-np-tZh"/>
+                            <constraint firstItem="dUf-iu-rpl" firstAttribute="trailing" secondItem="ZWA-x1-UlX" secondAttribute="trailing" id="KCP-7A-epZ"/>
+                            <constraint firstItem="dUf-iu-rpl" firstAttribute="leading" secondItem="ZWA-x1-UlX" secondAttribute="leading" id="KG8-Yo-8MU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZWA-x1-UlX" secondAttribute="trailing" constant="62" id="OkD-nd-kVe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qip-eA-SIU" secondAttribute="bottom" id="RkS-5t-zzw"/>
+                            <constraint firstItem="mrF-2p-u8N" firstAttribute="top" secondItem="dUf-iu-rpl" secondAttribute="bottom" constant="16" id="TDl-o5-QSJ"/>
+                            <constraint firstItem="dUf-iu-rpl" firstAttribute="top" secondItem="ZWA-x1-UlX" secondAttribute="bottom" constant="8" id="UEi-a4-XBO"/>
+                            <constraint firstAttribute="trailing" secondItem="qip-eA-SIU" secondAttribute="trailing" id="aGu-e7-tPx"/>
+                            <constraint firstItem="ZWA-x1-UlX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="62" id="xQt-X6-teh"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CyG-gS-l6O"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="applePayButton" destination="mrF-2p-u8N" id="cNb-Ti-3e3"/>
@@ -98,6 +195,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ApplePayBTN_64pt__black_logo_" width="140" height="64"/>
+        <image name="ApplePayBTN_64pt__black_textLogo_" width="194" height="64"/>
+        <image name="DFPn-ts7B_92ECGhxbw8-KAtLGT3LL3NUuXM2-_06Ck" width="1024" height="684"/>
     </resources>
 </document>
