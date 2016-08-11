@@ -141,7 +141,7 @@
         if (self.thumb) {
             piece.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
         }
-        piece.beaconID = self.beaconID;
+        piece.beaconID = @"Label";
         
         NSArray *newPiece = @[piece];
         self.show.pieces = [self.show.pieces arrayByAddingObjectsFromArray:newPiece];
@@ -163,12 +163,12 @@
         ShowOverviewViewController *showOverviewViewController = [segue destinationViewController];
         showOverviewViewController.show = self.show;
     }
-//    else {
-//    if ([[segue identifier] isEqualToString:@"BeaconPairViewController"]) {
-//        BeaconPairViewController *beaconPairViewController = [segue destinationViewController];
-//        beaconPairViewController.piece = self.piece;
-//        }
-//    }
+    else {
+    if ([[segue identifier] isEqualToString:@"BeaconPairViewController"]) {
+        BeaconPairViewController *beaconPairViewController = [segue destinationViewController];
+        beaconPairViewController.show = self.show;
+        }
+    }
 }
 
 - (IBAction)playButtonPressed:(UIButton *)sender {

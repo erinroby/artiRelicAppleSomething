@@ -10,10 +10,12 @@
 #import "ProximityContentManager.h"
 #import "Piece.h"
 #import "NewPieceViewController.h"
+#import "Show.h"
 
 @interface BeaconPairViewController : UIViewController
 
 @property (strong, nonatomic)Piece *piece;
 @property (strong, nonatomic)NSString *beaconID;
+@property (strong, nonatomic)Show *show;
 
 @end
