@@ -82,19 +82,6 @@
 
 #pragma MARK - Estimote Location Management
 
-
-#pragma MARK - UITableViewDataSource
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"beaconCell" forIndexPath:indexPath];
-    // bah! how to get at the beaconDetails from here!
-
-    return cell;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.availableBeacons.count;
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([[segue identifier] isEqualToString:@"NewPieceViewController"]){
