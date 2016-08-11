@@ -3,8 +3,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Show.h"
 
 
 @interface ViewController : UIViewController
+
+@property (strong, nonatomic)Show *show;
 
 @end

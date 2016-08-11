@@ -17,8 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsX-id-HbS">
-                                <rect key="frame" x="284" y="289" width="33" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgZ-UI-BPn">
+                                <rect key="frame" x="175" y="104" width="250" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="gdv-wF-LzV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oI6-7i-cFB">
+                                <rect key="frame" x="175" y="175" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="2kw-pU-M8F"/>
+                                    <constraint firstAttribute="width" constant="250" id="KQE-yH-4XJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zik-g4-jP4">
+                                <rect key="frame" x="175" y="459" width="250" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="kuF-5G-sCe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -26,18 +45,32 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rsX-id-HbS" firstAttribute="top" secondItem="MIK-0O-en7" secondAttribute="bottom" constant="225" id="PgT-h8-WwI"/>
-                            <constraint firstItem="rsX-id-HbS" firstAttribute="centerY" secondItem="hys-hi-MR7" secondAttribute="centerY" id="jHy-hc-ZXO"/>
-                            <constraint firstItem="rsX-id-HbS" firstAttribute="centerX" secondItem="hys-hi-MR7" secondAttribute="centerX" id="sOF-Zq-7H5"/>
+                            <constraint firstItem="oI6-7i-cFB" firstAttribute="centerY" secondItem="hys-hi-MR7" secondAttribute="centerY" id="54r-lH-M8m"/>
+                            <constraint firstItem="VgZ-UI-BPn" firstAttribute="centerX" secondItem="hys-hi-MR7" secondAttribute="centerX" id="EKM-Cd-Npu"/>
+                            <constraint firstItem="oI6-7i-cFB" firstAttribute="centerX" secondItem="hys-hi-MR7" secondAttribute="centerX" id="RD2-Xu-H3a"/>
+                            <constraint firstItem="Zik-g4-jP4" firstAttribute="top" secondItem="oI6-7i-cFB" secondAttribute="bottom" constant="34" id="eDd-XG-mge"/>
+                            <constraint firstItem="oI6-7i-cFB" firstAttribute="centerX" secondItem="hys-hi-MR7" secondAttribute="centerX" id="ofv-MN-Ild"/>
+                            <constraint firstItem="Zik-g4-jP4" firstAttribute="centerX" secondItem="hys-hi-MR7" secondAttribute="centerX" id="qcn-TJ-u5w"/>
+                            <constraint firstItem="VgZ-UI-BPn" firstAttribute="top" secondItem="MIK-0O-en7" secondAttribute="bottom" constant="40" id="vv9-hM-LFX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ynm-pM-llW">
+                        <barButtonItem key="leftBarButtonItem" title="Fetch Piece" id="Mcv-Lw-glC">
+                            <connections>
+                                <action selector="fetchButtonSelected:" destination="4kZ-D2-YXW" id="gwy-IG-Jjm"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="To Show" id="Chy-IW-OeN">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" id="vRv-NT-t6t"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Zik-g4-jP4" id="3es-R9-gcv"/>
+                        <outlet property="showImage" destination="oI6-7i-cFB" id="JI7-vX-t7i"/>
+                        <outlet property="welcomeLabel" destination="VgZ-UI-BPn" id="rzm-et-QM7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ub-er-a1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
