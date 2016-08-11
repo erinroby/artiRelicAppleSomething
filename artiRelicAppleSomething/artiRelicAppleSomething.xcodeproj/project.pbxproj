@@ -30,7 +30,6 @@
 		0DDE700B1D592A0E002F51A2 /* PieceOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE700A1D592A0E002F51A2 /* PieceOverviewViewController.m */; };
 		0DDE700E1D592A84002F51A2 /* BeaconPairViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */; };
 		700DB6FF1D5A403C00B4916E /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 700DB6FE1D5A403C00B4916E /* ImageHelper.m */; };
-		70FC5EC61D5AA36C0082268D /* addAPiece.png in Resources */ = {isa = PBXBuildFile; fileRef = 70FC5EC51D5AA36C0082268D /* addAPiece.png */; };
 		851CFB3B1D5BA0F300F57892 /* Curator.m in Sources */ = {isa = PBXBuildFile; fileRef = 851CFB3A1D5BA0F300F57892 /* Curator.m */; };
 		851CFB3E1D5BA2F100F57892 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 851CFB3D1D5BA2F100F57892 /* Show.m */; };
 		851CFB411D5BA31900F57892 /* Beacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 851CFB401D5BA31900F57892 /* Beacon.m */; };
@@ -122,7 +121,6 @@
 		0DDE700D1D592A84002F51A2 /* BeaconPairViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconPairViewController.m; sourceTree = "<group>"; };
 		700DB6FD1D5A403C00B4916E /* ImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelper.h; sourceTree = "<group>"; };
 		700DB6FE1D5A403C00B4916E /* ImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHelper.m; sourceTree = "<group>"; };
-		70FC5EC51D5AA36C0082268D /* addAPiece.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addAPiece.png; sourceTree = "<group>"; };
 		851CFB391D5BA0F300F57892 /* Curator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Curator.h; sourceTree = "<group>"; };
 		851CFB3A1D5BA0F300F57892 /* Curator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Curator.m; sourceTree = "<group>"; };
 		851CFB3C1D5BA2F100F57892 /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Show.h; sourceTree = "<group>"; };
@@ -249,17 +247,6 @@
 				0D2FD0511D59083E004DF6B9 /* EstimoteSDK.framework */,
 			);
 			name = Estimote;
-			sourceTree = "<group>";
-		};
-		0D3F74E11D59834D00CFB845 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				70FC5EC51D5AA36C0082268D /* addAPiece.png */,
-				0D3F74E21D59836300CFB845 /* picasso.jpg */,
-				0D3F74E31D59836300CFB845 /* picasso1.jpg */,
-				0D3F74E41D59836300CFB845 /* picasso2.jpg */,
-			);
-			name = images;
 			sourceTree = "<group>";
 		};
 		0DC02B531D59289D009B03BD /* Controller */ = {
@@ -426,9 +413,6 @@
 				0D2FD02E1D5907E2004DF6B9 /* LaunchScreen.storyboard in Resources */,
 				0D2FD02B1D5907E2004DF6B9 /* Assets.xcassets in Resources */,
 				0D2FD0261D5907E2004DF6B9 /* Main.storyboard in Resources */,
-				0D3F74E61D59836300CFB845 /* picasso1.jpg in Resources */,
-				0D3F74E71D59836300CFB845 /* picasso2.jpg in Resources */,
-				70FC5EC61D5AA36C0082268D /* addAPiece.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
