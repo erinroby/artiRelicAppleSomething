@@ -24,6 +24,7 @@
     [super viewDidLoad];
     self.showCollectionView.delegate = self;
     self.showCollectionView.dataSource = self;
+    
 //    PFQuery *query = [PFQuery queryWithClassName:@"Show"];
 //    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 //        if (!error) {
@@ -44,7 +45,7 @@
 //        self.showCollectionView.reloadData;
 //        return t;
 //    }];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
