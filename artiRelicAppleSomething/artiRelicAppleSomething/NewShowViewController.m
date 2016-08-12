@@ -8,7 +8,7 @@
 
 #import "NewShowViewController.h"
 
-const NSTimeInterval kScrollViewKeyboardAnimation = 0.25;
+const NSTimeInterval kScrollViewKeyboardAnimation = 0.50;
 const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 
 @interface NewShowViewController () <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, UIGestureRecognizerDelegate>
@@ -139,7 +139,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
     [UIView animateWithDuration:kScrollViewKeyboardAnimation animations:^{
-        [self.scrollView setContentOffset:(CGPointMake(0.0, 50.0))];
+        [self.scrollView setContentOffset:(CGPointMake(0.0, 150.0))];
     }];
 }
 

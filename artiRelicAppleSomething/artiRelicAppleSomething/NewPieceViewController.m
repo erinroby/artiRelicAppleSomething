@@ -8,7 +8,7 @@
 
 #import "NewPieceViewController.h"
 
-const NSTimeInterval kScrollViewKeyboardAnimation = 0.25;
+const NSTimeInterval kScrollViewKeyboardAnimation = 0.50;
 const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 
 @interface NewPieceViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, BeaconPairViewControllerDelegate>
@@ -206,7 +206,6 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
         BeaconPairViewController *beaconPairVC = segue.destinationViewController;
         beaconPairVC.delegate = self;
     }
-
 }
 
 - (IBAction)playButtonPressed:(UIButton *)sender {
@@ -296,11 +295,27 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 
 }
 
+- (void)addDoneButton {
+    UIToolbar* keyboardToolbar = [[UIToolbar alloc] init];
+    [keyboardToolbar sizeToFit];
+    UIBarButtonItem *flexBarButton = [[UIBarButtonItem alloc]
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                      target:nil action:nil];
+    UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc]
+                                      initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                      target:self.view action:@selector(endEditing:)];
+    keyboardToolbar.items = @[flexBarButton, doneBarButton];
+    self.piecePrice.inputAccessoryView = keyboardToolbar;
+}
+
 #pragma mark UITextFieldDelegate
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (textField == _piecePrice) {
+        [self addDoneButton];
+    }
     [UIView animateWithDuration:kScrollViewKeyboardAnimation animations:^{
-        [self.scrollView setContentOffset:(CGPointMake(0.0, 50.0))];
+        [self.scrollView setContentOffset:(CGPointMake(0.0, 150.0))];
     }];
     
 }
@@ -327,6 +342,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     [textView setText:@""];
+    [self addDoneButton];
     [UIView animateWithDuration:kScrollTextViewKeyboardAnimation animations:^{
         [self.scrollView setContentOffset:(CGPointMake(0.0, 150.0))];
     }];
