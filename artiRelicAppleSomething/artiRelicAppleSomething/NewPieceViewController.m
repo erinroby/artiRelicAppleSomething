@@ -186,7 +186,9 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
             if (_audioFile) {
                 piece.audio = _audioFile;
             }
-            self.show.pieces = [[NSMutableArray alloc]init];
+            if (!self.show.pieces) {
+                self.show.pieces = [[NSMutableArray alloc]init];
+            };
             self.show.pieces = [self.show.pieces arrayByAddingObject:piece];
             [self.show saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                 if (succeeded) {
