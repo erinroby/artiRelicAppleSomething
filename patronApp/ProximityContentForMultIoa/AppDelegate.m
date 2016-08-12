@@ -19,6 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ESTConfig setupAppID:@"proximity-content-for-mult-ioa" andAppToken:@"b796ce4b2a572e8707b202a92fb80ee5"];
     
+    [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil]];
+    
     // apply pay and stripe
     [[STPPaymentConfiguration sharedConfiguration] setPublishableKey:@"pk_test_TGCXR26srXhXwWm0goG29cDi"];
     [[STPPaymentConfiguration sharedConfiguration] setAppleMerchantIdentifier:@"merchant.com.patronapp"];

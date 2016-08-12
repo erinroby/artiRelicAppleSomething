@@ -13,7 +13,7 @@
 
 @import Parse;
 
-@interface ViewController () <ProximityContentManagerDelegate, ESTBeaconManagerDelegate>
+@interface ViewController () <ProximityContentManagerDelegate, CLLocationManagerDelegate>
 
 - (IBAction)fetchButtonSelected:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *artistLabel;
@@ -32,15 +32,19 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad {   
     [super viewDidLoad];
 
-    self.beaconManager = [[ESTBeaconManager alloc]init];
-    self.beaconManager.delegate = self;
-    [self.beaconManager requestAlwaysAuthorization];
-    [self.beaconManager startMonitoringForRegion:[[CLBeaconRegion alloc]initWithProximityUUID:[[NSUUID alloc]initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"] major:36360 minor:36995 identifier:@"monitored region"]];
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.delegate = self;
+    
+    NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
+    self.beaconRegion = [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID major:36360 minor:36995 identifier:@"managed region"];
+    self.beaconRegion.notifyEntryStateOnDisplay = YES;
+    [self.locationManager startMonitoringForRegion:self.beaconRegion];
     
     
+    //initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"] major:36360 minor:36995 identifier:@"monitored region"
 //Select show to be hosted by title
     PFQuery *query = [PFQuery queryWithClassName:@"Show"];
     [query whereKey:@"title" equalTo:@"Wyld"];
@@ -63,6 +67,8 @@
             UIImage *showImage = [UIImage imageWithData:[self.show.image getData]];
             self.showImage.image = showImage;
             self.descriptionLabel.text = self.show.desc;
+            
+            
         } else {
             NSLog(@"Error: failed to load parse-- %@",error);
         }
@@ -84,8 +90,23 @@
     
 }
 
-- (void) beaconManager:(id)manager didEnterRegion:(CLBeaconRegion *)region
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
 {
+    NSLog(@"Entered region");
+    
+    UILocalNotification *notification = [[UILocalNotification alloc]init];
+    notification.alertBody = @"Yay, you entered the Icy Mint region!!";
+    notification.alertTitle = @"Monitoring!!!";
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+    
+    NSString *beaconID = self.UIID;
+    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"beaconID contains[cd] %@",beaconID];
+    NSArray *filteredArray = [self.show.pieces filteredArrayUsingPredicate:bPredicate];
+    self.piece = [filteredArray firstObject];
+
+    [self performSegueWithIdentifier:@"ApplePayViewController" sender:self];
+    
     
 }
 
@@ -116,7 +137,7 @@
 //        CLBeaconRegion *region = [self.proximityContentManager.beaconId asBeaconRegion];
 //        NSLog(@"%@", region);
         self.UIID = self.proximityContentManager.beaconId.description;
-        NSLog(@"self.UIID set to: %@",self.UIID);
+//        NSLog(@"self.UIID set to: %@",self.UIID);
     } else {
         NSLog(@"No Beacons in Range");
         
