@@ -387,6 +387,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRe-I6-vg3">
                                         <rect key="frame" x="482" y="423" width="100" height="30"/>
                                         <state key="normal" title="Pair Beacon"/>
+                                        <connections>
+                                            <action selector="beaconButtonPressed:" destination="QMX-Vc-rwu" eventType="touchUpInside" id="mlV-ow-CmQ"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="i2g-9f-oLs">
                                         <rect key="frame" x="18" y="518" width="564" height="125"/>
@@ -444,6 +447,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="beaconButton" destination="DRe-I6-vg3" id="IRf-fJ-SnQ"/>
                         <outlet property="narrationLabel" destination="yDz-dZ-Tc7" id="7h6-Fm-pob"/>
                         <outlet property="pieceArtistTextField" destination="6ca-mn-IKw" id="07m-Hi-CEv"/>
                         <outlet property="pieceDescription" destination="i2g-9f-oLs" id="5bj-Xh-y5b"/>
