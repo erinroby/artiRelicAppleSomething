@@ -124,7 +124,7 @@ Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia od
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrF-2p-u8N">
+                            <button opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrF-2p-u8N">
                                 <rect key="frame" x="202" y="461" width="196" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="196" id="HGh-XG-f5f"/>
@@ -134,7 +134,7 @@ Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia od
                                     <action selector="payPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0vq-V1-p9J"/>
                                 </connections>
                             </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qip-eA-SIU">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qip-eA-SIU">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="vBP-v4-5dt"/>
@@ -156,7 +156,7 @@ Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia od
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="6TH-p1-RBZ"/>
                                 </items>
                             </toolbar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUf-iu-rpl">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUf-iu-rpl">
                                 <rect key="frame" x="82" y="361" width="436" height="84"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -173,7 +173,7 @@ Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia od
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="DFPn-ts7B_92ECGhxbw8-KAtLGT3LL3NUuXM2-_06Ck" translatesAutoresizingMaskIntoConstraints="NO" id="ZWA-x1-UlX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="DFPn-ts7B_92ECGhxbw8-KAtLGT3LL3NUuXM2-_06Ck" translatesAutoresizingMaskIntoConstraints="NO" id="ZWA-x1-UlX">
                                 <rect key="frame" x="82" y="122" width="436" height="231"/>
                             </imageView>
                         </subviews>

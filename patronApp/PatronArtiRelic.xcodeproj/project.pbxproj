@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70D3D1941D5D6ECC000FC440 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D3D1931D5D6ECC000FC440 /* CoreBluetooth.framework */; };
+		70D3D1961D5D6F0C000FC440 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D3D1951D5D6F0C000FC440 /* CoreLocation.framework */; };
 		70DDC9431D5C5E2D00202892 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DDC9421D5C5E2D00202892 /* Show.m */; };
 		70DDC9461D5C5EE700202892 /* Piece.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DDC9451D5C5EE700202892 /* Piece.m */; };
 		70DDC9481D5C684900202892 /* arti.png in Resources */ = {isa = PBXBuildFile; fileRef = 70DDC9471D5C684900202892 /* arti.png */; };
@@ -49,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		70D3D1931D5D6ECC000FC440 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		70D3D1951D5D6F0C000FC440 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		70DDC9411D5C5E2D00202892 /* Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Show.h; sourceTree = "<group>"; };
 		70DDC9421D5C5E2D00202892 /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
 		70DDC9441D5C5EE700202892 /* Piece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piece.h; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D3D1961D5D6F0C000FC440 /* CoreLocation.framework in Frameworks */,
+				70D3D1941D5D6ECC000FC440 /* CoreBluetooth.framework in Frameworks */,
 				EE4B478F1D5A52EA000CF527 /* Bolts.framework in Frameworks */,
 				EE4B47901D5A52EA000CF527 /* Parse.framework in Frameworks */,
 				EE4B47911D5A52EA000CF527 /* Stripe.framework in Frameworks */,
@@ -169,6 +175,8 @@
 		AECF16831B0E0C0200CC83B2 = {
 			isa = PBXGroup;
 			children = (
+				70D3D1951D5D6F0C000FC440 /* CoreLocation.framework */,
+				70D3D1931D5D6ECC000FC440 /* CoreBluetooth.framework */,
 				EE4B478C1D5A52EA000CF527 /* Bolts.framework */,
 				EE4B478D1D5A52EA000CF527 /* Parse.framework */,
 				EE4B478E1D5A52EA000CF527 /* Stripe.framework */,
