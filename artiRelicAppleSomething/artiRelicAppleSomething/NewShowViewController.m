@@ -100,6 +100,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
         [show saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             if (succeeded) {
                 NSLog(@"Show saved to parse");
+                [self.navigationController popViewControllerAnimated:YES];
             } else {
                 NSLog(@"Show failed to save to parse: %@", error);
             }
