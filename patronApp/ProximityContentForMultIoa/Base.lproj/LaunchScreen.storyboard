@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arti" width="140" height="64"/>
+        <image name="arti" width="1024" height="684"/>
     </resources>
 </document>

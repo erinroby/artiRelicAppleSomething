@@ -105,7 +105,7 @@
     
     self.request = [[PKPaymentRequest alloc]init];
     self.paymentMethods = @[PKPaymentNetworkVisa, PKPaymentNetworkMasterCard, PKPaymentNetworkAmex];
-    self.applePayMerchID = @"merchant.com.patronapp";
+    self.applePayMerchID = @"merchant.com.patronAppArtiRelic";
     self.request.merchantIdentifier = self.applePayMerchID;
     self.request.supportedNetworks = self.paymentMethods;
     self.request.merchantCapabilities = PKMerchantCapability3DS;
