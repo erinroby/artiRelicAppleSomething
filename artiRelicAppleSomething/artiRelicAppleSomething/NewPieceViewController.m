@@ -8,11 +8,15 @@
 
 #import "NewPieceViewController.h"
 
-@interface NewPieceViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, BeaconPairViewControllerDelegate>
+const NSTimeInterval kScrollViewKeyboardAnimation = 0.25;
+const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
+
+@interface NewPieceViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, BeaconPairViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *pieceImage;
 @property (weak, nonatomic) IBOutlet UITextField *pieceTitleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pieceArtistTextField;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *piecePrice;
 @property (weak, nonatomic) IBOutlet UITextView *pieceDescription;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
@@ -270,5 +274,61 @@
     NSLog(@"This was returned from ViewControllerB %@",item);
 
 }
+
+#pragma mark UITextFieldDelegate
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    [UIView animateWithDuration:kScrollViewKeyboardAnimation animations:^{
+        [self.scrollView setContentOffset:(CGPointMake(0.0, 50.0))];
+    }];
+    
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
+    
+    [UIView animateWithDuration:kScrollViewKeyboardAnimation animations:^{
+        [self.scrollView setContentOffset:(CGPointMake(0.0, (45.0 - navBarHeight)))];
+    }];
+}
+
+#pragma mark UITextViewDelegate
+
+-(BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    [self.pieceDescription setReturnKeyType:UIReturnKeyDone];
+    return YES;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    [UIView animateWithDuration:kScrollTextViewKeyboardAnimation animations:^{
+        [self.scrollView setContentOffset:(CGPointMake(0.0, 150.0))];
+    }];
+    
+    [self.pieceDescription setReturnKeyType:UIReturnKeyDefault];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    int charINTtyped = 0;
+    
+    if([text length] > 0){
+        charINTtyped = (int)[text characterAtIndex:0];
+    }
+    
+    if(charINTtyped == 10){
+        [textView resignFirstResponder];
+        [UIView animateWithDuration:kScrollTextViewKeyboardAnimation animations:^{
+            CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
+            [self.scrollView setContentOffset:(CGPointMake(0.0, (45.0 - navBarHeight)))];
+        }];
+        return NO;
+    }
+    return YES;
+}
+
 
 @end
