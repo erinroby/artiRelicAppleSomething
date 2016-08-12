@@ -10,6 +10,7 @@
 #import "Show.h"
 #import "ImageHelper.h"
 #import "Piece.h"
+#import "NewShowViewController.h"
 #import "NewPieceViewController.h"
 #import <Parse/Parse.h>
 #import "Curator.h"

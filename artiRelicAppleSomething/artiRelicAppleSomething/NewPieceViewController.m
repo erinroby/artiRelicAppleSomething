@@ -39,24 +39,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImage *placeholderImage = [UIImage imageNamed:@"frame"];
-    self.pieceImage.image = placeholderImage;
-    self.title = @"Create Artwork";
+    //audio path
+    NSArray *dirPaths;
+    NSString *docsDir;
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = dirPaths[0];
+    
+    NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
+    
+    _soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    
+    //determine new or existing piece
+    if (self.piece) {
+        self.pieceImage.image = [UIImage imageWithData:[self.piece.image getData]];
+        self.title = @"Edit Artwork";
+        self.pieceTitleTextField.text = self.piece.title;
+        self.pieceArtistTextField.text = self.piece.artist;
+        self.piecePrice.text = self.piece.price;
+    } else {
+        UIImage *placeholderImage = [UIImage imageNamed:@"frame"];
+        self.pieceImage.image = placeholderImage;
+        self.title = @"Create Artwork";
+    }
     
     //Audio setup
     _playButton.enabled = NO;
     _stopButton.enabled = NO;
 
-    NSArray *dirPaths;
-    NSString *docsDir;
 
-    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    docsDir = dirPaths[0];
-
-    NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
 //    NSLog(@"%@", soundFilePath);
 
-    _soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+
 
     NSDictionary *recordSettings  = [NSDictionary dictionaryWithObjectsAndKeys:
                                      [NSNumber numberWithInt:AVAudioQualityMin],
@@ -131,30 +145,35 @@
     if ([title isEqualToString:@""] || !title) {
         [self presentAlert];
     } else {
-        Piece *piece = [Piece pieceWithTitle:title desc:desc artist:artist price:price];
-        
-        piece.audio = [PFFile fileWithData:[NSData dataWithContentsOfURL:_soundFileURL]];
-        
+        Piece *piece;
+        if (self.piece) {
+            piece = self.piece;
+            piece.title = title;
+            piece.desc = desc;
+            piece.artist = artist;
+            piece.price = price;
+        } else {
+            piece = [Piece pieceWithTitle:title desc:desc artist:artist price:price];
+            self.show.pieces = [[NSMutableArray alloc]init];
+            self.show.pieces = [self.show.pieces arrayByAddingObject:piece];
+        }
         if (self.image) {
-            piece.image = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.image]];
+            piece.image = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.image]];;
         }
         if (self.thumb) {
             piece.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
         }
-        piece.beaconID = @"Label";
         
-        NSArray *newPiece = @[piece];
-        self.show.pieces = [self.show.pieces arrayByAddingObjectsFromArray:newPiece];
+        NSLog(@"Show created: %@", piece);
         
-        NSLog(@"%@",self.show.pieces);
-        self.piece = piece;
-        
-        NSLog(@"Piece created");
-        NSLog(@"Self.piece: %@", self.piece);
-        
-//        [self.show save];
+        [piece saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"Piece saved to parse");
+            } else {
+                NSLog(@"Show failed to save to parse: %@", error);
+            }
+        }];
     }
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

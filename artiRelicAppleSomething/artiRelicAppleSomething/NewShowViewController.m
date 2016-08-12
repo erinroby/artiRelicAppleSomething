@@ -35,10 +35,19 @@
     
     self.descriptionTextField.delegate = self;
 
-    
-    UIImage *placeholderImage = [UIImage imageNamed:@"frame"];
-    self.headerImage.image = placeholderImage;
-    self.title = @"Create Show";
+    if (self.show) {
+        self.headerImage.image = [UIImage imageWithData:[self.show.image getData]];
+        self.titleTextField.text = self.show.title;
+        self.subtitleTextField.text = self.show.subtitle;
+        self.descriptionTextField.text = self.show.desc;
+        self.title = @"Edit Show";
+    } else {
+        UIImage *placeholderImage = [UIImage imageNamed:@"frame"];
+        self.headerImage.image = placeholderImage;
+        self.title = @"Create Show";
+    }
+
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,14 +76,22 @@
     if ([title  isEqual: @""] || !title) {
         [self presentAlert];
     } else {
-        Show *show = [Show publishShowWithTitle:title subtitle:subtitle desc:desc];
+        Show *show;
+        if (self.show) {
+            show = self.show;
+            show.title = title;
+            show.subtitle = subtitle;
+            show.desc = desc;
+        } else {
+            show = [Show publishShowWithTitle:title subtitle:subtitle desc:desc];
+            show.pieces = [[NSMutableArray alloc]init];
+        }
         if (self.image) {
             show.image = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.image]];;
         }
         if (self.thumb) {
             show.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
         }
-        show.pieces = [[NSMutableArray alloc]init];
         
         NSLog(@"Show created: %@", show);
         
