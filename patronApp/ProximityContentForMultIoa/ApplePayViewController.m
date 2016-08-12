@@ -22,6 +22,9 @@
 @property(nonatomic, copy) NSArray<PKPaymentSummaryItem *> *paymentSummaryItems;
 @property (weak, nonatomic) IBOutlet UIImageView *pieceImage;
 @property (weak, nonatomic) IBOutlet UITextView *descLabel;
+- (IBAction)playButtonPressed:(id)sender;
+- (IBAction)pauseButtonPressed:(id)sender;
+- (IBAction)rewindButtonPressed:(id)sender;
 
 
 @end
@@ -33,6 +36,17 @@
     self.title = self.piece.title;
     self.descLabel.text = self.piece.desc;
     self.pieceImage.image = [UIImage imageWithData:[self.piece.image getData]];
+
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    //Audio setup
+    PFFile *audioFile = self.piece.audio;
+    NSData *audioData = [audioFile getData];
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategorySoloAmbient error:nil];
+    _audioPlayer = [[AVAudioPlayer alloc]initWithData:audioData error:nil];
     
 }
 
@@ -96,7 +110,7 @@
     
     self.request = [[PKPaymentRequest alloc]init];
     self.paymentMethods = @[PKPaymentNetworkVisa, PKPaymentNetworkMasterCard, PKPaymentNetworkAmex];
-    self.applePayMerchID = @"merchant.com.patronapp";
+    self.applePayMerchID = @"merchant.com.patronAppArtiRelic";
     self.request.merchantIdentifier = self.applePayMerchID;
     self.request.supportedNetworks = self.paymentMethods;
     self.request.merchantCapabilities = PKMerchantCapability3DS;
@@ -104,7 +118,7 @@
     self.request.currencyCode = @"USD";
     
     // 12.75 subtotal
-    NSDecimalNumber *subtotalAmount = [NSDecimalNumber decimalNumberWithMantissa:1275
+    NSDecimalNumber *subtotalAmount = [NSDecimalNumber decimalNumberWithMantissa:12250
                                                                         exponent:-2 isNegative:NO];
     self.request.paymentSummaryItems = @[[PKPaymentSummaryItem summaryItemWithLabel:@"Subtotal" amount:subtotalAmount]];
     
@@ -113,4 +127,39 @@
     applePayController.delegate = self;
     
 }
+- (IBAction)playButtonPressed:(id)sender {
+    [_audioPlayer play];
+}
+
+- (IBAction)pauseButtonPressed:(id)sender {
+    [_audioPlayer pause];
+}
+
+- (IBAction)rewindButtonPressed:(id)sender {
+    [_audioPlayer setCurrentTime:0];
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,14 +4,10 @@
 
 #import "NearestBeaconManager.h"
 
-@interface NearestBeaconManager () <ESTBeaconManagerDelegate>
+@interface NearestBeaconManager () <ESTBeaconManagerDelegate> 
 
-@property (copy, nonatomic) NSArray *beaconRegions;
-
-@property (nonatomic) ESTBeaconManager *beaconManager;
-
-@property (nonatomic) BeaconID *nearestBeaconID;
 @property (nonatomic) BOOL firstEventSent;
+
 
 @end
 
@@ -25,7 +21,7 @@
         self.beaconManager = [ESTBeaconManager new];
         self.beaconManager.delegate = self;
         self.beaconManager.returnAllRangedBeaconsAtOnce = YES;
-        [self.beaconManager requestWhenInUseAuthorization];
+        [self.beaconManager requestAlwaysAuthorization];
 
         self.firstEventSent = false;
     }
@@ -46,15 +42,28 @@
 
 - (void)beaconManager:(id)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
     CLBeacon *nearestBeacon = beacons.firstObject;
-
+    
     if (!(nearestBeacon.beaconID == nil && self.nearestBeaconID == nil)
             || ![nearestBeacon.beaconID isEqual:self.nearestBeaconID]
             || !self.firstEventSent) {
         self.nearestBeaconID = nearestBeacon.beaconID;
         [self.delegate nearestBeaconManager:self didUpdateNearestBeaconID:self.nearestBeaconID];
         self.firstEventSent = true;
+
     }
+    
 }
+
+
+//- (void)beaconManager:(id)manager didRangeBeacons:(NSArray *)beacons
+//             inRegion:(CLBeaconRegion *)region {
+//    CLBeacon *nearestBeacon = beacons.firstObject;
+//    if (nearestBeacon) {
+//        NSArray *places = [self placesNearBeacon:nearestBeacon];
+//        // TODO: update the UI here
+//        NSLog(@"%@", places); // TODO: remove after implementing the UI
+//    }
+//}
 
 - (void)beaconManager:(id)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted) {

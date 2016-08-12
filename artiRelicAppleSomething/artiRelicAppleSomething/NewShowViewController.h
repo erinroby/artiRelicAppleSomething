@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CoreDataStack.h"
-#import "NSManagedObjectContext+NSManagedObjectContext.h"
+#import <Parse/Parse.h>
 #import "Curator.h"
 #import "Show.h"
+#import "ImageHelper.h"
+
 
 @interface NewShowViewController : UIViewController
 
 @property (strong, nonatomic)Show *show;
 @property (strong, nonatomic)Curator *curator;
+@property (strong, nonatomic)UIImage *image;
+@property (strong, nonatomic)UIImage *thumb;
 
 @end

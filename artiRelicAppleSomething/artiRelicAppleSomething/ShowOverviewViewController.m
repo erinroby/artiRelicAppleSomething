@@ -21,7 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.pieceCollectionView.delegate = self;
+    self.pieceCollectionView.dataSource = self;
+    self.title = self.show.title;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,17 +32,41 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [self.pieceCollectionView reloadData];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    
+}
+
+-(NSArray *)dataSource {
+    if (!self.show.pieces) {
+        // TODO: Handle what happens when there are no pieces in a show. The view crashes when this array is nil.
+        return self.show.pieces;
+    }
+    return self.show.pieces;
+}
 
 - (IBAction)editButtonSelected:(id)sender {
+    NewShowViewController *showViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewShowViewController"];
+    showViewController.show = self.show;
+    [self.navigationController pushViewController:showViewController animated:YES];
+    
+}
+
+#pragma mark Prepare for Segue
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"NewPieceViewController"]) {
+        NewPieceViewController *newPieceViewController = [segue destinationViewController];
+        newPieceViewController.show = self.show;
+    }
 }
 
 #pragma MARK - UICollectionViewDelegate methods
@@ -47,12 +74,52 @@
 #pragma MARK - UICollectionViewDataSource methods
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
     return self.dataSource.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [[UICollectionViewCell alloc]init];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"pieceCell" forIndexPath:indexPath];
+    
+    UIImageView *cellImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(0.0, 0.0, 150.0, 150.0))];
+    Piece *piece = self.dataSource[indexPath.row];
+    UIImage *thumb = [UIImage imageWithData:[piece.thumbnail getData]];
+    cellImageView.image = thumb;
+    [cell.contentView addSubview:cellImageView];
+    
     return cell;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    // TODO: Setup show and other things to be passed along here!
+    Piece *piece = self.dataSource[indexPath.row];
+    NewPieceViewController *pieceViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewPieceViewController"];
+    pieceViewController.show = self.show;
+    pieceViewController.piece = piece;
+    
+    [self.navigationController pushViewController:pieceViewController animated:YES];
+}
+
+- (IBAction)publishButtonSelected:(UIBarButtonItem *)sender {
+    if (self.show)
+    {
+//        Show *saveThisShow = self.show;
+        
+        NSLog(@"Saving show: %@",self.show);
+        [self.show saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"Show saved");
+            } else {
+                NSLog(@"Error saving show %@", error);
+            }
+        }];
+    }
+}
+
+
+         
 @end
+
+
+
+

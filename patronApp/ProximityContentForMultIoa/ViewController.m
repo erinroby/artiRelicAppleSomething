@@ -170,6 +170,11 @@
     NSArray *filteredArray = [self.show.pieces filteredArrayUsingPredicate:bPredicate];
     self.piece = [filteredArray firstObject];
     NSLog(@"self.piece: %@",self.piece);
+//    PFFile *audioFile = self.piece.audio;
+//    NSData *audioData = [audioFile getData];
+//    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+//    [audioSession setCategory:AVAudioSessionCategorySoloAmbient error:nil];
+//    _audioPlayer = [[AVAudioPlayer alloc]initWithData:audioData error:nil];
     
 }
 

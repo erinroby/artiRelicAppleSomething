@@ -7,7 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "Curator.h"
+#import "Show.h"
+#import "ShowOverviewViewController.h"
+#import "BeaconPairViewController.h"
+#import "Piece.h"
+#import <AVFoundation/AVFoundation.h>
+#import "ImageHelper.h"
 
-@interface NewPieceViewController : UIViewController
+
+@interface NewPieceViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
+
+@property (strong, nonatomic)Show *show;
+@property (strong, nonatomic)Curator *curator;
+@property (strong, nonatomic)Piece *piece;
+@property (strong, nonatomic)AVAudioRecorder *audioRecorder;
+@property (strong, nonatomic)AVAudioPlayer *audioPlayer;
+@property (strong, nonatomic)UIImage *image;
+@property (strong, nonatomic)UIImage *thumb;
+@property (strong, nonatomic)NSString *beaconID;
 
 @end

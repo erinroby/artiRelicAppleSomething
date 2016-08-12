@@ -2,25 +2,27 @@
 //  Show.h
 //  artiRelicAppleSomething
 //
-//  Created by Jeremy Moore on 8/8/16.
+//  Created by David Swaintek on 8/10/16.
 //  Copyright © 2016 Erin Roby. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-#import "CoreDataStack.h"
-#import "NSManagedObjectContext+NSManagedObjectContext.h"
+#import <UIKit/UIKit.h>
 
-@class Curator, Piece;
+#import <Parse/Parse.h>
 
-NS_ASSUME_NONNULL_BEGIN
+#import "Curator.h"
 
-@interface Show : NSManagedObject
+@interface Show : PFObject <PFSubclassing>
 
-+ (instancetype)showWithTitle:(NSString *)title subtitle:(NSString *)subtitle desc:(NSString *)desc;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *subtitle;
+@property (strong, nonatomic) NSString *desc;
+@property (strong, nonatomic) PFFile *image;
+@property (strong, nonatomic) PFFile *thumbnail;
+@property (strong, nonatomic) Curator *curator;
+
+@property (strong, nonatomic) NSArray *pieces;
+
++(instancetype)publishShowWithTitle:(NSString *)title subtitle:(NSString *)subtitle desc:(NSString *)desc;
 
 @end
-
-NS_ASSUME_NONNULL_END
-
-#import "Show+CoreDataProperties.h"

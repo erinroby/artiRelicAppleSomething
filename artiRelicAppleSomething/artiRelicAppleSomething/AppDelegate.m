@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <EstimoteSDK/EstimoteSDK.h>
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -17,7 +18,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
+
     [ESTConfig setupAppID:@"proximity-content-for-mult-ioa" andAppToken:@"b796ce4b2a572e8707b202a92fb80ee5"];
+    
+    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
+        configuration.applicationId =@"L41o5UblNSd2YS1x0yTtdG1kXgE1g56qoQxFwdm1";
+        configuration.clientKey = @"BurwhvrUWhdo6Ao7t0bNX61QnONTO9Db2TqT7Kwx";
+        configuration.server = @"https://parseapi.back4app.com";
+    }]];
+
     return YES;
 }
 
@@ -42,7 +52,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [[CoreDataStack shared] saveContext];
 }
 
 

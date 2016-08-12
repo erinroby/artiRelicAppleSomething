@@ -2,27 +2,19 @@
 //  Curator.h
 //  artiRelicAppleSomething
 //
-//  Created by Jeremy Moore on 8/8/16.
+//  Created by David Swaintek on 8/10/16.
 //  Copyright © 2016 Erin Roby. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-#import "CoreDataStack.h"
-#import "NSManagedObjectContext+NSManagedObjectContext.h"
+#import <Parse/Parse.h>
 
+@interface Curator : PFObject
 
-@class Show;
+@property (strong, nonatomic)NSString *firstName;
+@property (strong, nonatomic)NSString *lastName;
+@property (strong, nonatomic)NSString *userName;
+@property (strong, nonatomic)NSString *password;
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface Curator : NSManagedObject
-
-+ (instancetype) curatorWithUserName:(NSString *)userName password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName;
++ (instancetype)curatorWithFirstName:(NSString *)firstName lastName:(NSString *)lastName userName:(NSString *)userName password:(NSString *)password;
 
 @end
-
-
-NS_ASSUME_NONNULL_END
-
-#import "Curator+CoreDataProperties.h"

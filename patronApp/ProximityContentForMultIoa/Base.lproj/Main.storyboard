@@ -138,7 +138,21 @@ Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia od
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="vBP-v4-5dt"/>
-                                    <barButtonItem systemItem="play" id="pTz-fY-dwv"/>
+                                    <barButtonItem systemItem="play" id="pTz-fY-dwv">
+                                        <connections>
+                                            <action selector="playButtonPressed:" destination="BYZ-38-t0r" id="I99-UZ-Tcx"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="pause" id="EMh-MY-KRs">
+                                        <connections>
+                                            <action selector="pauseButtonPressed:" destination="BYZ-38-t0r" id="6od-Hq-84N"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="rewind" id="9EL-a9-sfe">
+                                        <connections>
+                                            <action selector="rewindButtonPressed:" destination="BYZ-38-t0r" id="qhQ-0i-k34"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="6TH-p1-RBZ"/>
                                 </items>
                             </toolbar>

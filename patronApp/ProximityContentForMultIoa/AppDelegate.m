@@ -23,7 +23,7 @@
     
     // apply pay and stripe
     [[STPPaymentConfiguration sharedConfiguration] setPublishableKey:@"pk_test_TGCXR26srXhXwWm0goG29cDi"];
-    [[STPPaymentConfiguration sharedConfiguration] setAppleMerchantIdentifier:@"merchant.com.patronapp"];
+    [[STPPaymentConfiguration sharedConfiguration] setAppleMerchantIdentifier:@"merchant.com.patronAppArtiRelic"];
     
     //parse
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {

@@ -13,6 +13,7 @@
 #import "CachingContentFactory.h"
 #import "ProximityContentManager.h"
 
+
 @interface ViewController () <ProximityContentManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
@@ -40,6 +41,10 @@
     self.proximityContentManager.delegate = self;
     
     [self.proximityContentManager startContentUpdates];
+}
+
+- (NSUInteger)countOfProximityContentManager {
+    return 0;
 }
 
 - (void)proximityContentManager:(ProximityContentManager *)proximityContentManager didUpdateContent:(id)content {

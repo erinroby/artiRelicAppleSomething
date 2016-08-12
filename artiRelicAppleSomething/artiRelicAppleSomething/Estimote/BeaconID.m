@@ -40,7 +40,7 @@
     if (![object isKindOfClass:[BeaconID class]]) {
         return NO;
     }
-
+    
     return [self isEqualToBeaconID:(BeaconID *)object];
 }
 
