@@ -291,6 +291,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 
 -(void)addItemViewController:(BeaconPairViewController *)controller didFinishEnteringItem:(NSString *)item{
     // J: THe item here is the BeaconID string. Do what you need to with it for Parse, please.
+    
     _beaconID = item;
     NSLog(@"This was returned from ViewControllerB %@",item);
 
