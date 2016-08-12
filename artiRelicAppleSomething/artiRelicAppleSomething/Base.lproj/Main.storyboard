@@ -57,7 +57,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="39s-v7-xoo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="syi-7B-kWs">
+                        <barButtonItem key="rightBarButtonItem" title="Add A Show" id="syi-7B-kWs">
                             <connections>
                                 <segue destination="PuZ-ZL-qwv" kind="show" id="7Jx-YC-uUP"/>
                             </connections>
@@ -243,21 +243,15 @@
                                     <constraint firstAttribute="height" constant="44" id="Evz-2e-DbY"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Item" systemItem="edit" id="wfc-K0-fBV">
+                                    <barButtonItem title="Edit Show Overview" id="wfc-K0-fBV">
                                         <connections>
                                             <action selector="editButtonSelected:" destination="cEN-iz-JuY" id="ifM-PU-G83"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sHN-np-DJK"/>
-                                    <barButtonItem systemItem="add" id="32D-fq-kBj">
+                                    <barButtonItem title="Add A New Piece" id="32D-fq-kBj">
                                         <connections>
                                             <segue destination="QMX-Vc-rwu" kind="show" identifier="NewPieceViewController" id="C3I-LS-UMl"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="U4A-58-DWu"/>
-                                    <barButtonItem title="Publish" id="8kE-eT-621">
-                                        <connections>
-                                            <action selector="publishButtonSelected:" destination="cEN-iz-JuY" id="e56-xV-FgO"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -279,7 +273,6 @@
                     <connections>
                         <outlet property="editButton" destination="wfc-K0-fBV" id="uVq-vg-IX3"/>
                         <outlet property="pieceCollectionView" destination="bYQ-nO-UiV" id="CbW-WR-pg4"/>
-                        <outlet property="publishButton" destination="8kE-eT-621" id="YJF-8n-CYM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBb-HU-OWd" userLabel="First Responder" sceneMemberID="firstResponder"/>

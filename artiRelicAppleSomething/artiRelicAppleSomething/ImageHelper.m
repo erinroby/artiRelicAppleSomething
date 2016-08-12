@@ -24,7 +24,7 @@
 {
 
     CGSize thumbSize = CGSizeMake(50.0, 50.0);
-    UIGraphicsBeginImageContext(thumbSize);
+    UIGraphicsBeginImageContextWithOptions(thumbSize, NO, 0);
     [image drawInRect:CGRectMake(0.0, 0.0, thumbSize.width, thumbSize.height)];
     UIImage *thumbImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

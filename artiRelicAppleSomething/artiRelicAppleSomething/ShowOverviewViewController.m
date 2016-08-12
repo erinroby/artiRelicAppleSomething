@@ -15,9 +15,6 @@
 - (IBAction)editButtonSelected:(id)sender;
 @property(strong, nonatomic)NSArray *dataSource;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *publishButton;
-- (IBAction)publishButtonSelected:(UIBarButtonItem *)sender;
-
 @end
 
 @implementation ShowOverviewViewController
@@ -27,6 +24,7 @@
 
     self.pieceCollectionView.delegate = self;
     self.pieceCollectionView.dataSource = self;
+    self.title = self.show.title;
 }
 
 - (void)didReceiveMemoryWarning {

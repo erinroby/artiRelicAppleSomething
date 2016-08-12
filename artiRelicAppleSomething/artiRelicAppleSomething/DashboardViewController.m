@@ -24,6 +24,7 @@
     [super viewDidLoad];
     self.showCollectionView.delegate = self;
     self.showCollectionView.dataSource = self;
+    self.title = @"Edit Shows";
 }
 
 - (void)didReceiveMemoryWarning {

@@ -165,6 +165,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
+    [textView setText:@""];
     [UIView animateWithDuration:kScrollTextViewKeyboardAnimation animations:^{
         [self.scrollView setContentOffset:(CGPointMake(0.0, 150.0))];
     }];
