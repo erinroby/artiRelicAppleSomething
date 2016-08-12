@@ -56,6 +56,10 @@
 }
 
 - (IBAction)editButtonSelected:(id)sender {
+    NewShowViewController *showViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewShowViewController"];
+    showViewController.show = self.show;
+    [self.navigationController pushViewController:showViewController animated:YES];
+    
 }
 
 #pragma mark Prepare for Segue
@@ -63,7 +67,6 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"NewPieceViewController"]) {
         NewPieceViewController *newPieceViewController = [segue destinationViewController];
-        
         newPieceViewController.show = self.show;
     }
 }
@@ -82,11 +85,20 @@
     
     UIImageView *cellImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(0.0, 0.0, 150.0, 150.0))];
     Piece *piece = self.dataSource[indexPath.row];
-    UIImage *thumb = [UIImage imageWithData:[piece.image getData]];
+    UIImage *thumb = [UIImage imageWithData:[piece.thumbnail getData]];
     cellImageView.image = thumb;
     [cell.contentView addSubview:cellImageView];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    // TODO: Setup show and other things to be passed along here!
+    Piece *piece = self.dataSource[indexPath.row];
+    NewPieceViewController *pieceViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewPieceViewController"];
+    pieceViewController.piece = piece;
+    
+    [self.navigationController pushViewController:pieceViewController animated:YES];
 }
 
 - (IBAction)publishButtonSelected:(UIBarButtonItem *)sender {

@@ -24,28 +24,6 @@
     [super viewDidLoad];
     self.showCollectionView.delegate = self;
     self.showCollectionView.dataSource = self;
-    
-//    PFQuery *query = [PFQuery queryWithClassName:@"Show"];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (!error) {
-//            self.dataSource = objects;
-//            [self.showCollectionView reloadData];
-//            NSLog(@"Should have reloaded data from viewDidLoad");
-//        } else {
-//            NSLog(@"Error: failed to load parse");
-//        }
-//    }];
-//    PFQuery *query = [PFQuery queryWithClassName:@"Show"];
-//    [[[query findObjectsInBackground]continueWithSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
-//        NSArray *results = t.result;
-//        NSMutableArray *saveTasks = [NSMutableArray arrayWithCapacity:[results count]];
-//        return [BFTask taskForCompletionOfAllTasks:saveTasks];
-//    }] continueWithExecutor:[BFExecutor mainThreadExecutor]withSuccessBlock:^id _Nullable(BFTask * _Nonnull t) {
-//        self.dataSource = t.result;
-//        self.showCollectionView.reloadData;
-//        return t;
-//    }];
-    
 }
 
 - (void)didReceiveMemoryWarning {
