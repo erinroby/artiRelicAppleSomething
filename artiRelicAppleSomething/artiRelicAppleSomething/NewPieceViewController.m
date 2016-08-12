@@ -149,8 +149,10 @@
             piece.desc = desc;
             piece.artist = artist;
             piece.price = price;
+            piece.beaconID = _beaconID;
         } else {
             piece = [Piece pieceWithTitle:title desc:desc artist:artist price:price];
+            piece.beaconID = _beaconID;
             self.show.pieces = [[NSMutableArray alloc]init];
             self.show.pieces = [self.show.pieces arrayByAddingObject:piece];
         }
@@ -178,22 +180,8 @@
     if ([segue.identifier  isEqualToString: @"BeaconPairViewController"]) {
         BeaconPairViewController *beaconPairVC = segue.destinationViewController;
         beaconPairVC.delegate = self;
-//        [self.navigationController pushViewController:beaconPairVC animated:YES];
     }
 
-
-//    [[self navigationController] pushViewController:beaconPairVC animated:YES];
-
-//    if([[segue identifier] isEqualToString:@"ShowOverviewViewController"]){
-//        ShowOverviewViewController *showOverviewViewController = [segue destinationViewController];
-//        showOverviewViewController.show = self.show;
-//    }
-//    else {
-//    if ([[segue identifier] isEqualToString:@"BeaconPairViewController"]) {
-//        BeaconPairViewController *beaconPairViewController = [segue destinationViewController];
-//        beaconPairViewController.show = self.show;
-//        }
-//    }
 }
 
 - (IBAction)playButtonPressed:(UIButton *)sender {
@@ -277,6 +265,7 @@
 
 -(void)addItemViewController:(BeaconPairViewController *)controller didFinishEnteringItem:(NSString *)item{
     // J: THe item here is the BeaconID string. Do what you need to with it for Parse, please.
+    _beaconID = item;
     NSLog(@"This was returned from ViewControllerB %@",item);
 
 }
