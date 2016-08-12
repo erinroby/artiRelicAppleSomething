@@ -39,15 +39,14 @@
     self.locationManager.delegate = self;
     
     NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
-    self.beaconRegion = [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID major:36360 minor:36995 identifier:@"managed region"];
+    self.beaconRegion = [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID major:36360 minor:36995 identifier:@"test"];
     self.beaconRegion.notifyEntryStateOnDisplay = YES;
     [self.locationManager startMonitoringForRegion:self.beaconRegion];
     
-    
-    //initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"] major:36360 minor:36995 identifier:@"monitored region"
+
 //Select show to be hosted by title
     PFQuery *query = [PFQuery queryWithClassName:@"Show"];
-    [query whereKey:@"title" equalTo:@"Wyld"];
+    [query whereKey:@"title" equalTo:@"Wyld Stallyns"];
     [query includeKey:@"pieces"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -61,7 +60,7 @@
             
             NSString *showTitle = self.show.title;
             self.welcomeLabel.text = [self.welcomeLabel.text stringByAppendingString:showTitle];
-// can get artist from show, I forgot to input for this show...
+// TODO:  can get artist from show, I forgot to input for this show...
             NSString *artistName = @" B. Watterson";
             self.artistLabel.text = [self.artistLabel.text stringByAppendingString:artistName];
             UIImage *showImage = [UIImage imageWithData:[self.show.image getData]];
@@ -100,8 +99,8 @@
     notification.soundName = UILocalNotificationDefaultSoundName;
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
     
-    NSString *beaconID = self.UIID;
-    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"beaconID contains[cd] %@",beaconID];
+    NSString *pieceID = region.identifier;
+    NSPredicate *bPredicate = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@",pieceID];
     NSArray *filteredArray = [self.show.pieces filteredArrayUsingPredicate:bPredicate];
     self.piece = [filteredArray firstObject];
 
@@ -151,6 +150,7 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self.proximityContentManager stopContentUpdates];
+    
 }
 
 - (void)didReceiveMemoryWarning {
