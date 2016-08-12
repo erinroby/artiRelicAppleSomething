@@ -21,7 +21,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 @property (weak, nonatomic) IBOutlet UITextView *pieceDescription;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *pieceImageTapGesture;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *beaconButton;
+@property (weak, nonatomic) IBOutlet UIButton *beaconButton;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
@@ -35,7 +35,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 - (IBAction)playButtonPressed:(UIButton *)sender;
 - (IBAction)stopButtonPressed:(UIButton *)sender;
 - (IBAction)recordButtonPressed:(UIButton *)sender;
-- (IBAction)beaconButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)beaconButtonPressed:(UIButton *)sender;
 
 @end
 
