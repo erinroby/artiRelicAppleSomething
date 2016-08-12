@@ -315,7 +315,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
     CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
     
     [UIView animateWithDuration:kScrollViewKeyboardAnimation animations:^{
-        [self.scrollView setContentOffset:(CGPointMake(0.0, (45.0 - navBarHeight)))];
+        [self.scrollView setContentOffset:(CGPointMake(0.0, -(navBarHeight + 20.0)))];
     }];
 }
 
@@ -345,7 +345,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
         [textView resignFirstResponder];
         [UIView animateWithDuration:kScrollTextViewKeyboardAnimation animations:^{
             CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
-            [self.scrollView setContentOffset:(CGPointMake(0.0, (45.0 - navBarHeight)))];
+            [self.scrollView setContentOffset:(CGPointMake(0.0, -(navBarHeight + 20.0)))];
         }];
         return NO;
     }
