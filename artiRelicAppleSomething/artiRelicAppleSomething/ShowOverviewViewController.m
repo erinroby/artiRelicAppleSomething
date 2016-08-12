@@ -96,6 +96,7 @@
     // TODO: Setup show and other things to be passed along here!
     Piece *piece = self.dataSource[indexPath.row];
     NewPieceViewController *pieceViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewPieceViewController"];
+    pieceViewController.show = self.show;
     pieceViewController.piece = piece;
     
     [self.navigationController pushViewController:pieceViewController animated:YES];

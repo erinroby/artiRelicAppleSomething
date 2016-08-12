@@ -105,7 +105,7 @@
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     _recordButton.enabled = YES;
-    _stopButton.enabled = YES;
+    _stopButton.enabled = NO;
 }
 
 - (void) audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
@@ -151,33 +151,48 @@
             piece.artist = artist;
             piece.price = price;
             piece.beaconID = _beaconID;
+            if (self.image) {
+                piece.image = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.image]];;
+            }
+            if (self.thumb) {
+                piece.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
+            }
+            
+            if (_audioFile) {
+                piece.audio = _audioFile;
+            }
+            [piece saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (succeeded) {
+                    NSLog(@"Piece saved to parse");
+                    [self.navigationController popViewControllerAnimated:YES];
+                } else {
+                    NSLog(@"Piece failed to save to parse: %@", error);
+                }
+            }];
         } else {
             piece = [Piece pieceWithTitle:title desc:desc artist:artist price:price];
             piece.beaconID = _beaconID;
+            if (self.image) {
+                piece.image = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.image]];;
+            }
+            if (self.thumb) {
+                piece.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
+            }
+            
+            if (_audioFile) {
+                piece.audio = _audioFile;
+            }
             self.show.pieces = [[NSMutableArray alloc]init];
             self.show.pieces = [self.show.pieces arrayByAddingObject:piece];
+            [self.show saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (succeeded) {
+                    NSLog(@"Show with new piece saved to parse");
+                    [self.navigationController popViewControllerAnimated:YES];
+                } else {
+                    NSLog(@"Show with new piece failed to save to parse: %@", error);
+                }
+            }];
         }
-        if (self.image) {
-            piece.image = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.image]];;
-        }
-        if (self.thumb) {
-            piece.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
-        }
-        
-        if (_audioFile) {
-            piece.audio = _audioFile;
-        }
-
-        NSLog(@"Show created: %@", piece);
-
-        [piece saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            if (succeeded) {
-                NSLog(@"Piece saved to parse");
-                [self.navigationController popViewControllerAnimated:YES];
-            } else {
-                NSLog(@"Show failed to save to parse: %@", error);
-            }
-        }];
     }
 }
 
