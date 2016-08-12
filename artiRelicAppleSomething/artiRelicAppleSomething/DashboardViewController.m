@@ -24,7 +24,6 @@
     [super viewDidLoad];
     self.showCollectionView.delegate = self;
     self.showCollectionView.dataSource = self;
-
 }
 
 - (void)didReceiveMemoryWarning {

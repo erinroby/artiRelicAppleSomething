@@ -402,11 +402,10 @@
                                 <items>
                                     <barButtonItem title="Beacon!" id="hWM-lS-c9D">
                                         <connections>
-                                            <segue destination="KDP-VB-VGr" kind="show" identifier="BeaconPairViewController" id="G9a-3Z-aTl"/>
+                                            <action selector="beaconButtonPressed:" destination="QMX-Vc-rwu" id="K8Z-Vz-t36"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="osQ-fB-bwx"/>
-                                    <barButtonItem title="Preview" id="p7o-Na-GXr"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -439,6 +438,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="beaconButton" destination="hWM-lS-c9D" id="txg-do-ozg"/>
                         <outlet property="narrationLabel" destination="yDz-dZ-Tc7" id="7h6-Fm-pob"/>
                         <outlet property="pieceArtistTextField" destination="6ca-mn-IKw" id="07m-Hi-CEv"/>
                         <outlet property="pieceDescription" destination="i2g-9f-oLs" id="5bj-Xh-y5b"/>
@@ -447,11 +447,10 @@
                         <outlet property="piecePrice" destination="Ecd-Vf-tc8" id="7yL-14-zf8"/>
                         <outlet property="pieceTitleTextField" destination="nLw-mk-8Tr" id="M7L-zb-9IB"/>
                         <outlet property="playButton" destination="a2E-Dn-4b7" id="Pn4-uS-iB7"/>
-                        <outlet property="previewButton" destination="p7o-Na-GXr" id="Smb-jr-ECJ"/>
-                        <outlet property="previewButtonSelected" destination="p7o-Na-GXr" id="Q8c-yF-6CN"/>
                         <outlet property="recordButton" destination="NVF-eI-38l" id="xom-e6-6NT"/>
                         <outlet property="saveButton" destination="D35-GD-e5b" id="3Bc-kx-EJi"/>
                         <outlet property="stopButton" destination="4pe-FB-rG6" id="reQ-bN-fmS"/>
+                        <segue destination="KDP-VB-VGr" kind="show" identifier="BeaconPairViewController" id="yIw-Sf-LvC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxG-Kj-T1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -475,15 +474,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52h-in-5PR">
-                                <rect key="frame" x="263" y="518" width="55" height="30"/>
-                                <state key="normal" title="SELECT">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="QMX-Vc-rwu" kind="show" identifier="NewPieceViewController" id="cOc-Ef-9eq"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Searching for nearest beacon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdw-0d-xDW">
                                 <rect key="frame" x="171" y="369" width="239" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -493,6 +483,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvO-WC-A6T">
                                 <rect key="frame" x="171" y="110" width="240" height="128"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52h-in-5PR">
+                                <rect key="frame" x="263" y="518" width="55" height="30"/>
+                                <state key="normal" title="SELECT">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="KDP-VB-VGr" eventType="touchUpInside" id="sSj-58-CDa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -547,7 +546,4 @@
             <point key="canvasLocation" x="449" y="984"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="C3I-LS-UMl"/>
-    </inferredMetricsTieBreakers>
 </document>

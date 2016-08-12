@@ -12,10 +12,18 @@
 #import "NewPieceViewController.h"
 #import "Show.h"
 
+@class BeaconPairViewController;
+
+@protocol BeaconPairViewControllerDelegate <NSObject>
+- (void)addItemViewController:(BeaconPairViewController *)controller didFinishEnteringItem:(NSString *)item;
+@end
+
 @interface BeaconPairViewController : UIViewController
 
 @property (strong, nonatomic)Piece *piece;
 @property (strong, nonatomic)NSString *beaconID;
 @property (strong, nonatomic)Show *show;
+
+@property (nonatomic, weak) id <BeaconPairViewControllerDelegate> delegate;
 
 @end

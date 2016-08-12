@@ -17,6 +17,8 @@
 
 #import "NearestBeaconManager.h"
 
+
+
 @interface BeaconPairViewController () <ProximityContentManagerDelegate>
 
 @property (nonatomic) ProximityContentManager *proximityContentManager;
@@ -57,7 +59,6 @@
     BeaconDetails *beaconDetails = content;
     if (beaconDetails) {
         CLBeaconRegion *region = [self.proximityContentManager.beaconId asBeaconRegion];
-        NSLog(@"%@", region);
         // self.UIID.text = self.proximityContentManager.beaconId.description;
         self.UIID.text = beaconDetails.beaconName;
         // write a switch statement to handle the image, etc.
@@ -72,12 +73,10 @@
 }
 
 - (IBAction)saveButtonPressed:(id)sender {
-    NSLog(@"saveButton pressed.");
-
-    // send and/or attach beacon data to the piece here.
-    // do setup in prepare for segue and then call here?
-    self.beaconID = self.UIID.text;
-    NSLog(@"self.beaconID: %@", self.beaconID);
+    NSString *itemToPassBack = self.proximityContentManager.beaconId.asString;
+    NSLog(@"self.beaconID: %@", itemToPassBack);
+    [self.delegate addItemViewController:self didFinishEnteringItem:itemToPassBack];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma MARK - Estimote Location Management
@@ -90,5 +89,6 @@
         newPieceViewController.beaconID = self.proximityContentManager.beaconId.asString;
     }
 }
+
 
 @end
