@@ -27,6 +27,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UILabel *narrationLabel;
 @property (strong, nonatomic) NSURL *soundFileURL;
+@property (strong, nonatomic) PFFile *audioFile;
 
 
 - (IBAction)pieceImageTapped:(UITapGestureRecognizer *)sender;
@@ -53,29 +54,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
     NSString *soundFilePath = [docsDir stringByAppendingPathComponent:@"sound.caf"];
 
     _soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-
-    //determine new or existing piece
-    if (self.piece) {
-        self.pieceImage.image = [UIImage imageWithData:[self.piece.image getData]];
-        self.title = @"Edit Artwork";
-        self.pieceTitleTextField.text = self.piece.title;
-        self.pieceArtistTextField.text = self.piece.artist;
-        self.piecePrice.text = self.piece.price;
-    } else {
-        UIImage *placeholderImage = [UIImage imageNamed:@"frame"];
-        self.pieceImage.image = placeholderImage;
-        self.title = @"Create Artwork";
-    }
-
-    //Audio setup
-    _playButton.enabled = NO;
-    _stopButton.enabled = NO;
-
-
-//    NSLog(@"%@", soundFilePath);
-
-
-
+    
     NSDictionary *recordSettings  = [NSDictionary dictionaryWithObjectsAndKeys:
                                      [NSNumber numberWithInt:AVAudioQualityMin],
                                      AVEncoderAudioQualityKey,
@@ -86,19 +65,41 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
                                      [NSNumber numberWithFloat:44100.0],
                                      AVSampleRateKey,
                                      nil];
-
+    
     NSError *error = nil;
-
+    
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-
+    
     _audioRecorder = [[AVAudioRecorder alloc]initWithURL:_soundFileURL settings:recordSettings error:&error];
-
+    
     if (error) {
         NSLog (@"error: %@", [error localizedDescription]);
     } else {
         [_audioRecorder prepareToRecord];
     }
+
+    //determine new or existing piece
+    if (self.piece) {
+        self.pieceImage.image = [UIImage imageWithData:[self.piece.image getData]];
+        self.title = @"Edit Artwork";
+        self.pieceTitleTextField.text = self.piece.title;
+        self.pieceArtistTextField.text = self.piece.artist;
+        self.piecePrice.text = self.piece.price;
+        if (self.piece.audio) {
+            [[self.piece.audio getData] writeToURL:_soundFileURL atomically:YES];
+            _playButton.enabled = YES;
+            _stopButton.enabled = NO;
+        }
+    } else {
+        UIImage *placeholderImage = [UIImage imageNamed:@"frame"];
+        self.pieceImage.image = placeholderImage;
+        self.title = @"Create Artwork";
+        _playButton.enabled = NO;
+        _stopButton.enabled = NO;
+    }
+
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -108,7 +109,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     _recordButton.enabled = YES;
-    _stopButton.enabled = YES;
+    _stopButton.enabled = NO;
 }
 
 - (void) audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
@@ -154,29 +155,48 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
             piece.artist = artist;
             piece.price = price;
             piece.beaconID = _beaconID;
+            if (self.image) {
+                piece.image = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.image]];;
+            }
+            if (self.thumb) {
+                piece.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
+            }
+            
+            if (_audioFile) {
+                piece.audio = _audioFile;
+            }
+            [piece saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (succeeded) {
+                    NSLog(@"Piece saved to parse");
+                    [self.navigationController popViewControllerAnimated:YES];
+                } else {
+                    NSLog(@"Piece failed to save to parse: %@", error);
+                }
+            }];
         } else {
             piece = [Piece pieceWithTitle:title desc:desc artist:artist price:price];
             piece.beaconID = _beaconID;
+            if (self.image) {
+                piece.image = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.image]];;
+            }
+            if (self.thumb) {
+                piece.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
+            }
+            
+            if (_audioFile) {
+                piece.audio = _audioFile;
+            }
             self.show.pieces = [[NSMutableArray alloc]init];
             self.show.pieces = [self.show.pieces arrayByAddingObject:piece];
+            [self.show saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (succeeded) {
+                    NSLog(@"Show with new piece saved to parse");
+                    [self.navigationController popViewControllerAnimated:YES];
+                } else {
+                    NSLog(@"Show with new piece failed to save to parse: %@", error);
+                }
+            }];
         }
-        if (self.image) {
-            piece.image = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.image]];;
-        }
-        if (self.thumb) {
-            piece.thumbnail = [PFFile fileWithData:[[ImageHelper shared]dataFromImage:self.thumb]];
-        }
-
-        NSLog(@"Show created: %@", piece);
-
-        [piece saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            if (succeeded) {
-                NSLog(@"Piece saved to parse");
-                [self.navigationController popViewControllerAnimated:YES];
-            } else {
-                NSLog(@"Show failed to save to parse: %@", error);
-            }
-        }];
     }
 }
 
@@ -217,6 +237,7 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
         _narrationLabel.textColor = [UIColor blackColor];
         _narrationLabel.text = @"Record Narration";
         [_audioRecorder stop];
+        _audioFile = [PFFile fileWithData:[NSData dataWithContentsOfURL:_soundFileURL]];
     } else if (_audioPlayer.playing) {
         [_audioPlayer stop];
     }
