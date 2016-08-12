@@ -118,7 +118,7 @@
     self.request.currencyCode = @"USD";
     
     // 12.75 subtotal
-    NSDecimalNumber *subtotalAmount = [NSDecimalNumber decimalNumberWithMantissa:1275
+    NSDecimalNumber *subtotalAmount = [NSDecimalNumber decimalNumberWithMantissa:12250
                                                                         exponent:-2 isNegative:NO];
     self.request.paymentSummaryItems = @[[PKPaymentSummaryItem summaryItemWithLabel:@"Subtotal" amount:subtotalAmount]];
     
