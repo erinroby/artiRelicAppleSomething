@@ -8,7 +8,7 @@
 
 #import "NewPieceViewController.h"
 
-@interface NewPieceViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface NewPieceViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, BeaconPairViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *pieceImage;
 @property (weak, nonatomic) IBOutlet UITextField *pieceTitleTextField;
@@ -17,8 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *pieceDescription;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *pieceImageTapGesture;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *previewButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *previewButtonSelected;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *beaconButton;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
@@ -31,6 +30,7 @@
 - (IBAction)playButtonPressed:(UIButton *)sender;
 - (IBAction)stopButtonPressed:(UIButton *)sender;
 - (IBAction)recordButtonPressed:(UIButton *)sender;
+- (IBAction)beaconButtonPressed:(UIBarButtonItem *)sender;
 
 @end
 
@@ -85,10 +85,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    
     [super viewWillAppear:YES];
-    
-    
 }
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
@@ -96,11 +93,11 @@
     _stopButton.enabled = YES;
 }
 
-- (void) audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error{
+- (void) audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
     NSLog(@"Decode error occurred");
 }
 
-- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag{
+- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag {
 }
 
 - (void) audioRecorderEncodeErrorDidOccur:(AVAudioRecorder *)recorder error:(NSError *)error{
@@ -154,21 +151,31 @@
         
 //        [self.show save];
     }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([[segue identifier] isEqualToString:@"ShowOverviewViewController"]){
-        ShowOverviewViewController *showOverviewViewController = [segue destinationViewController];
-        showOverviewViewController.show = self.show;
+    if ([segue.identifier  isEqualToString: @"BeaconPairViewController"]) {
+        BeaconPairViewController *beaconPairVC = segue.destinationViewController;
+        beaconPairVC.delegate = self;
+//        [self.navigationController pushViewController:beaconPairVC animated:YES];
     }
-    else {
-    if ([[segue identifier] isEqualToString:@"BeaconPairViewController"]) {
-        BeaconPairViewController *beaconPairViewController = [segue destinationViewController];
-        beaconPairViewController.show = self.show;
-        }
-    }
+
+    
+//    [[self navigationController] pushViewController:beaconPairVC animated:YES];
+
+//    if([[segue identifier] isEqualToString:@"ShowOverviewViewController"]){
+//        ShowOverviewViewController *showOverviewViewController = [segue destinationViewController];
+//        showOverviewViewController.show = self.show;
+//    }
+//    else {
+//    if ([[segue identifier] isEqualToString:@"BeaconPairViewController"]) {
+//        BeaconPairViewController *beaconPairViewController = [segue destinationViewController];
+//        beaconPairViewController.show = self.show;
+//        }
+//    }
 }
 
 - (IBAction)playButtonPressed:(UIButton *)sender {
@@ -218,6 +225,10 @@
     }
 }
 
+- (IBAction)beaconButtonPressed:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"BeaconPairViewController" sender:sender];
+};
+
 - (void)presentAlert
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"WARNING" message:@"Please enter a piece title before saving piece." preferredStyle:UIAlertControllerStyleAlert];
@@ -242,6 +253,14 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma BeaconPairViewControllerDelegate
+
+-(void)addItemViewController:(BeaconPairViewController *)controller didFinishEnteringItem:(NSString *)item{
+    // J: THe item here is the BeaconID string. Do what you need to with it for Parse, please.
+    NSLog(@"This was returned from ViewControllerB %@",item);
+
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "NewShowViewController.h"
 
+const NSTimeInterval kScrollViewKeyboardAnimation = 0.25;
+const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 
 @interface NewShowViewController () <UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate, UIGestureRecognizerDelegate>
 
@@ -118,7 +120,10 @@
 #pragma mark UITextFieldDelegate
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
-    [self.scrollView setContentOffset:(CGPointMake(0.0, 50.0))];
+    [UIView animateWithDuration:kScrollViewKeyboardAnimation animations:^{
+        [self.scrollView setContentOffset:(CGPointMake(0.0, 50.0))];
+    }];
+
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -128,7 +133,10 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField {
     CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
-    [self.scrollView setContentOffset:(CGPointMake(0.0, (45.0 - navBarHeight)))];
+    
+    [UIView animateWithDuration:kScrollViewKeyboardAnimation animations:^{
+        [self.scrollView setContentOffset:(CGPointMake(0.0, (45.0 - navBarHeight)))];
+    }];
 }
 
 #pragma mark UITextViewDelegate
@@ -139,7 +147,10 @@
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-    [self.scrollView setContentOffset:(CGPointMake(0.0, 150.0))];
+    [UIView animateWithDuration:kScrollTextViewKeyboardAnimation animations:^{
+        [self.scrollView setContentOffset:(CGPointMake(0.0, 150.0))];
+    }];
+
     [self.descriptionTextField setReturnKeyType:UIReturnKeyDefault];
 }
 
@@ -152,10 +163,10 @@
     
     if(charINTtyped == 10){
         [textView resignFirstResponder];
-        
-        CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
-        [self.scrollView setContentOffset:(CGPointMake(0.0, (45.0 - navBarHeight)))];
-        
+        [UIView animateWithDuration:kScrollTextViewKeyboardAnimation animations:^{
+            CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
+            [self.scrollView setContentOffset:(CGPointMake(0.0, (45.0 - navBarHeight)))];
+        }];
         return NO;
     }
     return YES;
