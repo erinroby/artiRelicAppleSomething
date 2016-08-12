@@ -39,14 +39,14 @@
     self.locationManager.delegate = self;
     
     NSUUID *proximityUUID = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
-    self.beaconRegion = [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID major:36360 minor:36995 identifier:@"test"];
+    self.beaconRegion = [[CLBeaconRegion alloc]initWithProximityUUID:proximityUUID major:21640 minor:54671 identifier:@"happy "];
     self.beaconRegion.notifyEntryStateOnDisplay = YES;
     [self.locationManager startMonitoringForRegion:self.beaconRegion];
     
 
 //Select show to be hosted by title
     PFQuery *query = [PFQuery queryWithClassName:@"Show"];
-    [query whereKey:@"title" equalTo:@"Wyld Stallyns"];
+    [query whereKey:@"title" equalTo:@"Stuff"];
     [query includeKey:@"pieces"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {

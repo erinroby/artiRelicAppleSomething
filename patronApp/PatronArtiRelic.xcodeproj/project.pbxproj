@@ -112,6 +112,7 @@
 		70DDC93A1D5C5D7A00202892 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				70DDC93B1D5C5D8400202892 /* Model */,
 				AECF16931B0E0C0200CC83B2 /* AppDelegate.h */,
 				AECF16941B0E0C0200CC83B2 /* AppDelegate.m */,
 			);
@@ -198,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				70DDC93A1D5C5D7A00202892 /* Global */,
-				70DDC93B1D5C5D8400202892 /* Model */,
 				70DDC93D1D5C5DAA00202892 /* View */,
 				70DDC93C1D5C5D9E00202892 /* Controller */,
 				AECF168F1B0E0C0200CC83B2 /* Supporting Files */,
