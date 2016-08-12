@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "Curator.h"
+#import "Show.h"
 
 @interface DashboardViewController : UIViewController
+
+@property (strong, nonatomic)Show *show;
+@property (strong, nonatomic)Curator *curator;
 
 @end

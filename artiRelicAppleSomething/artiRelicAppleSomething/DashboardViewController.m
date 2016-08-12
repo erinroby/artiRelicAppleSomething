@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *showCollectionView;
 @property (strong, nonatomic) NSArray *dataSource;
+@property (strong, nonatomic) BFTask *parseShows;
 
 @end
 
@@ -23,23 +24,32 @@
     [super viewDidLoad];
     self.showCollectionView.delegate = self;
     self.showCollectionView.dataSource = self;
-    [self.showCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    self.title = @"Edit Shows";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
--(NSArray *)dataSource {
-    // TODO: Hook this up to the core data dataSource!
-    UIImage *image = [UIImage imageNamed:@"picasso"];
-    UIImage *imageOne = [UIImage imageNamed:@"picasso1"];
-    UIImage *imageTwo = [UIImage imageNamed:@"picasso2"];
-    
-    _dataSource = @[image, imageOne, imageTwo];
-    
-    return _dataSource;
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    PFQuery *query = [PFQuery queryWithClassName:@"Show"];
+    [query includeKey:@"pieces"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSLog(@"Fetched shows from Parse");
+            self.dataSource = objects;
+            [self.showCollectionView reloadData];
+        } else {
+            NSLog(@"Error: failed to load parse-- %@",error);
+        }
+    }];
+
+    [self.showCollectionView reloadData];
+    NSLog(@"Should have reloaded from viewWillAppear");
 }
+
 
 #pragma MARK - UICollectionViewDelegate methods
 
@@ -49,21 +59,33 @@
     return self.dataSource.count;
 }
 
-- (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier {
-}
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"showCell" forIndexPath:indexPath];
     // TODO: Configure cell for reals here!
-    cell.backgroundColor = [UIColor blackColor];
+
+    Show *show = self.dataSource[indexPath.row];
+    UIImageView *cellImageView = [[UIImageView alloc]initWithFrame:(CGRectMake(0.0, 0.0, 150.0, 150.0))];
+    cellImageView.contentMode = UIViewContentModeScaleAspectFit;
+    PFFile *pfThumb = show.thumbnail;
+    [pfThumb getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (!data) {
+            return NSLog(@"Error getting PFFile for thumbnail");
+        }
+        cellImageView.image = [UIImage imageWithData:data];
+    }];
+
+    [cell.contentView addSubview:cellImageView];
+
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Setup show and other things to be passed along here!
-//    Show *show = self.dataSource[indexPath.row];
-    ShowOverviewViewController *showOverviewViewController = [[ShowOverviewViewController alloc]init];
-//    showOverviewViewController.show = show;
+    Show *show = self.dataSource[indexPath.row];
+    ShowOverviewViewController *showOverviewViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ShowOverviewViewController"];
+    showOverviewViewController.show = show;
+
     [self.navigationController pushViewController:showOverviewViewController animated:YES];
 }
 
