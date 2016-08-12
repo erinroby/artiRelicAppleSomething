@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "Piece.h"
 @import PassKit;
 
 @interface ApplePayViewController : UIViewController
 
 @property (strong, nonatomic)Piece *piece;
+@property (strong, nonatomic) AVAudioRecorder *audioRecorder;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
 @end

@@ -22,6 +22,9 @@
 @property(nonatomic, copy) NSArray<PKPaymentSummaryItem *> *paymentSummaryItems;
 @property (weak, nonatomic) IBOutlet UIImageView *pieceImage;
 @property (weak, nonatomic) IBOutlet UITextView *descLabel;
+- (IBAction)playButtonPressed:(id)sender;
+- (IBAction)pauseButtonPressed:(id)sender;
+- (IBAction)rewindButtonPressed:(id)sender;
 
 
 @end
@@ -33,6 +36,12 @@
     self.title = self.piece.title;
     self.descLabel.text = self.piece.desc;
     self.pieceImage.image = [UIImage imageWithData:[self.piece.image getData]];
+    //Audio setup
+    PFFile *audioFile = self.piece.audio;
+    NSString *audioFilePath = [audioFile url];
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategorySoloAmbient error:nil];
+    _audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL URLWithString:audioFilePath] error:nil];
     
 }
 
@@ -113,4 +122,39 @@
     applePayController.delegate = self;
     
 }
+- (IBAction)playButtonPressed:(id)sender {
+    [_audioPlayer play];
+}
+
+- (IBAction)pauseButtonPressed:(id)sender {
+    [_audioPlayer pause];
+}
+
+- (IBAction)rewindButtonPressed:(id)sender {
+    [_audioPlayer setCurrentTime:0];
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
