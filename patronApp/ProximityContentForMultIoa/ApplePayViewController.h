@@ -14,7 +14,7 @@
 @interface ApplePayViewController : UIViewController
 
 @property (strong, nonatomic)Piece *piece;
-@property (strong, nonatomic) AVAudioRecorder *audioRecorder;
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+
 
 @end

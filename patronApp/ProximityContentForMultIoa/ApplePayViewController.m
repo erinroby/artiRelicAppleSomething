@@ -36,12 +36,17 @@
     self.title = self.piece.title;
     self.descLabel.text = self.piece.desc;
     self.pieceImage.image = [UIImage imageWithData:[self.piece.image getData]];
+
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
     //Audio setup
     PFFile *audioFile = self.piece.audio;
-    NSString *audioFilePath = [audioFile url];
+    NSData *audioData = [audioFile getData];
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategorySoloAmbient error:nil];
-    _audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL URLWithString:audioFilePath] error:nil];
+    _audioPlayer = [[AVAudioPlayer alloc]initWithData:audioData error:nil];
     
 }
 
