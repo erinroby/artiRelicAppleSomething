@@ -13,7 +13,8 @@
 
 @import Parse;
 
-@interface ViewController () <ProximityContentManagerDelegate>
+@interface ViewController () <ProximityContentManagerDelegate, ESTBeaconManagerDelegate>
+
 - (IBAction)fetchButtonSelected:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *artistLabel;
 
@@ -24,6 +25,9 @@
 
 @property (nonatomic) ProximityContentManager *proximityContentManager;
 
+@property (nonatomic) ESTBeaconManager *beaconManager;
+
+
 @end
 
 @implementation ViewController
@@ -31,10 +35,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.beaconManager = [[ESTBeaconManager alloc]init];
+    self.beaconManager.delegate = self;
+    [self.beaconManager requestAlwaysAuthorization];
+    [self.beaconManager startMonitoringForRegion:[[CLBeaconRegion alloc]initWithProximityUUID:[[NSUUID alloc]initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"] major:36360 minor:36995 identifier:@"monitored region"]];
+    
+    
 //Select show to be hosted by title
     PFQuery *query = [PFQuery queryWithClassName:@"Show"];
-//    [query whereKey:@"title" equalTo:@"Flower"];
-//    [query includeKey:@"pieces"];
+    [query whereKey:@"title" equalTo:@"Wyld"];
+    [query includeKey:@"pieces"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             NSLog(@"show results: %@", objects);
@@ -71,6 +81,11 @@
                                     beaconContentFactory:[[CachingContentFactory alloc] initWithBeaconContentFactory:[BeaconDetailsCloudFactory new]]];
     self.proximityContentManager.delegate = self;
     [self.proximityContentManager startContentUpdates];
+    
+}
+
+- (void) beaconManager:(id)manager didEnterRegion:(CLBeaconRegion *)region
+{
     
 }
 
@@ -136,5 +151,7 @@
     NSLog(@"self.piece: %@",self.piece);
     
 }
+
+
 
 @end
