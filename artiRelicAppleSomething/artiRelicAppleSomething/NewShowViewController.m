@@ -141,7 +141,6 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
     [UIView animateWithDuration:kScrollViewKeyboardAnimation animations:^{
         [self.scrollView setContentOffset:(CGPointMake(0.0, 50.0))];
     }];
-
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
