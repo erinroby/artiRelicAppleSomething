@@ -18,7 +18,6 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *subtitleTextField;
@@ -26,7 +25,6 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *headerImageTapGesture;
 - (IBAction)headerImageTapped:(UITapGestureRecognizer *)sender;
-
 
 @end
 
@@ -48,8 +46,6 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
         self.headerImage.image = placeholderImage;
         self.title = @"Create Show";
     }
-
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -149,8 +145,8 @@ const NSTimeInterval kScrollTextViewKeyboardAnimation = 0.50;
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField {
+    [textField setBorderStyle:UITextBorderStyleNone];
     CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
-    
     [UIView animateWithDuration:kScrollViewKeyboardAnimation animations:^{
         [self.scrollView setContentOffset:(CGPointMake(0.0, -(navBarHeight + 20.0)))];
     }];
