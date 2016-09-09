@@ -1,4 +1,4 @@
-# artiRelicAppleSomething
+# galleryBeacon
 
 ## About
 
@@ -25,7 +25,9 @@ Idea: An app with iBeacon integration that replaces the plaque along side an art
 
 ## WireFrames
 
-![alt text](images/wireFrames.png "Introductory wireFrames")
+![alt text](images/PatronApp.png "wireFrames")
+![alt text](images/CuratorShow.png "wireFrames")
+![alt text](images/CuratorPiece.png "wireFrames")
 
 ## Group Members
 
